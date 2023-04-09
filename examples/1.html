@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/sharp-solid.css">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/sharp-regular.css">
+
+<link rel="stylesheet" href="../complete.css">
+<script src="../complete.js" defer></script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+<style>
+
+    :root {
+    }
+
+    body {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Arial, Helvetica;
+
+        /* color: white;
+        background: black; */
+
+        --sb-border:none;
+        --sb-input-border: solid 1px;
+        --sb-input-padding: 20px;
+        --sb-shadow:none;
+        --sb-outline-color: transparent;
+
+        /* --sb-label-offset: 15px;
+        --sb-label-offset-x: 30px;
+        --sb-outline-offset: 0px */
+    }
+
+    form {
+        width: 600px;
+    }
+</style>
+
+<form class="sb-form" >
+
+    <h1>Rules:</h1>
+
+    <ol>
+        <li>The input element <b>always</b> goes first</li>
+        <li>Notes and alerts are located directly after the input element</li>
+        <li>Buttons and icons <b>before</b> the label are displayed on the left</li>
+        <li>Buttons and icons <b>after</b> the label are displayed on the right</li>
+    </ol>
+
+
+    <ol class="input">
+        <li>
+            <input type="text" name="" id="">
+            <label for="">text 1</label>
+        </li>
+        <li>
+            <input type="text" name="" id="">
+            <label for="">text 2</label>
+        </li>
+        <li>
+            <input type="text" name="" id="">
+            <label for="">text 3</label>
+        </li>
+        <li>
+            <input type="text" name="" id="">
+            <label for="">text 4</label>
+        </li>
+        <li>
+            <input type="text" name="" id="">
+            <label for="">text 5</label>
+        </li>
+        <li>
+            <input type="text" name="" id="">
+            <label for="">text 6</label>
+        </li>
+    </ol>
+
+    <details>
+        <summary>text</summary>
+
+        <div class="input">
+            <input type="text">
+
+            <label >vanilla</label>
+        </div>
+
+        <div class="input">
+            <input type="text" readonly value="some value that cant be changed">
+            <label >readonly</label>
+        </div>
+    
+        <div class="input">
+            <input type="text" required>
+            <label >required</label>
+        </div>
+
+        <div class="input">
+            <input type="text" minlength="10" maxlength="50">
+            <label >min - max value</label>
+        </div>
+
+        <div class="input">
+            <input type="text">
+
+            <i class="fa-duotone fa-person-skating"></i>
+            <label >icon left</label>
+        </div>
+
+        <div class="input">
+
+            <input type="text">
+            <label >icon right</label>
+
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+
+            <input type="text">
+
+            <i class="fa-duotone fa-person-skating"></i>
+
+            <label >icon left button right</label>
+
+            <button>Chemical <br> engineering <br> Yeah!</button>
+        </div>
+
+        <div class="input">
+
+            <input type="text">
+
+            <button>Chemical engineering</button> 
+
+            <label >icon right button left</label>
+
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+            <input type="text">
+            
+            <i class="fa-duotone fa-person-skating"></i>
+            <label >icon left 2 buttons right</label>
+
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+        </div>
+
+        <div class="input">
+            <input type="text">
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label >icon right 2 buttons left</label>
+
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+            <input type="text">
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon + button right, 2 buttons left</label>
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+
+        <div class="input">
+            <input type="text">
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+
+            <label>icon + button left, 2 buttons right</label>
+
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+        </div>
+
+        <div class="input">
+            <input type="text">
+            <span role="note">Dit is wat extra informatie voor de input</span>
+
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon + button right, 2 buttons left</label>
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+            <input type="text">
+            <span role="alert">Dit is een error message voor de input</span>
+
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon + button right, 2 buttons left</label>
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+            <input type="text">
+            
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon + button right, 2 buttons left</label>
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+
+            <span role="alert">Dit is een error message voor de input</span>
+            <span role="note">Dit is wat extra informatie voor de input</span>
+            <span role="alert">Dit is een error message voor de input</span>
+            <span role="note">Dit is wat extra informatie voor de input</span>
+        </div>
+
+        <div class="input">
+
+
+            <input type="text">
+
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon + button right, 2 buttons left</label>
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+
+            <span role="note">Dit is wat extra informatie voor de input hint of then century,the slip it brought knees fail- too much- i though that id heard you laughing</span>
+            <span role="alert">Dit is een error message voor de input but that was just a dream, that was just a dream that me in corner, that me in the spot light, losing my religion</span>
+            <span role="note">Dit is wat extra informatie voor de input</span>
+            <span role="alert">Dit is een error message voor de input</span>
+        </div>
+
+    </details>
+
+    
+    <details >
+        <summary>button</summary>
+
+        <div class="input">
+            <input type="button" value="button only child">
+        </div>
+
+        <div class="input">
+            <input type="button" disabled value="disabled button">
+        </div>
+    
+        <div class="input">
+            <input type="button" value="2 buttons">
+
+            <button>the second button</button>
+        </div>
+
+        <div class="input">
+            <button>the second button</button>
+
+            <input type="button" value="3 buttons">
+
+            <button class="outline">the third button</button>
+        </div>
+
+        <div class="input">
+            <i class="fa-duotone fa-person-skating"></i>
+            <input type="button" value="button with icon left">
+        </div>
+
+        <div class="input">
+            <input type="button" value="button with icon right">
+
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+            <button>the second button</button>
+
+            <input type="button" value="icon right button left">
+
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+
+            <input type="button" value="a very heigh button">
+
+            <i class="fa-duotone fa-person-skating"></i>
+
+
+            <button>Chemical <br> engineering <br> Yeah!</button>
+        </div>
+
+        <div class="input">
+            <input type="button" value="button met extra info">
+            
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+            
+            
+            <button>schaatsen</button>
+
+            <span role="note">Dit is wat extra informatie voor de input</span>
+        </div>
+
+        <div class="input">
+            <input type="button" value="button met een waarschuwing">
+
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <button>schaatsen</button>
+
+            <span role="alert">Dit is een error message voor de input</span>
+        </div>
+
+        <div class="input">
+            <input type="button" value="button met een waarschuwing + extra info">
+            
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon + button right, 2 buttons left</label>
+
+            <button>schaatsen</button>
+
+            <span role="alert">Dit is een error message voor de input</span>
+            <span role="note">Dit is wat extra informatie voor de input</span>
+            <span role="alert">Dit is een error message voor de input</span>
+            <span role="note">Dit is wat extra informatie voor de input</span>
+        </div>
+
+    </details>
+
+    <details >
+        <summary>textarea</summary>
+
+        <div class="input">
+            <textarea></textarea>
+
+            <label>vanilla</label>
+        </div>
+
+        <div class="input">
+            <textarea readonly>Dit is wat default text</textarea>
+            <label >readonly</label>
+        </div>
+    
+        <div class="input">
+            <textarea required></textarea>
+            <label >required</label>
+        </div>
+
+        <div class="input">
+            <textarea minlength="5" maxlength="10"></textarea>
+            <label >min - max value</label>
+        </div>
+
+        <div class="input">
+            <textarea></textarea>
+
+            <i class="fa-duotone fa-person-skating"></i>
+            <label >icon left</label>
+        </div>
+
+        <div class="input">
+
+            <textarea></textarea>
+            <label >icon right</label>
+
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+
+            <textarea></textarea>
+
+            <i class="fa-duotone fa-person-skating"></i>
+
+            <label >icon left button right</label>
+
+            <button>Chemical <br> engineering <br> Yeah!</button>
+        </div>
+
+        <div class="input">
+
+            <textarea></textarea>
+
+            <button>Chemical engineering</button> 
+
+            <label >icon right button left</label>
+
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+            <textarea></textarea>
+            
+            <i class="fa-duotone fa-person-skating"></i>
+            <label >icon left 2 buttons right</label>
+
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+        </div>
+
+        <div class="input">
+            <textarea></textarea>
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label >icon right 2 buttons left</label>
+
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+            <textarea></textarea>
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon + button right, 2 buttons left</label>
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+
+        <div class="input">
+            <textarea></textarea>
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+
+            <label>icon + button left, 2 buttons right</label>
+
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+        </div>
+
+        <div class="input">
+            <textarea></textarea>
+            <span role="note">Dit is wat extra informatie voor de input</span>
+
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon + button right, 2 buttons left</label>
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+            <textarea></textarea>
+            <span role="alert">Dit is een error message voor de input</span>
+
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon + button right, 2 buttons left</label>
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+            <textarea></textarea>
+            
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon + button right, 2 buttons left</label>
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+
+            <span role="alert">Dit is een error message voor de input</span>
+            <span role="note">Dit is wat extra informatie voor de input</span>
+            <span role="alert">Dit is een error message voor de input</span>
+            <span role="note">Dit is wat extra informatie voor de input</span>
+        </div>
+
+        <div class="input">
+
+
+            <textarea></textarea>
+
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon + button right, 2 buttons left</label>
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+
+            <span role="note">Dit is wat extra informatie voor de input hint of then century,the slip it brought knees fail- too much- i though that id heard you laughing</span>
+            <span role="alert">Dit is een error message voor de input but that was just a dream, that was just a dream that me in corner, that me in the spot light, losing my religion</span>
+            <span role="note">Dit is wat extra informatie voor de input</span>
+            <span role="alert">Dit is een error message voor de input</span>
+        </div>
+
+        <div class="input">
+            <textarea ></textarea>
+            <label >with counter</label>
+
+            <span class="count"></span>
+        </div>
+
+        <div class="input">
+            <textarea maxlength="20"></textarea>
+            <label >with counter + max length</label>
+
+            <span class="count"></span>
+        </div>
+
+
+        <div class="input">
+            <textarea maxlength="20"></textarea>
+            <label >with counter + note</label>
+
+            <span role="alert">error</span>
+            <span class="count"></span>
+            <span role="note">Length is limited due a skill issue</span>
+
+        </div>
+
+        <div class="input">
+            <textarea maxlength="20"></textarea>
+            <label >with counter as note + note</label>
+
+            <span role="note" class="count"></span>
+        </div>
+
+    </details>
+
+    <details open>
+        <summary>checkbox</summary>
+
+        <div class="input">
+            <input type="checkbox">
+
+            <label>vanilla</label>
+        </div>
+
+        <div class="input">
+            <input type="checkbox" disabled value="some value that cant be changed">
+            <label>readonly</label>
+        </div>
+    
+        <div class="input">
+            <input type="checkbox" required>
+            <label>required</label>
+        </div>
+
+        <div class="input">
+            <input type="checkbox" minlength="10" maxlength="50">
+            <label>min - max value</label>
+        </div>
+
+        <div class="input">
+            <input type="checkbox">
+
+            <i class="fa-duotone fa-person-skating"></i>
+            <label>icon left</label>
+        </div>
+
+        <div class="input">
+
+            <input type="checkbox">
+            <label>icon right</label>
+
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+
+            <input type="checkbox">
+
+            <i class="fa-duotone fa-person-skating"></i>
+
+            <label>icon left button right</label>
+
+            <button>Chemical <br> engineering <br> Yeah!</button>
+        </div>
+
+        <div class="input">
+
+            <input type="checkbox">
+
+            <button>Chemical engineering</button> 
+
+            <label>icon right button left</label>
+
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+            <input type="checkbox">
+            
+            <i class="fa-duotone fa-person-skating"></i>
+            <label>icon left 2 buttons right</label>
+
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+        </div>
+
+        <div class="input">
+            <input type="checkbox">
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon right 2 buttons left</label>
+
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+            <input type="checkbox">
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon + button right, 2 buttons left</label>
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+
+        <div class="input">
+            <input type="checkbox">
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+
+            <label>icon + button left, 2 buttons right</label>
+
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+        </div>
+
+        <div class="input">
+            <input type="checkbox">
+            <span role="note">Dit is wat extra informatie voor de input</span>
+
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon + button right, 2 buttons left</label>
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+            <input type="checkbox">
+            <span role="alert">Dit is een error message voor de input</span>
+
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon + button right, 2 buttons left</label>
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+        </div>
+
+        <div class="input">
+            <input type="checkbox">
+            
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon + button right, 2 buttons left</label>
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+
+            <span role="alert">Dit is een error message voor de input</span>
+            <span role="note">Dit is wat extra informatie voor de input</span>
+            <span role="alert">Dit is een error message voor de input</span>
+            <span role="note">Dit is wat extra informatie voor de input</span>
+        </div>
+
+        <div class="input">
+
+
+            <input type="checkbox">
+
+            <button class="outline">Chemical engineering</button>
+            <button>schaatsen</button>
+
+            <label>icon + button right, 2 buttons left</label>
+
+            <button>schaatsen</button>
+            <i class="fa-duotone fa-person-skating"></i>
+
+            <span role="note">Dit is wat extra informatie voor de input hint of then century,the slip it brought knees fail- too much- i though that id heard you laughing</span>
+            <span role="alert">Dit is een error message voor de input but that was just a dream, that was just a dream that me in corner, that me in the spot light, losing my religion</span>
+            <span role="note">Dit is wat extra informatie voor de input</span>
+            <span role="alert">Dit is een error message voor de input</span>
+        </div>
+
+    </details>
+
+
+    <input type="color">
+    <input type="date">
+    <input type="datetime">
+    <input type="datetime-local">
+    <input type="email">
+    <input type="file">
+    <input type="hidden">
+    <input type="image">
+    <input type="month">
+    <input type="number">
+    <input type="password">
+    <input type="radio">
+    <input type="range">
+    <input type="reset">
+    <input type="search">
+    <input type="submit">
+    <input type="tel">
+    <input type="time">
+    <input type="url">
+    <input type="week">
+
+
+</form>

@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/sharp-solid.css">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/sharp-regular.css">
+
+<!-- <link rel="stylesheet" href="complet.before.css"> -->
+<link rel="stylesheet" href="complete.css">
+<script src="complete.js" defer></script>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+
+
+<style>
+
+    :root {
+        --sb-shadow: 
+        5px 5px 0px 0px grey,
+        10px 10px 0px 0px rgba(128, 128, 128, 0.8),
+        15px 15px 0px 0px rgba(128, 128, 128, 0.6),
+        20px 20px 0px 0px rgba(128, 128, 128, 0.4),
+        25px 25px 0px 0px rgba(128, 128, 128, 0.2);
+
+
+        --sb-shadow:  5px 5px 0px 0px grey;
+        --sb-border: grey solid 1px;
+    
+    }
+
+
+    html,
+    body {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        /* background: black; */
+
+        font-family: system-ui;
+    }
+
+
+    form {
+        width: 100%;
+        max-width: 500px;
+    }
+</style>
+
+
+<form class="sb-form">
+    <h1 class="mb-5">Contact formulier</h1>
+
+    <div class="input">
+        <input type="text">
+        <label for="">Username</label>
+    </div>
+
+    <div class="input">
+        <input type="email" name="" id="">
+        <label for="email">Email adres</label>
+    </div>
+
+    <div class="input">
+        <input type="password" name="" id="">
+        <label for="">Password</label>
+        <button class="reveal"></button>
+
+        <span role="note">Wachtwoord moet minimaal 19 chars lang zijn met speciale tekens en cijfers</span>
+    </div>
+
+    <div class="input">
+        <input type="password">
+        <label for="">Repeat password</label>
+        <button class="reveal"></button>
+    </div>
+
+
+    <div class="input" style="
+        --sb-padding: 0px;
+        --sb-border: none;
+        --sb-background: transparent;
+        --sb-btn-color: white;
+        --sb-btn-shadow: var(--sb-shadow); 
+        box-shadow: none;
+        --sb-gap: 30px;
+    ">
+        <input type="submit">
+        <input type="submit">
+    </div>
+
+
+
+</form>
+
+
+
+

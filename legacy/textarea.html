@@ -1,0 +1,74 @@
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+
+<div class="input-textarea">
+    <textarea placeholder="" name="" maxlength="100"></textarea>
+    <div>
+        <label for="">Titel</label>
+        <span>100 karakters over</span>
+    </div>
+</div>
+
+<script>
+    function update_textarea(textarea) {
+        let length = textarea.val().length;
+        let max = textarea.attr('maxlength');
+        max = max == undefined ? 0 : max;
+
+        textarea.parent().children('div').children('span').html(
+            length > max
+                ? 'Je zit over je karakter limit!'
+                : `${max - length} karakters over`
+        )
+    }
+
+    $('.textarea').each(function() {
+        let interval = null;
+
+        $(this).children('textarea').focus(function() {
+            let textarea = $(this);
+            interval = setInterval(function() {
+                update_textarea(textarea);
+            }, 100)
+        })
+
+        $(this).focusout(function() {
+            clearInterval(interval);
+        })
+
+        update_textarea($(this).children('textarea'));
+    })
+
+</script>
+
+<style>
+    .textarea {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 5px 2px lightgrey;
+        overflow: hidden;
+        padding: 8px 12px;
+        box-sizing: border-box;
+    }
+
+    .textarea > textarea {
+        outline: none;
+        border: none;
+        height: 150px;
+    }
+
+    .textarea > div {
+        padding-top: 8px;
+        border-top: lightgray solid 1px;
+        margin-top: 15px;
+        color: #999999;
+        height: 35px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+</style>

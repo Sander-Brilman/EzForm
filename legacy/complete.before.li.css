@@ -1,0 +1,596 @@
+:root {
+    --sb-theme-color: #15a6ab;
+    --sb-error-color: #c83232;
+    --sb-label-color: #747474;
+    --sb-input-color: #000;
+    --sb-background: white;
+    --sb-border-radius: 6px;
+    --sb-label-left: 15%;
+    --sb-margin: 2.5em;
+}
+     
+@keyframes error {
+    45%, 55% { color: var(--sb-error-color); }
+}
+
+
+/* ==============
+generic rules
+=============== */
+
+.sb-form,
+.sb-form * {
+    box-sizing: border-box;
+}
+
+.sb-form :is(.input, .input > li) *:not(li) {
+    order: 1;
+    border-radius: var(--sb-border-radius);
+    margin: 0 5px 5px 0;
+    opacity: 1;
+}
+
+.sb-form :is(.input, .input > li) :is(
+    input,
+    button,
+    textarea,
+    select,
+    label
+) {
+    cursor: pointer;
+}
+
+.sb-form :is(.input, .input > li) label ~ * {
+    order: 3;
+}
+
+
+
+
+
+/* ==============
+container
+=============== */
+
+.sb-form .input {
+    padding: 5px 0 0 5px;
+    border-bottom: var(--sb-border, solid var(--sb-border-color, var(--sb-theme-color)) 2px);
+    margin: 0 0 var(--sb-margin) 0;
+    box-shadow: var(--sb-shadow, 0px 0px 5px 1px var(--sb-shadow-color, #d3d3d3));
+    border-radius: var(--sb-border-radius);
+    background: var(--sb-background);
+    width: 100%;
+}
+
+.sb-form .input:not(ol, ul),
+.sb-form .input > li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+
+/* ==============
+generic input elements
+=============== */
+
+.sb-form :is(.input, .input > li) :first-child:not(li) {
+    transition: font-weight .25s;
+    border: none;
+    background: none;
+    flex-grow: 1;
+    min-height: 2.7rem;
+    font-size: 1.05rem;
+    color: var(--sb-input-color);
+    order: 2;
+    width: 1em;
+    z-index: 1;
+    padding: 0 5px;
+}
+
+.sb-form :is(.input, .input > li) [readonly]:not(li) {
+    color: var(--sb-label-color);
+    cursor: not-allowed;
+}
+
+.sb-form :is(.input, .input > li) :is(
+    select,
+    input,
+    textarea,
+    button
+):focus {
+    outline: var(--sb-outline, var(--sb-theme-color) dashed 1px);
+}
+
+.sb-form :is(.input, .input > li) :is(
+    input,
+    textarea
+):first-child:not(li):is(:not(:placeholder-shown), :focus):not(
+    [type="button"],
+    [type="submit"],
+    [type="reset"]
+) {
+    padding-top: 1rem;
+}
+
+
+
+/* ==============
+labels
+=============== */
+
+.sb-form :is(.input, .input > li) label:not(:where([type="checkbox"], [type="radio"]) ~ label) {
+    line-height: 45px;
+    align-self: flex-start;
+    transition: color .3s ease-in, font-size .3s, line-height .3s, align-self .3s;
+    font-size: 1.1rem;
+    color: var(--sb-label-color);
+    width: 0;
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left: 5px;
+}   
+
+
+.sb-form :is(.input, .input > li) :first-child:not(
+    [type="checkbox"], 
+    [type="button"], 
+    [type="submit"], 
+    [type="radio"], 
+    [type="reset"], 
+    button
+) + label {
+    padding: 0 0 0 .5rem;
+}
+
+.sb-form :is(.input, .input > li) :first-child:not(li, [type="checkbox"], [type="radio"]):is(:focus, :not(:placeholder-shown)) ~ label { 
+    line-height: 1rem;
+    font-size: .9rem;
+}
+
+.sb-form :is(.input, .input > li) :is(
+    [placeholder]:invalid:not(:required:placeholder-shown),
+    [role="alert"]
+) ~ label {
+    animation: error 1.5s linear 0s infinite forwards normal;
+} 
+
+.sb-form :is(.input, .input > li) :is( textarea, select, input ):focus ~ label { font-weight: bold; }
+
+.sb-form :is(.input, .input > li) :first-child:not(li):is(:required, [required], [min], [minlength]) ~ label::after { 
+    content: '*'; 
+    margin-left: 3px; 
+    color: var(--sb-error-color);
+    font-size: 1.2em;
+}  
+
+
+
+/* ==============
+icons
+=============== */
+
+.sb-form :is(.input, .input > li) > i {
+    color: var(--sb-theme-color);
+    font-size: 22px;
+    min-width: 40px;
+    text-align: center;
+}
+
+
+
+/* ==============
+messages
+=============== */
+
+.sb-form :is(.input, .input > li) :is(
+    [role="alert"],
+    [role="note"] 
+) {
+    display: flex;
+    align-items: center;
+    transition: opacity .5s, font-weight .25s, line-height .5s;
+    width: 100%;
+    order: 4;
+}
+
+.sb-form :is(.input, .input > li) :is(
+    [role="alert"],
+    [role="note"],
+    
+    :where(
+        [type="radio"],
+        [type="checkbox"]
+    ) ~ :where(
+        [role="alert"],
+        [role="note"] 
+    ) ~ label:not(:where(
+        [role="alert"],
+        [role="note"] 
+    ) ~ label ~ label)
+)::before {
+    content: '\24D8';
+    text-align: center;
+    align-self: flex-start;
+    font-weight: bolder;
+    font-size: 12px;
+    margin: 5px 3px 0 0;
+}
+
+.sb-form :is(.input, .input > li) :is(
+    [role="alert"],
+    [role="note"]
+)::before {
+    min-width: 40px;
+    font-size: 18px;
+    margin: 0;
+}
+
+.sb-form :is(.input, .input > li) [role="alert"] {
+    color: var(--sb-error-color);
+}
+
+.sb-form :is(.input, .input > li) :is(
+    input:not(
+        [type="submit"],
+        [type="reset"],
+        [type="button"]
+    ),
+    textarea,
+    select
+):focus ~ :is([role="alert"], [role="note"]) {
+    font-weight: bold;
+}
+
+.sb-form :is(.input, .input > li) [role="note"] {
+    color: var(--sb-label-color);
+}   
+
+
+/* ==============
+button
+=============== */
+
+.sb-form :is(.input, .input > li) :is(
+    [type="button"],
+    [type="submit"],
+    [type="reset"],
+    button
+):not(:first-child) {
+    flex-grow: unset;
+    z-index: 1;
+}
+
+.sb-form :is(.input, .input > li) :is(
+    [type="button"],
+    [type="submit"],
+    [type="reset"],
+    button
+):not(.btn) {
+    align-self: stretch;
+    border: none;
+    transition: color .4s, border .4s, background .3s ease-out;
+    padding: .375rem .75rem;
+    outline-offset: 2px;
+    width: unset;
+    
+    color: var(
+        --sb-btn-color,
+        var(--sb-background)
+    );
+    
+    
+    background-color: var(
+        --sb-btn-background,
+        var(--sb-theme-color)
+    );
+        
+    background-image: radial-gradient(circle, rgba(0, 0, 0, .09) 50%, transparent 50%);
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    background-size: 0;
+
+    border: var(
+        --sb-btn-border,
+        solid
+        1px
+        var(
+            --sb-btn-border-color,
+            transparent
+        )
+    );
+}   
+
+
+.sb-form :is(.input, .input > li) > :is(
+    [type="button"],
+    [type="reset"],
+    [type="submit"],
+    button
+):not(.btn):is(:hover, :focus) {
+    color: var(
+        --sb-btn-hover-color, 
+        var(
+            --sb-btn-color,
+            var(--sb-background)
+        )
+    );
+
+    background-color: var(
+        --sb-btn-hover-background, 
+        var(
+            --sb-btn-background,
+            var(--sb-theme-color)
+        )
+    );
+
+    background-size: 220%;
+
+    border: var(
+        --sb-btn-hover-border,
+        1px
+        solid
+        var(
+            --sb-btn-border-color,
+            transparent
+        )
+    );
+}   
+
+/* ==============
+outline button
+=============== */
+
+ .sb-form :is(.input, .input > li) > *:not(.btn).outline {
+    border-color: var(
+        --sb-btn-border-color,
+        var(
+            --sb-btn-background,
+            var(--sb-theme-color)
+        )
+    );    
+    
+    background-color: var(--sb-background);
+
+    color: var(
+        --sb-btn-color,
+        var(
+            --sb-btn-background,
+            var(--sb-theme-color)
+        )
+    );
+}
+
+.sb-form :is(.input, .input > li) > *:not(.btn).outline:hover {
+    background: var(
+        --sb-btn-hover-background,
+        var(
+            --sb-btn-background,
+            var(--sb-theme-color)
+        )
+    );
+
+    color: var( 
+        --sb-btn-hover-color 
+        --sb-btn-background 
+    )
+}
+
+
+
+/* ==============
+password reveal button
+=============== */
+
+.sb-form :is(.input, .input > li) ::-ms-reveal { display: none; }
+
+.sb-form :is(.input, .input > li) > button:empty.reveal {
+    min-width: 50px;
+    position: relative;
+    padding: 0 .75rem;
+}
+
+.sb-form :is(.input, .input > li) > button.reveal:empty:after {
+    content: "\1F441";
+    font-size: 1.5rem;
+
+}
+
+.sb-form :is(.input, .input > li) [type="text"] ~ button.reveal:empty::after {
+    content: "\00D7";
+}
+
+
+
+/* ==============
+input textarea
+=============== */
+
+.sb-form :is(.input, .input > li) textarea:first-child {
+    min-height: 150px;
+}
+
+.sb-form :is(.input, .input > li) textarea:not(:placeholder-shown) {
+    padding-top: 1em;
+}
+
+.sb-form :is(.input, .input > li) textarea ~ *  {
+    margin-top: .1em;
+}
+
+.sb-form :is(.input, .input > li) textarea ~ .count {
+    order: 4;
+    width: 100%;
+    padding-left: 5px;
+    color: var(--sb-label-color);
+}
+
+
+
+/* ==============
+input checkbox / radio general
+=============== */
+
+.sb-form :is(.input, .input > li) input:is(
+    [type="radio"],
+    [type="checkbox"]
+) {
+    flex-grow: 0;
+    min-height: 1rem;
+    height: 1rem;
+    width: 40px;
+    outline-offset: 2px;
+}
+
+.sb-form :is(.input, .input > li) :is(
+    [type="radio"],
+    [type="checkbox"],
+) ~ label[for] {
+    flex-grow: 1;
+    height: 40px;
+    color: var(--sb-input-color);
+    order: 2;
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* ==============
+input checkbox / radio switch
+=============== */
+
+.sb-form :is(.input, .input > li) :is(
+    [type="radio"],
+    [type="checkbox"]
+)[role="switch"] {
+    width: 30px;
+    border: var(--sb-switch-border, 1px solid var(--sb-switch-background, var(--sb-theme-color)));
+    margin: 0 10px 5px 5px;
+    background-image: radial-gradient(circle, var(--sb-switch-color, var(--sb-theme-color))  25%, transparent 30%);
+    background-color: var(--sb-switch-background, transparent);
+    background-position: -8px center;
+    border-radius: 20px;
+    transition: background-color .3s ease-out, background-position .3s ease-in-out, border .3s ease-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0;
+}
+
+.sb-form :is(.input, .input > li) :is(
+    [type="radio"],
+    [type="checkbox"]
+)[role="switch"]:checked {
+    background-image: radial-gradient(circle, var(--sb-switch-checked-color, var(--sb-switch-color, var(--sb-background))) 25%, transparent 30%);
+    background-position: 8px center;
+    background-color: var(--sb-switch-checked-background, var(--sb-theme-color));
+    border: var(--sb-switch-checked-border, var(--sb-switch-border, none));
+}
+
+
+
+/* ==============
+input radio overlapping icon, todo
+=============== */
+
+
+
+
+/* ==============
+input file
+=============== */
+
+.sb-form :is(.input, .input > li) input[type="file"] {
+    padding-top: .8em;
+    line-height: 1.6rem;
+}
+
+.sb-form :is(.input, .input > li) input[type="file"] ~ label {
+    margin: 0;
+}
+
+.sb-form :is(.input, .input > li) ::file-selector-button {
+    display: none;
+}
+
+
+
+
+/* ==============
+input range
+=============== */
+
+.sb-form :is(.input, .input > li) > input[type="range"]:first-child {
+    margin: .8rem 5px 0;
+    padding: 0;
+    min-height: 2em;
+}
+
+
+
+/* ==============
+input color
+=============== */
+
+.sb-form :is(.input, .input > li) input[type="color"] {
+    padding: 0 !important;
+    min-height: 2.5rem;
+    outline-offset: 2px;
+}
+
+.sb-form :is(.input, .input > li) input[type="color"] ~ i ~ label {
+    position: relative;
+    left: 45px;
+}
+
+
+.sb-form :is(.input, .input > li) input[type="color"] ~ label {
+    align-self: center;
+}
+
+/* ==============
+input color inner color thing
+=============== */
+
+.sb-form :is(.input, .input > li) ::-moz-color-swatch  {
+    border-radius: var(--sb-border-radius);
+    border: none;
+}
+
+.sb-form :is(.input, .input > li) ::-webkit-color-swatch {
+    border-radius: var(--sb-border-radius);
+    border: none;
+}
+
+.sb-form :is(.input, .input > li) ::-webkit-color-swatch-wrapper { 
+    padding: 0;
+}
+
+.sb-form :is(.input, .input > li) [type="color"] ~ *:not(i, label ~ *, [role="alert"], [role="note"]) {
+    order: 0;
+}
+
+.sb-form :is(.input, .input > li) input[type="color"] ~ label,
+.sb-form :is(.input, .input > li) [type="color"] ~ i {
+    filter: drop-shadow(0 0 1px var(--sb-label-color)) 
+            drop-shadow(0 0 1px var(--sb-label-color));
+    color: var(--sb-background);
+}
+
+.sb-form :is(.input, .input > li) [type="color"] ~ i:not(label ~ i) {
+    margin-right: -40px;
+}
+
+
+
+.sb-form :is(.input, .input > li) [type="color"] ~ label ~ i {
+    order: 2;
+    margin-right: 5px;
+    margin-left: -45px;
+}
