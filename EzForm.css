@@ -52,9 +52,7 @@ order
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 2.7rem;
     flex-grow: 1;
-
 }
 
 .sb-form .input :focus {
@@ -232,7 +230,7 @@ input elements
 }
 
 .sb-form .input :is(
-    input:not([type="submit"], [type="button"], [type="reset"]),
+    input:not([type="submit"], [type="button"], [type="reset"], [role="switch"]),
     textarea
 ):is(
     :not(:placeholder-shown), 
@@ -632,9 +630,22 @@ input checkbox / radio switch
     [type="radio"],
     [type="checkbox"]
 )[role="switch"] {
-    width: 30px;
-    border: var(--sb-switch-border, 1px solid var(--sb-switch-background, var(--sb-theme-color)));
-    margin: 0 10px 5px 5px;
+    padding: 0;
+    min-width: 30px;
+    margin: 0 5px;
+    --sb-switch-border-default: 1px solid var(
+        --sb-switch-border-color, 
+        var(
+            --sb-switch-background, 
+            var(
+                --sb-theme-color
+            )
+        )
+    );
+    border: var(
+        --sb-switch-border, 
+        var(--sb-switch-border-default)
+    );
     background-image: radial-gradient(circle, var(--sb-switch-color, var(--sb-theme-color))  25%, transparent 30%);
     background-color: var(--sb-switch-background, transparent);
     background-position: -8px center;
@@ -653,7 +664,8 @@ input checkbox / radio switch
     background-image: radial-gradient(circle, var(--sb-switch-checked-color, var(--sb-switch-color, var(--sb-background))) 25%, transparent 30%);
     background-position: 8px center;
     background-color: var(--sb-switch-checked-background, var(--sb-theme-color));
-    border: var(--sb-switch-checked-border, var(--sb-switch-border, none));
+
+    border: var(--sb-switch-checked-border, var(--sb-switch-border, transparent));
 }
 
 

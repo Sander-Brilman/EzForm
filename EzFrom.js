@@ -1,34 +1,73 @@
 
-const inputSelector = '.sb-form .input';
-const buttonTypes = '[type="button"],[type="submit"],[type="reset"]';
 
-const getSiblingBySelector = (element, selector) => {
-    return element.parentElement.querySelector(selector);
-}
+// replace common operations with a custom function to save space when compressing
 
-const getAttr = (element, attrName) => element.getAttribute(attrName);
+const getSiblingBySelector = (element, selector) => element.parentElement.querySelector(selector);
 
-const hasAttr = (element, attrName) => element.hasAttribute(attrName) && getAttr(element) != '';
+const getAttr   = (element, attrName) => element.getAttribute(attrName);
+
+const hasAttr   = (element, attrName) => element.hasAttribute(attrName) && getAttr(element, attrName) != '';
+
+const selectAll = (element, selector) => element.querySelectorAll(selector);
+
+const setAttr   = (element, attrName, attrValue) => element.setAttribute(attrName, attrValue);
+
+const createTypeSelector = typeName => `[type=${typeName}]`;
+
+const randomString = () => Math.random().toString(36).substring(2);
 
 
-// parse & optimize html
-document.querySelectorAll(inputSelector).forEach(container => {
+// replace common occurring string with a variable to save space when compressing.
+let documentElement = document;
+let placeholder = 'placeholder';
+let type = 'type';
+let password = 'password';
 
 
-    let inputs = container.querySelectorAll(`input:not(${buttonTypes}), textarea, select`);
+// selectors
+let parentSelector      = '.sb-form'
+let inputSelector       = parentSelector + ` .input`;
+let typeButtonSelector  = createTypeSelector('button');
+let typeSubmitSelector  = createTypeSelector('submit');
+let typeResetSelector   = createTypeSelector('reset');
+let buttonTypesSelector = typeButtonSelector + `,${typeSubmitSelector},${typeResetSelector}`;
+let textareaSelector    = 'textarea';
+let selectSelector      = 'select';
+let mainSelector        = `:is(input:not(${buttonTypesSelector}),${textareaSelector},${selectSelector})`;
+
+
+
+
+
+
+
+// parse  html
+selectAll(documentElement, inputSelector).forEach(container => {
+
+
+    let inputs = selectAll(container, mainSelector);
+
 
     for (let i = 0; i < inputs.length; i++) {
-        const input = inputs[i];
+        let input = inputs[i];
         let label = getSiblingBySelector(input, 'label');
+
+        console.log(input, label, hasAttr(label, 'for'))
         
-        if (!hasAttr(input, 'placeholder')) {
-            input.setAttribute('placeholder', ' ');
+        if (!hasAttr(input, placeholder)) {
+            setAttr(input, placeholder, '');
         }
 
+        if (hasAttr(label, 'for')) { continue; }
+
+        let id = hasAttr(input, 'id') ? getAttr(input, 'id') : randomString();
+
+        setAttr(input, 'id', id);
+        setAttr(label, 'for', id);
     }
 
 
-
+    console.log(' ');
 
     
 
@@ -38,12 +77,12 @@ document.querySelectorAll(inputSelector).forEach(container => {
 
 
 // password button
-document.querySelectorAll(`${inputSelector} .reveal`).forEach(button => {
-    button.setAttribute('type', 'button');
+selectAll(documentElement, `${inputSelector} .reveal`).forEach(button => {
+    setAttr(button, type, 'button')
 
-    button.onclick = () => {
+    button.onclick = e => {
         let input = getSiblingBySelector(button, 'input');
-        input.setAttribute('type', input.getAttribute('type') == 'password' ? 'text' : 'password');
+        setAttr(input, type, getAttr(input, type) == password ? 'text' : password)
     }
 }) 
 
@@ -52,24 +91,25 @@ document.querySelectorAll(`${inputSelector} .reveal`).forEach(button => {
 // textarea
 const updateTextarea = textarea => {
     let length = textarea.value.length;
-    let max = textarea.getAttribute('maxlength');
+    let max = getAttr(textarea, 'maxlength');
     max = max == undefined ? '' : ` / ${max}`;
     
     let span = getSiblingBySelector(textarea, '.count');
     if (span == undefined) { return; }
     span.innerHTML = `${length}${max}`;
 }
-document.querySelectorAll(`${inputSelector} textarea`).forEach(textarea => {
+
+selectAll(documentElement, `${inputSelector} ${textareaSelector}`).forEach(textarea => {
     let interval = null;
 
-    textarea.onfocus = () => {
-        interval = setInterval(() => {
+    textarea.onfocus = e => {
+        interval = setInterval(e => {
             updateTextarea(textarea);
         }, 300)
     }
     
-    textarea.onfocusout = () => { clearInterval(interval); }
-    textarea.onblur = () => {  clearInterval(interval);  }
+    textarea.onfocusout = e => { clearInterval(interval); }
+    textarea.onblur = e => {  clearInterval(interval);  }
     
     updateTextarea(textarea);
 })
@@ -78,24 +118,24 @@ document.querySelectorAll(`${inputSelector} textarea`).forEach(textarea => {
 
 // validation
 const displayErrorMessages = () => {
-    document.querySelectorAll(`${inputSelector} :is(input:not([type="button"], [type="reset"], [type="submit"]), textarea, select)`).forEach(input => {
+    selectAll(documentElement, `${inputSelector} ${mainSelector}`).forEach(input => {
         if (input.checkValidity()) {
             return;
         }
 
-        let span = document.createElement('span')
-        span.setAttribute('role', 'alert');
+        let span = documentElement.createElement('span')
+        setAttr(span, 'role', 'alert')
         span.innerText = input.validationMessage;
 
         input.parentNode.appendChild(span);
     })
 }
 
-document.querySelectorAll('form.sb-form').forEach(form => {
+selectAll(documentElement, `form${parentSelector}`).forEach(form => {
 
 
 
-    form.onsubmit = function(e) {
+    form.onsubmit = e => {
         displayErrorMessages()
 
         
@@ -103,8 +143,8 @@ document.querySelectorAll('form.sb-form').forEach(form => {
     }
 
 
-    form.querySelectorAll(`${inputSelector} :is(button:not([type="button"], [type="reset"]), [type="submit"])`).forEach(button => {
-        button.onclick = () => { displayErrorMessages() }
+    selectAll(form, `${inputSelector} :is(button:not(${typeButtonSelector},${typeResetSelector}),${typeSubmitSelector})`).forEach(button => {
+        button.onclick = e => { displayErrorMessages() }
     })
 })
 
