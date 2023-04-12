@@ -2,19 +2,19 @@
 
 // replace common operations with a custom function to save space when compressing
 
-const getSiblingBySelector = (element, selector) => element.parentElement.querySelector(selector);
+let getSiblingBySelector = (element, selector) => element.parentElement.querySelector(selector);
 
-const getAttr   = (element, attrName) => element.getAttribute(attrName);
+let getAttr   = (element, attrName) => element.getAttribute(attrName);
 
-const hasAttr   = (element, attrName) => element.hasAttribute(attrName) && getAttr(element, attrName) != '';
+let hasAttr   = (element, attrName) => element.hasAttribute(attrName) && getAttr(element, attrName) != '';
 
-const selectAll = (element, selector) => element.querySelectorAll(selector);
+let selectAll = (element, selector) => element.querySelectorAll(selector);
 
-const setAttr   = (element, attrName, attrValue) => element.setAttribute(attrName, attrValue);
+let setAttr   = (element, attrName, attrValue) => element.setAttribute(attrName, attrValue);
 
-const createTypeSelector = typeName => `[type=${typeName}]`;
+let createTypeSelector = typeName => `[type=${typeName}]`;
 
-const randomString = () => Math.random().toString(36).substring(2);
+let randomString = () => Math.random().toString(36).substring(2);
 
 
 // replace common occurring string with a variable to save space when compressing.
