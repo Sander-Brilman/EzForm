@@ -1,0 +1,226 @@
+
+/* ==============
+generic input styles
+=============== */
+
+.sb-form .input :is(
+    input,
+    button,
+    textarea,
+    select
+) {
+    color: var(--sb-input-color, inherit);
+    border: var(--sb-input-border, solid 1px var(--sb-input-border-color));
+    background: var(--sb-input-background);
+    padding: var(--sb-input-padding, 0 0 0 clamp(5px, calc(var(--sb-border-radius) / 2), 10px));
+    width: 2em;
+    font-size: .9rem;
+}
+
+.sb-form .input :is(
+    input,
+    button,
+    textarea,
+    select
+):not(.label-top *, [type="checkbox"], [type="radio"]) {
+    min-height: 2.7rem;
+}
+
+.sb-form .input :is([readonly], :disabled):not(:is([type="radio"], [type="checkbox"], [type="color"]):not([role="switch"])) {
+    cursor: not-allowed;
+    opacity: .65;
+}
+
+.sb-form .input :is(
+    input:not([type="submit"], [type="button"], [type="reset"], [role="switch"]),
+    textarea
+):is(
+    :not(:placeholder-shown), 
+    :focus
+):not(.label-top *) {
+    padding-top: 1rem;
+}
+
+
+
+/* ==============
+input textarea
+=============== */
+
+.sb-form .input textarea {
+    height: var(--sb-textarea-height, 70px);
+}
+
+.sb-form .input textarea ~ *  {
+    align-self: flex-start;
+}
+
+.sb-form .input textarea ~ :is(
+    button, 
+    [type="submit"], 
+    [type="reset"], 
+    [type="button"]
+):not(:is(
+    button, 
+    [type="submit"], 
+    [type="reset"], 
+    [type="button"]
+    ) ~ *
+) {
+    width: 100%;
+}
+
+.sb-form .input textarea ~ button  {
+    order: 4;
+}
+
+.sb-form .input textarea ~ .count {
+    order: 4;
+    width: 100%;
+    justify-content: left;
+    min-height: auto;
+}
+
+
+
+/* ==============
+input checkbox / radio general
+=============== */
+
+.sb-form .input :is(
+    [type="radio"],
+    [type="checkbox"]
+) {
+    min-height: 1rem;
+    height: 1rem;
+    align-self: center;
+    flex-grow: 0;
+    min-width: 2.7rem;
+    padding-top: 30px;
+}
+
+.sb-form .input :is(
+    [type="radio"],
+    [type="checkbox"],
+) ~ label {
+    flex-grow: 1;
+    color: var(--sb-input-color);
+    order: 2;
+    justify-content: left;
+}
+
+
+
+/* ==============
+input checkbox / radio switch
+=============== */
+
+.sb-form .input :is(
+    [type="radio"],
+    [type="checkbox"]
+)[role="switch"] {
+    padding: 0;
+    min-width: 30px;
+    margin: 0 5px;
+    --sb-switch-border-default: 1px solid var(
+        --sb-switch-border-color, 
+        var(
+            --sb-switch-background, 
+            var(
+                --sb-theme-color
+            )
+        )
+    );
+    border: var(
+        --sb-switch-border, 
+        var(--sb-switch-border-default)
+    );
+    background-image: radial-gradient(circle, var(--sb-switch-color, var(--sb-theme-color))  25%, transparent 30%);
+    background-color: var(--sb-switch-background, transparent);
+    background-position: -8px center;
+    border-radius: 20px;
+    transition: background-color .3s ease-out, background-position .3s ease-in-out, border .3s ease-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0;
+}
+
+.sb-form .input :is(
+    [type="radio"],
+    [type="checkbox"]
+)[role="switch"]:checked {
+    background-image: radial-gradient(circle, var(--sb-switch-checked-color, var(--sb-switch-color, var(--sb-background))) 25%, transparent 30%);
+    background-position: 8px center;
+    background-color: var(--sb-switch-checked-background, var(--sb-theme-color));
+
+    border: var(--sb-switch-checked-border, var(--sb-switch-border, transparent));
+}
+
+
+
+/* ==============
+input radio overlapping icon, todo
+=============== */
+
+
+
+
+/* ==============
+input color
+=============== */
+
+.sb-form .input [type="color"] {
+    padding: 0 !important;
+    align-self: stretch;
+    height: auto;
+}
+
+.sb-form .input [type="color"] ~ i ~ label {
+    position: relative;
+    left: 2.7rem;
+}
+
+.sb-form [type="color"] ~ label {
+}
+
+/* ==============
+input color inner color thing
+=============== */
+
+.sb-form .input ::-moz-color-swatch  {
+    border-radius: var(--sb-border-radius);
+    border: none;
+}
+
+.sb-form .input ::-webkit-color-swatch {
+    border-radius: var(--sb-border-radius);
+    border: none;
+}
+
+.sb-form .input ::-webkit-color-swatch-wrapper { 
+    padding: 0;
+    height: 100%;
+}
+
+.sb-form .input [type="color"] ~ *:not(i, label ~ *, [role="alert"], [role="note"]) {
+    order: 0;
+}
+
+.sb-form .input input[type="color"] ~ label,
+.sb-form .input [type="color"] ~ i {
+    filter: drop-shadow(0 0 1px var(--sb-label-color)) 
+            drop-shadow(0 0 1px var(--sb-label-color));
+    color: var(--sb-background);
+}
+
+.sb-form .input [type="color"] ~ i:not(label ~ i) {
+    margin-right: -2.7rem;
+}
+
+
+
+.sb-form .input [type="color"] ~ label ~ i {
+    order: 2;
+    margin-left: -45px;
+}

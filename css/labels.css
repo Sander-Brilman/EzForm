@@ -1,0 +1,83 @@
+/* ==============
+label
+=============== */
+
+.sb-form .input label:not(
+    :is(
+        [type="checkbox"], 
+        [type="radio"],
+        [type="button"],
+        [type="submit"],
+        [type="reset"],
+        select
+    ) ~ label
+):not(.label-top *) {
+    transition: font-size .3s ease-out, transform .3s ease-out;
+    font-size: 1.1rem;
+    color: var(--sb-label-color);
+
+    width: 0;
+    padding: 0;
+    margin: 0 calc(var(--sb-gap-x, var(--sb-gap)) * -1) 0 0;
+
+    white-space: nowrap;
+
+    position: relative;
+    left: calc(clamp(5px, calc(var(--sb-border-radius) / 2), 10px) + var(--sb-label-offset-x, 0px));
+
+    pointer-events: none;
+    flex-grow: 0;
+}
+
+
+/* 
+top label
+*/
+
+.sb-form .input label:is(.label-top *),
+.sb-form .input label:not(
+    :is(
+        input:not(
+            [type="button"],
+            [type="submit"],
+            [type="reset"]
+        ),
+        textarea,
+        select
+    ) ~ *
+) {
+    order: 0;
+    width: 100%;
+    justify-content: start;
+    padding: .3em 0;
+}
+
+.sb-form .input :is(
+    input:not(
+        [type="button"],
+        [type="submit"],
+        [type="reset"],
+        [type="checkbox"],
+        [type="radio"]
+    ),
+    textarea
+):is(:focus, :not(:placeholder-shown)) ~ label:not(.label-top *) { 
+    font-size: .75rem;
+    transform: translateY(calc(-50% + .9em + calc(var(--sb-label-offset, 0px) * -1)));
+}
+
+.sb-form .input :is(
+    [placeholder]:invalid:not(:required:placeholder-shown),
+    [aria-invalid],
+    [aria-errormessage]
+):not([type="checkbox"], [type="radio"]) ~ label {
+    animation: error 1.5s linear 0s infinite;
+} 
+
+.sb-form .input :is(:required, [min], [minlength]) ~ label > *::after { 
+    content: '*'; 
+    margin-left: 3px; 
+    color: var(--sb-error-color);
+    font-size: 1.2em;
+    line-height: 0;
+}  

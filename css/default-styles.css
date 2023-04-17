@@ -1,0 +1,20 @@
+
+/* ==============
+outline button
+=============== */
+
+.sb-form .input :is(
+    [type="button"],
+    [type="reset"],
+    [type="submit"],
+    button
+):not(.btn).outline {
+    --sb-btn-background:         var(--sb-background);
+    --sb-btn-hover-background:   var(--sb-theme-color);
+    
+    --sb-btn-color:              var(--sb-theme-color);
+    --sb-btn-hover-color:        var(--sb-btn-background);
+
+    --sb-btn-border-color:       var(--sb-theme-color);
+    --sb-btn-hover-border-color: var(--sb-theme-color);
+}

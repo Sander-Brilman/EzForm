@@ -1,0 +1,190 @@
+/* ==============
+Default values
+=============== */
+
+:root {
+    --sb-theme-color: #3F00FF;
+    --sb-error-color: #c83232;
+    --sb-label-color: #747474;
+    --sb-color: #000;
+    --sb-background: white;
+
+
+    
+
+    --sb-border-radius: 4px;
+
+    --sb-label-left: 15%;
+    --sb-margin: 2.5em;
+
+
+    --sb-padding: 5px;
+    --sb-gap: 5px;
+
+    --sb-input-background: none;
+    --sb-input-border-color: transparent;
+
+    --sb-btn-padding-y: .5em;
+    --sb-btn-padding-x: 1.25em;
+
+
+}
+     
+@keyframes error {
+    45%, 55% { color: var(--sb-error-color); }
+}
+
+
+/* ==============
+generic styles
+=============== */
+
+.input,
+.input * {
+    box-sizing: border-box;
+}
+
+
+.sb-form .input :not(li) {
+    order: 1;
+
+    border-radius: var(--sb-border-radius);
+
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.sb-form .input :focus {
+    outline: var(--sb-outline, var(--sb-outline-color, var(--sb-theme-color) solid 1px));
+    outline-offset: var(--sb-outline-offset, 2px);
+}
+
+.sb-form .input :is(
+    input:not(
+        [type="button"],
+        [type="submit"],
+        [type="reset"]
+    ),
+    textarea,
+    select
+) {
+    order: 2;
+}
+
+.sb-form .input label ~ * {
+    order: 3;
+    z-index: 1;
+}
+
+
+.sb-form .input :is(
+    input,
+    button,
+    textarea,
+    select,
+    label
+) {
+    cursor: pointer;
+
+}
+
+
+.sb-form .input :is(
+    input:not(
+        [type="submit"],
+        [type="reset"],
+        [type="button"]
+    ),
+    :is(
+        input:is(
+            [type="submit"],
+            [type="reset"],
+            [type="button"]
+        ),
+        button
+    ):not(
+        :is(
+            input:not(
+                [type="submit"],
+                [type="reset"],
+                [type="button"]
+            ),
+            textarea,
+            select
+        ) ~ *
+    ),    
+    textarea,
+    select,
+    .grow
+) {
+    flex-grow: 100;
+}
+
+.sb-form .input hr {
+    width: 100%;
+    color: var(--sb-theme-color);
+}
+
+.sb-form .input :is([role="alert"], [role="note"])::before,
+.sb-form .input :is(
+    button,
+    [type="button"],
+    [type="submit"],
+    [type="reset"]
+).reveal:empty {
+    mask-image: var(--sb-svg);
+    -webkit-mask-image: var(--sb-svg);
+    
+    mask-position: center ;
+    -webkit-mask-position: center ;
+    
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.sb-form .input:not(ol, ul),
+.sb-form .input > li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+    row-gap: var(--sb-gap-y, var(--sb-gap));
+    column-gap: var(--sb-gap-x, var(--sb-gap));
+}
+
+.sb-form .input li:not(:last-child) {
+    margin-bottom: var(--sb-gap-y, var(--sb-gap));
+}
+
+
+
+/* ==============
+container
+=============== */
+
+.sb-form .input {
+    position: relative;
+    color: var(--sb-color);
+
+    padding:  var(--sb-padding);
+
+    margin: 0 0 var(--sb-margin) 0;
+
+    border: var(--sb-border, none);
+    border-bottom: var(--sb-border-bottom, var(--sb-border, solid var(--sb-border-color, var(--sb-theme-color)) 2px));
+    border-top: var(--sb-border-top, var(--sb-border, none));
+    border-left: var(--sb-border-left, var(--sb-border, none));
+    border-right: var(--sb-border-right, var(--sb-border, none));
+    
+    box-shadow: var(--sb-shadow, 0px 0px 5px 1px var(--sb-shadow-color, #d3d3d3));
+    border-radius: var(--sb-border-radius);
+
+    background: var(--sb-background);
+    width: 100%;
+    min-height: 2.7rem;
+
+}
