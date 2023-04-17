@@ -675,3 +675,65 @@ input checkbox / radio switch
 /* ==============
 input radio overlapping icon, todo
 =============== */
+
+
+
+
+/* ==============
+input color
+=============== */
+
+.sb-form .input [type="color"] {
+    padding: 0 !important;
+    align-self: stretch;
+    height: auto;
+}
+
+.sb-form .input [type="color"] ~ i ~ label {
+    position: relative;
+    left: 2.7rem;
+}
+
+.sb-form [type="color"] ~ label {
+}
+
+/* ==============
+input color inner color thing
+=============== */
+
+.sb-form .input ::-moz-color-swatch  {
+    border-radius: var(--sb-border-radius);
+    border: none;
+}
+
+.sb-form .input ::-webkit-color-swatch {
+    border-radius: var(--sb-border-radius);
+    border: none;
+}
+
+.sb-form .input ::-webkit-color-swatch-wrapper { 
+    padding: 0;
+    height: 100%;
+}
+
+.sb-form .input [type="color"] ~ *:not(i, label ~ *, [role="alert"], [role="note"]) {
+    order: 0;
+}
+
+.sb-form .input input[type="color"] ~ label,
+.sb-form .input [type="color"] ~ i {
+    filter: drop-shadow(0 0 1px var(--sb-label-color)) 
+            drop-shadow(0 0 1px var(--sb-label-color));
+    color: var(--sb-background);
+}
+
+.sb-form .input [type="color"] ~ i:not(label ~ i) {
+    margin-right: -2.7rem;
+}
+
+
+
+.sb-form .input [type="color"] ~ label ~ i {
+    order: 2;
+    margin-left: -45px;
+}

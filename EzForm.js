@@ -52,8 +52,6 @@ selectAll(documentElement, inputSelector).forEach(container => {
         let input = inputs[i];
         let label = getSiblingBySelector(input, 'label');
 
-        console.log(input, label, hasAttr(label, 'for'))
-        
         if (!hasAttr(input, placeholder)) {
             setAttr(input, placeholder, '');
         }
