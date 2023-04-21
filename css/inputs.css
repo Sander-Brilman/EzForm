@@ -184,6 +184,7 @@ input color
 .sb-form [type="color"] ~ label {
 }
 
+
 /* ==============
 input color inner color thing
 =============== */
@@ -198,29 +199,23 @@ input color inner color thing
     border: none;
 }
 
-.sb-form .input ::-webkit-color-swatch-wrapper { 
-    padding: 0;
-    height: 100%;
-}
+/* 
+overlapping icon
+*/
 
-.sb-form .input [type="color"] ~ *:not(i, label ~ *, [role="alert"], [role="note"]) {
-    order: 0;
-}
 
-.sb-form .input input[type="color"] ~ label,
-.sb-form .input [type="color"] ~ i {
+.sb-form .input [type="color"] ~ i:last-of-type {
     filter: drop-shadow(0 0 1px var(--sb-label-color)) 
             drop-shadow(0 0 1px var(--sb-label-color));
     color: var(--sb-background);
 }
 
-.sb-form .input [type="color"] ~ i:not(label ~ i) {
-    margin-right: -2.7rem;
+
+.sb-form .input [type="color"] ~ i:not(label ~ i):last-of-type {
+    margin-right: calc(-2.7rem + var(--sb-gap-x, var(--sb-gap)) * -1);
 }
 
-
-
-.sb-form .input [type="color"] ~ label ~ i {
+.sb-form .input [type="color"] ~ label ~ i:last-of-type {
     order: 2;
-    margin-left: -45px;
+    margin-left: calc(-2.7rem + var(--sb-gap-x, var(--sb-gap)) * -1);
 }

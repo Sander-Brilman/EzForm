@@ -74,10 +74,10 @@ top label
     animation: error 1.5s linear 0s infinite;
 } 
 
-.sb-form .input :is(:required, [min], [minlength]) ~ label > *::after { 
-    content: '*'; 
+.sb-form .input :is(:required, [min], [minlength]) ~ label::after { 
+    content: var(--sb-required-text, '*'); 
     margin-left: 3px; 
     color: var(--sb-error-color);
-    font-size: 1.2em;
     line-height: 0;
+    order: 1;
 }  
