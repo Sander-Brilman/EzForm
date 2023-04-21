@@ -38,7 +38,7 @@ generic input styles
     :not(:placeholder-shown), 
     :focus
 ):not(.label-top *) {
-    padding-top: 1rem;
+    padding: var(--sb-input-focus-padding);
 }
 
 

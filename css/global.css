@@ -5,29 +5,22 @@ Default values
 :root {
     --sb-theme-color: #3F00FF;
     --sb-error-color: #c83232;
-    --sb-label-color: #747474;
     --sb-color: #000;
     --sb-background: white;
-
-
-    
-
     --sb-border-radius: 4px;
-
-    --sb-label-left: 15%;
     --sb-margin: 2.5em;
-
-
     --sb-padding: 5px;
     --sb-gap: 5px;
 
+    --sb-label-color: #747474;
+    --sb-label-padding: 0;
+    --sb-label-focus-offset-y: calc(-50% + .7em);
+
+    --sb-input-focus-padding: 1rem 0 0 0; 
     --sb-input-background: none;
     --sb-input-border-color: transparent;
 
-    --sb-btn-padding-y: .5em;
-    --sb-btn-padding-x: 1.25em;
-
-
+    --sb-btn-padding: .5em 1.25em; 
 }
      
 @keyframes error {

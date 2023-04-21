@@ -11,7 +11,7 @@ button
     justify-content: center;
 
     transition: color .3s, border .3s, background .3s ease-out, box-shadow .3s;
-    padding: var(--sb-btn-padding-y) var(--sb-btn-padding-x);
+    padding: var(--sb-btn-padding);
     width: unset;
     
     color: var(

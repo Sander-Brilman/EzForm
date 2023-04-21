@@ -2,6 +2,12 @@
 label
 =============== */
 
+.sb-form .input label {
+    background: var(--sb-label-background, var(--sb-background));
+    z-index: 1;
+}
+
+/* inner span for background color */
 .sb-form .input label:not(
     :is(
         [type="checkbox"], 
@@ -11,12 +17,36 @@ label
         [type="reset"],
         select
     ) ~ label
-):not(.label-top *) {
-    transition: font-size .3s ease-out, transform .3s ease-out;
+) > * {
+    transition: 
+        color .3s ease-out,
+        background .3s ease-out;
+
+    line-height: normal;
+    padding: var(--sb-label-padding);
+    align-self: center;
+    background: transparent;
+}
+
+.sb-form .input label:not(
+    :is(
+        [type="checkbox"], 
+        [type="radio"],
+        [type="button"],
+        [type="submit"],
+        [type="reset"],
+        select
+    ) ~ label
+) {
+    transition: 
+        font-size .3s ease-out, 
+        transform .3s ease-out, 
+        left .3s ease-out;
+
     font-size: 1.1rem;
     color: var(--sb-label-color);
 
-    width: 0;
+    max-width: 0;
     padding: 0;
     margin: 0 calc(var(--sb-gap-x, var(--sb-gap)) * -1) 0 0;
 
@@ -26,30 +56,30 @@ label
     left: calc(clamp(5px, calc(var(--sb-border-radius) / 2), 10px) + var(--sb-label-offset-x, 0px));
 
     pointer-events: none;
-    flex-grow: 0;
+
+    transform: translateY(calc(var(--sb-label-offset-y, 0px)));
+
 }
 
 
-/* 
-top label
-*/
 
-.sb-form .input label:is(.label-top *),
-.sb-form .input label:not(
-    :is(
-        input:not(
-            [type="button"],
-            [type="submit"],
-            [type="reset"]
-        ),
-        textarea,
-        select
-    ) ~ *
-) {
-    order: 0;
-    width: 100%;
-    justify-content: start;
-    padding: .3em 0;
+/* focus state */
+.sb-form .input :is(
+    input:not(
+        [type="button"],
+        [type="submit"],
+        [type="reset"],
+        [type="checkbox"],
+        [type="radio"]
+    ),
+    textarea
+):is(:focus, :not(:placeholder-shown)) ~ label { 
+    font-size: .75rem;
+
+    left: calc(clamp(5px, calc(var(--sb-border-radius) / 2), 10px) + var(--sb-label-focus-offset-x, 0px));
+
+
+    transform: translateY(var(--sb-label-focus-offset-y));
 }
 
 .sb-form .input :is(
@@ -61,11 +91,11 @@ top label
         [type="radio"]
     ),
     textarea
-):is(:focus, :not(:placeholder-shown)) ~ label:not(.label-top *) { 
-    font-size: .75rem;
-    transform: translateY(calc(-50% + .9em + calc(var(--sb-label-offset, 0px) * -1)));
+):is(:focus, :not(:placeholder-shown)) ~ label > * {
+    background: var(--sb-label-background);
 }
 
+/* invalid state */
 .sb-form .input :is(
     [placeholder]:invalid:not(:required:placeholder-shown),
     [aria-invalid],
@@ -74,7 +104,8 @@ top label
     animation: error 1.5s linear 0s infinite;
 } 
 
-.sb-form .input :is(:required, [min], [minlength]) ~ label::after { 
+/* required symbol */
+.sb-form .input :is(:required, [min], [minlength]) ~ label > *::after { 
     content: var(--sb-required-text, '*'); 
     margin-left: 3px; 
     color: var(--sb-error-color);
