@@ -175,6 +175,7 @@ input color
     padding: 0 !important;
     align-self: stretch;
     height: auto;
+    
 }
 
 .sb-form .input [type="color"] ~ i ~ label {
@@ -215,10 +216,14 @@ overlapping icon
     color: var(--sb-background);
 }
 
+.sb-form .input [type="color"] ~ i:not(label ~ i) {
+    background: red;
+}
 
+/* 
 .sb-form .input [type="color"] ~ i:not(label ~ i):last-of-type {
     margin-right: calc(-2.7rem + var(--sb-gap-x, var(--sb-gap)) * -1);
-}
+} */
 
 .sb-form .input [type="color"] ~ label + i {
     order: 2;
