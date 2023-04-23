@@ -18,6 +18,18 @@ generic input styles
 }
 
 .sb-form .input :is(
+    input:not(
+        [type="button"],
+        [type="reset"],
+        [type="submit"]
+    ),
+    textarea,
+    select
+) {
+    box-shadow: var(--sb-input-shadow);
+}
+
+.sb-form .input :is(
     input,
     button,
     textarea,
@@ -30,17 +42,6 @@ generic input styles
     cursor: not-allowed;
     opacity: .65;
 }
-
-.sb-form .input :is(
-    input:not([type="submit"], [type="button"], [type="reset"], [role="switch"]),
-    textarea
-):is(
-    :not(:placeholder-shown), 
-    :focus
-):not(.label-top *) {
-    padding: var(--sb-input-focus-padding);
-}
-
 
 
 /* ==============
@@ -204,7 +205,11 @@ overlapping icon
 */
 
 
-.sb-form .input [type="color"] ~ i:last-of-type {
+.sb-form .input [type="color"] ~ :is(
+    label + i,
+) 
+
+{
     filter: drop-shadow(0 0 1px var(--sb-label-color)) 
             drop-shadow(0 0 1px var(--sb-label-color));
     color: var(--sb-background);
@@ -215,7 +220,7 @@ overlapping icon
     margin-right: calc(-2.7rem + var(--sb-gap-x, var(--sb-gap)) * -1);
 }
 
-.sb-form .input [type="color"] ~ label ~ i:last-of-type {
+.sb-form .input [type="color"] ~ label + i {
     order: 2;
     margin-left: calc(-2.7rem + var(--sb-gap-x, var(--sb-gap)) * -1);
 }

@@ -92,7 +92,7 @@ label
     ),
     textarea
 ):is(:focus, :not(:placeholder-shown)) ~ label > * {
-    background: var(--sb-label-background);
+    background: var(--sb-label-background, var(--sb-background));
 }
 
 /* invalid state */

@@ -98,7 +98,7 @@ only child button
     [type="submit"],
     [type="reset"],
     button
-):only-child {
+):only-child:not(.input > li > *) {
     padding: 0 var(--sb-btn-padding-x);
     font-size: 1.1rem;
     position: absolute;

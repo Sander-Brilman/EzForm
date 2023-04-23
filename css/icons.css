@@ -11,5 +11,6 @@ icons
     min-width: 2.7rem;
     font-size: 22px;
     aspect-ratio: 1;
+    flex-grow: 0;
 }
 

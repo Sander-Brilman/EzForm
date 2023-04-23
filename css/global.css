@@ -13,10 +13,10 @@ Default values
     --sb-gap: 5px;
 
     --sb-label-color: #747474;
-    --sb-label-padding: 0;
+    --sb-label-padding: 0 5px;
     --sb-label-focus-offset-y: calc(-50% + .7em);
 
-    --sb-input-focus-padding: 1rem 0 0 0; 
+    --sb-input-padding: 1rem 0 0 .5rem; 
     --sb-input-background: none;
     --sb-input-border-color: transparent;
 
@@ -88,7 +88,9 @@ generic styles
     input:not(
         [type="submit"],
         [type="reset"],
-        [type="button"]
+        [type="button"],
+        [type="radio"],
+        [type="checkbox"]
     ),
     :is(
         input:is(
