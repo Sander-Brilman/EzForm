@@ -175,15 +175,6 @@ input color
     padding: 0 !important;
     align-self: stretch;
     height: auto;
-    
-}
-
-.sb-form .input [type="color"] ~ i ~ label {
-    position: relative;
-    left: 2.7rem;
-}
-
-.sb-form [type="color"] ~ label {
 }
 
 
