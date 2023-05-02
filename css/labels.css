@@ -14,8 +14,7 @@ label
         [type="radio"],
         [type="button"],
         [type="submit"],
-        [type="reset"],
-        select
+        [type="reset"]
     ) ~ label
 ) > * {
     transition: 
@@ -34,8 +33,7 @@ label
         [type="radio"],
         [type="button"],
         [type="submit"],
-        [type="reset"],
-        select
+        [type="reset"]
     ) ~ label
 ) {
     transition: 
@@ -72,7 +70,8 @@ label
         [type="checkbox"],
         [type="radio"]
     ),
-    textarea
+    textarea,
+    select
 ):is(:focus, :not(:placeholder-shown)) ~ label { 
     font-size: .75rem;
 
