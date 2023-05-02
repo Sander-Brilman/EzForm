@@ -58,6 +58,8 @@ selectAll(documentElement, inputSelector).forEach(container => {
 
         label.innerHTML = `<span>${label.innerHTML}</span>`
 
+        console.log(label, label.innerHTML);
+
         if (hasAttr(label, 'for')) { continue; }
 
         let id = hasAttr(input, 'id') ? getAttr(input, 'id') : randomString();
