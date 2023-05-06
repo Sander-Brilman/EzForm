@@ -15,6 +15,7 @@ generic input styles
     padding: var(--sb-input-padding, 0 0 0 clamp(5px, calc(var(--sb-border-radius) / 2), 10px));
     width: 2em;
     font-size: .9rem;
+    position: relative;
 }
 
 .sb-form .input :is(
@@ -175,6 +176,28 @@ input color
     padding: 0 !important;
     align-self: stretch;
     height: auto;
+}
+
+/* ==============
+input date
+=============== */
+
+*::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 20px;
+    padding: 50% 15px;
+    right: 0px;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+}
+
+*::-moz-calendar-picker-indicator {
+    position: absolute;
+    top: 20px;
+    padding: 50% 15px;
+    right: 0px;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
 }
 
 

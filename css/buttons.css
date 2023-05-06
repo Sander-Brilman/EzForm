@@ -61,7 +61,7 @@ button
         )
     );
 
-    background-size: 225%;
+    background-size: 250%;
 
     border: var(
         --sb-btn-hover-border,
