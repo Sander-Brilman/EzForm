@@ -1,0 +1,27 @@
+
+
+
+:where(
+    .input-box label
+) {
+
+    /* display flex + flex-grow for making the label fill the remaining space in the container */
+    display: flex;
+        flex-grow: 1;
+}
+
+/* 
+    input, textarea, select are all styles the same.
+*/
+:where(
+    .input-box label :is(input, textarea, select)
+) {
+
+    /* flex-grow fro growing the input to the same size as the label it is nested in */
+    flex-grow: 1;
+
+
+
+
+
+}

@@ -5,16 +5,40 @@
 <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/sharp-solid.css">
 <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/sharp-regular.css">
 
-<link rel="stylesheet" href="css/variables.css">
-<link rel="stylesheet" href="css/container_core.css">
-
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+
+
+
+
+
+<!-- load variables -->
+<link rel="stylesheet" href="css/variables.css">
+
+<!-- load containers -->
+<link rel="stylesheet" href="css/container/container_core.css">
+    <link rel="stylesheet" href="css/container/container_list.css">
+    <link rel="stylesheet" href="css/container/container_minimal.css">
+
+<!-- load container items -->
+<link rel="stylesheet" href="css/container_item/container_item_core.css">
+    <link rel="stylesheet" href="css/container_item/button.css">
+    <link rel="stylesheet" href="css/container_item/icon.css">
+
+    <!-- load messages -->
+    <link rel="stylesheet" href="css/container_item/message/message_core.css">
+        <link rel="stylesheet" href="css/container_item/message/message_note.css">
+        <link rel="stylesheet" href="css/container_item/message/message_alert.css">
+
+    <!-- load inputs -->
+    <link rel="stylesheet" href="css/container_item/input/input_core.css">
+        <link rel="stylesheet" href="css/container_item/input/tag.css">
+        <link rel="stylesheet" href="css/container_item/input/input_text.css">
 
 
 <style>
     body {
-        background: lightblue;
-        max-width: 1000px;
+        max-width: 700px;
         margin: auto;
     }
 </style>
@@ -24,23 +48,25 @@
 
 <!-- full container, requires a wrapper for  multiple buttons, multiple inputs and multiple icons (if you want that for some reason) -->
 <div class="input-box">
-    <i>Icon</i>
+    <i class="fa-duotone fa-person-skating"></i>
 
     <label>
         <span>qwdqwqwd</span>
 
         <!-- auto hide all browser icons like calendar and apply custom icons via background svg -->
         <input placeholder="Test placeholder">
-
-
-        <!-- alerts & notes should be in the container root. they are supported in minimal containers but in this case it is not a minimal container -->
-        <span role="alert">HE kijk uit!</span>
     </label>
+
+
 
     <!-- button requires no classes -->
     <button>
         button
     </button>
+
+    <!-- alerts & notes should be in the container root. they are supported in minimal containers but in this case it is not a minimal container -->
+    <span role="alert">HE kijk uit!</span>
+
 </div>
 
 <br>
@@ -50,7 +76,7 @@
 
 
 <div class="input-box">
-    <i>Icon</i>
+    <i class="fa-solid fa-wand-magic-sparkles"></i>
 
     <label class="input">
         <!-- tag voor de input. check for the input required attribute for red star at the end using ::after -->
@@ -82,21 +108,21 @@
 <ul class="input-box">
     <li>
         <label>
-            <i>Icon</i>
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
             <span>Optie 1</span>
             <input name="r" type="radio">
         </label>
     </li>
     <li>
         <label>
-            <i>Icon</i>
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
             <span>Optie 1</span>
             <input name="r" type="radio">
         </label>
     </li>
     <li>
         <label>
-            <i>Icon</i>
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
             <span>Optie 1</span>
             <input name="r" type="radio">
 
@@ -105,7 +131,7 @@
     </li>
     <li>
         <label>
-            <i>Icon</i>
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
             <span>Optie 1</span>
             <input name="r" type="radio">
         </label>

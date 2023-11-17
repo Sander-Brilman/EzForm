@@ -1,0 +1,34 @@
+
+/* 
+a container can be either:
+
+- a normal div with the class .input-box
+- a list item from a list with the class .input-box
+- a label as a minimal container
+
+*/
+:where(
+    .input-box:not(ul, ol),
+    :is(ul, ol).input-box > li
+) {
+    /* display flex for putting all the items in the container horizontal  */
+    display: flex;
+
+        /* flex wrap for allowing messages to be on a new line by setting a full width */
+        flex-wrap: wrap;        
+
+        /* the gap between container items such as icons, labels with inputs and buttons */
+        gap: var(--container-gap);
+
+    /* - - - - - */
+
+    background: var(--container-background);
+    padding: var(--container-padding);
+    border-radius: var(--container-border-radius);
+
+    box-shadow: var(--container-box-shadow);
+
+    /* - - - - - */
+
+
+}

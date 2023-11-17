@@ -1,0 +1,14 @@
+
+
+.input-box i {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+
+    background: var(--sb-icon-background, transparent);
+    color: var(--sb-icon-color, var(--sb-theme-color));
+    min-width: 40px;
+    font-size: 22px;
+    aspect-ratio: 1;
+    flex-grow: 0;
+}
