@@ -1,0 +1,17 @@
+
+/* 
+a container can be either:
+
+- a normal div with the class .input-box
+- a list item from a list with the class .input-box
+- a label as a minimal container
+
+*/
+:where(
+    .input-box:not(ul, ol),
+    :is(ul, ol).input-box > li
+) {
+    display: flex;
+    background: var(--container-background);
+
+}

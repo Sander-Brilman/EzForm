@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/sharp-solid.css">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/sharp-regular.css">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/container_core.css">
+
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+
+<style>
+    body {
+        background: lightblue;
+        max-width: 1000px;
+        margin: auto;
+    }
+</style>
+
+
+<h1>wad qawd qwd qwd </h1>
+
+<!-- full container, requires a wrapper for  multiple buttons, multiple inputs and multiple icons (if you want that for some reason) -->
+<div class="input-box">
+    <i>Icon</i>
+
+    <label>
+        <span>qwdqwqwd</span>
+
+        <!-- auto hide all browser icons like calendar and apply custom icons via background svg -->
+        <input placeholder="Test placeholder">
+
+
+        <!-- alerts & notes should be in the container root. they are supported in minimal containers but in this case it is not a minimal container -->
+        <span role="alert">HE kijk uit!</span>
+    </label>
+
+    <!-- button requires no classes -->
+    <button>
+        button
+    </button>
+</div>
+
+<br>
+<br>
+<br>
+<!-- slimmed down + icon -->
+
+
+<div class="input-box">
+    <i>Icon</i>
+
+    <label class="input">
+        <!-- tag voor de input. check for the input required attribute for red star at the end using ::after -->
+        <span>qwdqwqwd</span>
+    
+        <!-- if placeholder == ' ' then floating label -->
+        <input placeholder="Test placeholder">
+    </label>
+
+    <!-- use css order to always force to end -->
+    <span role="alert">HE kijk uit!</span>
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+<!-- single full-length button / share space between buttons -->
+<div class="input-box">
+    <button>Wide button</button>
+</div>
+
+
+<!-- list for radio buttons -->
+
+<ul class="input-box">
+    <li>
+        <label>
+            <i>Icon</i>
+            <span>Optie 1</span>
+            <input name="r" type="radio">
+        </label>
+    </li>
+    <li>
+        <label>
+            <i>Icon</i>
+            <span>Optie 1</span>
+            <input name="r" type="radio">
+        </label>
+    </li>
+    <li>
+        <label>
+            <i>Icon</i>
+            <span>Optie 1</span>
+            <input name="r" type="radio">
+
+            <span role="alert">HE kijk uit!</span>
+        </label>
+    </li>
+    <li>
+        <label>
+            <i>Icon</i>
+            <span>Optie 1</span>
+            <input name="r" type="radio">
+        </label>
+        <button>bezwaar</button>
+    </li>
+</ul>
