@@ -1,11 +1,15 @@
+/* 
+[== base styles: container_item.css ==]
 
+base styles for the messages such as notes & alerts at the bottom of the containers
+*/
 :where(
     .input-box :is(
         [role="alert"], 
         [role="note"]
     )
 ) {
-
+    /* flex to make sure the ::before and the text are side by side */
     display: flex;
  
     /* Set width to 100% to put it on a new line using the flex-wrap on the parent */
@@ -15,41 +19,55 @@
     is displayed at the end even though it might have a different position in the html */
     order: 3;
 
-    justify-content: start;
-    min-height: 1.5rem;
+    /* variables will be set by the specific implementation in the message_note.css & message_alert.css files  */
+    color: var(--message-color);
+    background: var(--message-background);
+    padding: var(--message-padding);
+    border-radius: var(--message-border-radius);
 
-
-
-
-    color: var(--note-color);
-
+    border-left: var(--message-border-left);
+    border-right: var(--message-border-right);
+    border-top: var(--message-border-top);
+    border-bottom: var(--message-border-bottom);
 }
 
-
+/* 
+the ::before element of the messages where the icon is rendered 
+*/
 :where(
     .input-box :is(
         [role="alert"],
         [role="note"]
     )
 )::before {
+
+    /* needed for the ::before to appear at all */
     content: '';
-    text-align: center;
+
+
+    /* puts the icon at the same level of the fist line of the text */
     align-self: flex-start;
-    min-height: 1.5rem;
+
+
+    /* width for the spacing between the icon and the text and the height to control 
+    at what hight the icon is displayed */
+    min-height: 17px;
     min-width: 40px;
 
 
-    --message-svg-icon: var(--sb-note-icon, url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="m9 6.6-2.4.3v.4H7c.3.1.4.2.3.5l-.7 3.5c-.2.9 0 1.3.8 1.3a2 2 0 0 0 1.4-.6l.1-.4c-.2.2-.5.2-.7.2-.2 0-.3-.2-.3-.5l1-4.7zm0-2.1a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>'));
+    /* due use of an image mask, the background of the ::before will be the eventual color of the icon 
+    this means the variable --message-icon-color can possibly be a gradient. */
+    background: var(--message-icon-color);
 
-    background: var(--note-color);
 
-        /* mask-image for the icon at the start of the message */
-        mask-image: var(--message-svg-icon);
-        -webkit-mask-image: var(--message-svg-icon);
+    /* mask-image for the svg icon at the start of the message 
+    --message-svg-icon will be set by the specific implementation in the message_note.css & message_alert.css files */
+    mask-image: var(--message-icon);
+    -webkit-mask-image: var(--message-icon);
+
+    mask-position: center ;
+    -webkit-mask-position: center ;
     
-        mask-position: center ;
-        -webkit-mask-position: center ;
-        
-        mask-repeat: no-repeat;
-        -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
 }

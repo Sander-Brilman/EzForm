@@ -1,0 +1,27 @@
+/* 
+[== base styles: message_core.css ==]
+
+specific style implementation for message type notes
+*/
+:where(
+    .input-box [role="alert"]
+) {
+    /* variable used in base styles */
+    --message-color: var(--alert-color);
+    --message-background: var(--alert-background);
+    --message-padding: var(--alert-padding);
+    --message-border-radius: var(--alert-border-radius);
+
+    --message-border-left: var(--alert-border-left);
+    --message-border-top: var(--alert-border-top);
+    --message-border-bottom: var(--alert-border-bottom);
+    --message-border-right: var(--alert-border-right);
+}
+
+:where(
+    .input-box [role="alert"]
+)::before {
+    /* variable used in base styles */
+    --message-icon-color: var(--alert-icon-color);
+    --message-icon: var(--alert-icon-url);
+}
