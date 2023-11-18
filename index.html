@@ -10,7 +10,8 @@
 
 
 
-
+<!-- reset browser styles -->
+<link rel="stylesheet" href="css/reset.css">
 
 <!-- load variables -->
 <link rel="stylesheet" href="css/variables.css">
@@ -41,6 +42,14 @@
         max-width: 700px;
         margin: auto;
     }
+
+
+    body {
+        --container-border: solid 2px #646464;
+        --container-box-shadow: 5px 5px 0px 0px #646464;
+        --container-border-bottom: initial;
+    }
+
 </style>
 
 
@@ -69,12 +78,7 @@
 
 </div>
 
-<br>
-<br>
-<br>
 <!-- slimmed down + icon -->
-
-
 <div class="input-box">
     <i class="fa-solid fa-wand-magic-sparkles"></i>
 
@@ -83,7 +87,7 @@
         <span>qwdqwqwd</span>
     
         <!-- if placeholder == ' ' then floating label -->
-        <input placeholder="Test placeholder">
+        <input placeholder=" ">
     </label>
 
     <!-- use css order to always force to end -->
@@ -93,16 +97,29 @@
 
 </div>
 
-
-
-<br>
-<br>
-<br>
-<br>
-
 <!-- single full-length button / share space between buttons -->
 <div class="input-box">
     <button>Wide button</button>
+</div>
+
+<!-- single full-length button / share space between buttons -->
+<div class="input-box">
+    <button disabled>disabled button</button>
+    <button class="outline">Wide button</button>
+</div>
+
+
+<!-- single full-length button / share space between buttons -->
+<div class="input-box">
+    <input type="button" value="CLICK ME">
+</div>
+
+<div class="input-box">
+    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+    <label>
+        <button>Wide button</button>
+    </label>
 </div>
 
 

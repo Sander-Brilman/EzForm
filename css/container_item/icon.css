@@ -1,14 +1,30 @@
+/* 
+[== base styles: container_item_core.css ==]
 
-
-.input-box i {
-    display: flex;
-        justify-content: center;
-        align-items: center;
-
-    background: var(--sb-icon-background, transparent);
-    color: var(--sb-icon-color, var(--sb-theme-color));
-    min-width: 40px;
-    font-size: 22px;
+specific style implementation for message type notes
+*/
+:where(
+    .input-box i
+) {
+    /* turn the icon into a cube */
+    width: 40px;
     aspect-ratio: 1;
-    flex-grow: 0;
+
+    /* center the icon in the middle of its width. the icon is already a flexbox due the reset.css */
+    justify-content: center;
+    align-items: center;
+
+    background: var(--icon-background);
+    color: var(--icon-color);
+    padding: var(--icon-padding);
+    border-radius: var(--icon-border-radius);
+
+    border-left: var(--icon-border-left, var(--icon-border));
+    border-right: var(--icon-border-right, var(--icon-border));
+    border-top: var(--icon-border-top, var(--icon-border));
+    border-bottom: var(--icon-border-bottom, var(--icon-border));
+
+
+    /* icons are usually set with text and a specific imported font. so font-size == icon size */
+    font-size: var(--icon-font-size);
 }

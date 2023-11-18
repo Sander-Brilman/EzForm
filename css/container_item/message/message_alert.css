@@ -12,10 +12,10 @@ specific style implementation for message type notes
     --message-padding: var(--alert-padding);
     --message-border-radius: var(--alert-border-radius);
 
-    --message-border-left: var(--alert-border-left);
-    --message-border-top: var(--alert-border-top);
-    --message-border-bottom: var(--alert-border-bottom);
-    --message-border-right: var(--alert-border-right);
+    --message-border-left: var(--alert-border-left, var(--alert-border));
+    --message-border-top: var(--alert-border-top, var(--alert-border));
+    --message-border-bottom: var(--alert-border-bottom, var(--alert-border));
+    --message-border-right: var(--alert-border-right, var(--alert-border));
 }
 
 :where(

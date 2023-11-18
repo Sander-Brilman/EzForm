@@ -1,0 +1,133 @@
+/* 
+[== base styles: container_item_core.css ==]
+
+specific style implementation for message type notes
+*/
+:where(
+    .input-box :is(
+        button, 
+        input[type="submit"],
+        input[type="button"],
+        input[type="reset"]
+    )
+) {
+    /* center the text in the middle of the button. the button is already a flexbox due the reset.css */
+    justify-content: center;
+    align-items: center;
+
+
+    /* 
+    animation explained:
+
+    the --button-background is used to set a standard blank background color for the button.
+    this is the color that will be visible in the non-hover state
+
+    there is a radial-gradient over layed over the blank background color. the gradient has 2 sides.
+    the inner side is the --button-hover-background and the outer side (the one that is visible all the time) is transparent
+
+    in the non-hover state the background size is so small the inner circle is not visible.
+    on hover the background gets resized to make the inner circle cover the entire button.
+    */
+    transition: 
+        color var(--button-transition-duration), 
+        border var(--button-transition-duration), 
+        background var(--button-transition-duration) ease-out;
+    background: 
+        var(--button-background) /* background color */
+        radial-gradient(circle, var(--button-hover-background) 50%, transparent 50%)  /* background image */
+        center  /* background position */
+        top /* background position */
+        / 
+        0 
+        no-repeat; /* background repeat */
+
+
+    /* standard properties */
+    color: var(--button-color);
+    padding: var(--button-padding);
+    border-radius: var(--button-border-radius);
+
+    border-left: var(--button-border-left, var(--button-border));
+    border-right: var(--button-border-right, var(--button-border));
+    border-top: var(--button-border-top, var(--button-border));
+    border-bottom: var(--button-border-bottom, var(--button-border));
+
+    cursor: pointer;
+
+    /* meaning it will try to fill up all the available space in the container but only when the button is alone in the container
+    otherwise the space will be taken up by the label + input.
+    if multiple buttons are alone (meaning without a label) in the container they will share the space */
+    flex-grow: 1;
+
+
+
+
+}
+
+/* 
+hover animation: hover-state
+*/
+:where(
+    .input-box :is(
+        button, 
+        input[type="submit"],
+        input[type="button"],
+        input[type="reset"]
+    )
+):hover {
+    background-size: 250%;
+
+    color: var(--button-hover-color);
+
+
+    border-left: var(--button-hover-border-left, var(--button-hover-border));
+    border-right: var(--button-hover-border-right, var(--button-hover-border));
+    border-top: var(--button-hover-border-top, var(--button-hover-border));
+    border-bottom: var(--button-hover-border-bottom, var(--button-hover-border));
+
+
+}
+
+
+/* 
+disabled buttons
+*/
+:where(
+    .input-box :is(
+        button, 
+        input[type="submit"],
+        input[type="button"],
+        input[type="reset"]
+    ):disabled
+) {
+    cursor:not-allowed;
+    opacity: .6;
+}
+
+
+/* 
+opinionated outline button style.
+
+adds nothing to the core functionality of the framework but is here for a 
+commonly used implementation
+*/
+
+:where(
+    .input-box :is(
+        button, 
+        input[type="submit"],
+        input[type="button"],
+        input[type="reset"]
+    ).outline
+) {
+
+    --button-background: transparent;
+    --button-hover-background: var(--global-button-color);
+
+    --button-border: solid var(--global-button-color) 2px;
+    --button-hover-border: var(--button-border);
+
+    --button-color: var(--global-button-color);
+    --button-hover-color: white;
+
+}

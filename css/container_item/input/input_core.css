@@ -1,27 +1,44 @@
+/* 
+[== base styles: container_item_core.css ==]
 
+specific style implementation for message type notes
+*/
 
 
 :where(
     .input-box label
 ) {
+    /* needed to allow the tag (span) to be position absolute in case of a floating label  */
+    position: relative;
 
     /* display flex + flex-grow for making the label fill the remaining space in the container */
     display: flex;
-        flex-grow: 1;
+        flex-grow: 999999;
 }
 
 /* 
     input, textarea, select are all styles the same.
 */
 :where(
-    .input-box label :is(input, textarea, select)
+    .input-box label :is(
+        input, 
+        textarea, 
+        select
+    )
 ) {
 
     /* flex-grow fro growing the input to the same size as the label it is nested in */
     flex-grow: 1;
 
+    /* standard properties */
+    padding: var(--input-padding);
+    background: var(--input-background);
+    color: var(--input-color);
 
-
+    border-left: var(--input-border-left, var(--input-border));
+    border-right: var(--input-border-right, var(--input-border));
+    border-top: var(--input-border-top, var(--input-border));
+    border-bottom: var(--input-border-bottom, var(--input-border));
 
 
 }

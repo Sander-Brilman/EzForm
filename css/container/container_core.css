@@ -6,26 +6,26 @@ a container can be either:
 - a list item from a list with the class .input-box
 - a label as a minimal container
 
+
+a normal div with the class .input box will only be styled as a container if it
+contains atleast 1 label. 
+
 */
 :where(
-    .input-box:not(ul, ol),
-    :is(ul, ol).input-box > li
+    .input-box:has(label)
 ) {
-    /* display flex for putting all the items in the container horizontal  */
-    display: flex;
+    /* the container is already a flexbox due the reset.css */
+    /* flex wrap for allowing messages to be on a new line by setting a full width */
+    flex-wrap: wrap;        
 
-        /* flex wrap for allowing messages to be on a new line by setting a full width */
-        flex-wrap: wrap;        
 
-        /* the gap between container items such as icons, labels with inputs, buttons and messages */
-        gap: var(--container-gap-x) var(--container-gap-y);
+    padding: var(--container-padding);
+    box-shadow: var(--container-box-shadow);
 
 
 
     background: var(--container-background);
-    padding: var(--container-padding);
     border-radius: var(--container-border-radius);
-    box-shadow: var(--container-box-shadow);
     
     /* border styles */
     border-top: var(--container-border-top, var(--container-border));
@@ -35,5 +35,26 @@ a container can be either:
 
 
 
+
+}
+
+
+:where(
+    .input-box
+) {
+    /* the gap between container items such as icons, labels with inputs, buttons and messages */
+    gap: var(--container-gap-x) var(--container-gap-y);
+
+    
+    margin: var(--container-margin);
+
+    /* padding: var(--container-padding);
+    box-shadow: var(--container-box-shadow);
+    border-radius: var(--container-border-radius);
+    border-top: var(--container-border-top, var(--container-border));
+    border-left: var(--container-border-left, var(--container-border));
+    border-bottom: var(--container-border-bottom, var(--container-border));
+    border-right: var(--container-border-right, var(--container-border));
+ */
 
 }

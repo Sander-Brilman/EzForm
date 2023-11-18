@@ -9,9 +9,6 @@ base styles for the messages such as notes & alerts at the bottom of the contain
         [role="note"]
     )
 ) {
-    /* flex to make sure the ::before and the text are side by side */
-    display: flex;
- 
     /* Set width to 100% to put it on a new line using the flex-wrap on the parent */
     width: 100%;
 
@@ -51,8 +48,9 @@ the ::before element of the messages where the icon is rendered
 
     /* width for the spacing between the icon and the text and the height to control 
     at what hight the icon is displayed */
-    min-height: 17px;
-    min-width: 40px;
+    min-width: 18px;
+    aspect-ratio: 1;
+    margin-right: 10px;
 
 
     /* due use of an image mask, the background of the ::before will be the eventual color of the icon 

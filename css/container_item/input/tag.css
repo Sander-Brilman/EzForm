@@ -1,0 +1,34 @@
+/* 
+[== base styles: input_core.css ==]
+
+specific style implementation for message type notes
+*/
+
+
+
+/* 
+styling for the tag. the tag is the span with text nested inside the label
+*/
+:where(
+    .input-box label > span
+) {
+    /* needed to allow the tag (span) to be position absolute in case of a floating label  */
+    position: absolute;
+
+
+    transition: 
+        font-size var(--tag-transition-duration) ease-out,
+        top var(--tag-transition-duration) ease-out,
+        left var(--tag-transition-duration) ease-out;
+
+    padding: var(--tag-padding);
+    background: var(--tag-background);
+    color: var(--tag-color);
+
+    border-left: var(--tag-border-left, var(--tag-border));
+    border-right: var(--tag-border-right, var(--tag-border));
+    border-top: var(--tag-border-top, var(--tag-border));
+    border-bottom: var(--tag-border-bottom, var(--tag-border));
+
+
+}
