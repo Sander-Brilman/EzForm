@@ -7,16 +7,22 @@
     */
 
     --global-primary-color: blue;
-    --global-secondary-color: pink;
+    --global-secondary-color: #009dff;
 
     --global-label-color: #6f6f6f;
     --global-error-color: #b22222;
 
-    --global-gap: 5px;
-    --global-border-radius: 10px;
+    --global-border-radius: 5px;
 
     --global-button-color: var(--global-primary-color);
     --global-button-hover-color: rgba(0, 0, 0, 0.212);
+
+    --global-focus-outline: solid 2px rgba(0, 0, 0, 0.7);
+    --global-focus-outline: solid 2px rgba(var(--global-primary-color), 50%);
+    --global-focus-outline-offset: 2px;
+
+    --global-transition-duration: .3s;
+
 
     /* 
     for each customizable item there will always be at least (but not limited to) the following css-style-specific variables available:
@@ -25,6 +31,7 @@
     - padding
     - border radius
     - text color (AKA just color)
+    - font-size
 
     - border
     - border-left
@@ -39,7 +46,7 @@
     /* container */
     --container-background: white;
     --container-padding: 5px;
-    --container-border-radius: 10px;
+    --container-border-radius: initial;
     --container-margin: 0 0 2em;
 
     --container-border: initial;
@@ -48,17 +55,16 @@
     --container-border-right: initial;
     --container-border-left: initial;
 
-    --container-gap-y: var(--global-gap); 
-    --container-gap-x: var(--global-gap);
+    --container-gap: 5px;
     --container-box-shadow: 0px 0px 5px 1px #d3d3d3;
 
 
 
     /* icon */
-    --icon-background: none;
+    --icon-background: initial;
     --icon-color: var(--global-primary-color);
     --icon-padding: 0;
-    --icon-border-radius: 0;
+    --icon-border-radius: initial;
     --icon-font-size: 22px;
     
     --icon-border: initial;
@@ -71,9 +77,9 @@
     --note-color: var(--global-label-color);
     --note-background: none;
     --note-padding: 5px;
-    --note-border-radius: 0;
+    --note-border-radius: initial;
     --note-icon-color: var(--global-label-color);
-    --note-icon-url: url('data:image/svg+xml;,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="m9 6.6-2.4.3v.4H7c.3.1.4.2.3.5l-.7 3.5c-.2.9 0 1.3.8 1.3a2 2 0 0 0 1.4-.6l.1-.4c-.2.2-.5.2-.7.2-.2 0-.3-.2-.3-.5l1-4.7zm0-2.1a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>');
+    --note-font-size: initial;
 
     --note-border: initial;
     --note-border-bottom: initial;
@@ -86,30 +92,36 @@
     --alert-color: var(--global-error-color);
     --alert-background: none;
     --alert-padding: 5px;
-    --alert-border-radius: 5px;
+    --alert-border-radius: inherit;
     --alert-icon-color: var(--global-error-color);
-    --alert-icon-url: url('data:image/svg+xml;,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M7.94 2.02A.13.13 0 0 1 8 2a.13.13 0 0 1 .07.02.15.15 0 0 1 .05.05l6.86 11.67c.03.06.03.12 0 .18a.16.16 0 0 1-.06.06.12.12 0 0 1-.06.02H1.15a.12.12 0 0 1-.07-.02.16.16 0 0 1-.05-.06.18.18 0 0 1 0-.18L7.88 2.07a.15.15 0 0 1 .06-.05zm1.04-.45a1.13 1.13 0 0 0-1.96 0L.17 13.23c-.46.78.09 1.77.97 1.77h13.72c.89 0 1.44-.99.98-1.77L8.98 1.57z"/><path d="M7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm.1-6a.9.9 0 1 1 1.8 0l-.35 3.5a.55.55 0 0 1-1.1 0L7.1 6z"/></svg>');
+    --alert-font-size: initial;
 
-    --alert-border: rgba(178, 34, 34, 0.438) solid 1px;
+    --alert-border: initial;
     --alert-border-bottom: initial;
     --alert-border-top: initial;
     --alert-border-right: initial;
     --alert-border-left: initial;
 
 
+
+
+
+
     /* button */
     --button-background: var(--global-button-color);
     --button-color: white;
-    --button-padding: 10px 20px;
-    --button-border-radius: 5px;
-    
-    --button-border: initial;
+    --button-padding: .5em 1.2em;
+    --button-border-radius: initial;
+    --button-transition-duration: var(--global-transition-duration);
+    --button-font-size: initial;
+
+    --button-border: transparent 2px solid;
     --button-border-bottom: initial;
     --button-border-top: initial;
     --button-border-right: initial;
     --button-border-left: initial;
 
-    --button-transition-duration: .3s;
+
 
     /* button:hover */
     --button-hover-background: var(--global-button-hover-color);
@@ -123,14 +135,15 @@
 
 
     /* tag */
-    --tag-background: lightgrey;
+    --tag-background: initial;
     --tag-color: var(--global-label-color);
-    --tag-padding: 2px 5px;
-    --tag-border-radius: 30px;
-    --tag-transition-duration: .3s;
+    --tag-padding: initial;
+    --tag-border-radius: initial;
+    --tag-transition-duration: var(--global-transition-duration);
+    --tag-font-size: 12px;
 
-    --tag-offset-top: 0px;
-    --tag-offset-left: 0px;
+    --tag-offset-top: initial;
+    --tag-offset-left: initial;
     
     --tag-border: initial;
     --tag-border-bottom: initial;
@@ -142,8 +155,9 @@
     /* input */
     --input-background: none;
     --input-color: initial;
-    --input-padding: 0;
-    --input-border-radius: 0;
+    --input-padding: 15px 5px 0 5px;
+    --input-border-radius: initial;
+    --input-font-size: initial;
     
     --input-border: initial;
     --input-border-bottom: initial;

@@ -25,7 +25,7 @@ contains atleast 1 label.
 
 
     background: var(--container-background);
-    border-radius: var(--container-border-radius);
+    border-radius: var(--container-border-radius, var(--global-border-radius));
     
     /* border styles */
     border-top: var(--container-border-top, var(--container-border));
@@ -43,18 +43,10 @@ contains atleast 1 label.
     .input-box
 ) {
     /* the gap between container items such as icons, labels with inputs, buttons and messages */
-    gap: var(--container-gap-x) var(--container-gap-y);
+    gap: var(--container-gap);
 
     
     margin: var(--container-margin);
 
-    /* padding: var(--container-padding);
-    box-shadow: var(--container-box-shadow);
-    border-radius: var(--container-border-radius);
-    border-top: var(--container-border-top, var(--container-border));
-    border-left: var(--container-border-left, var(--container-border));
-    border-bottom: var(--container-border-bottom, var(--container-border));
-    border-right: var(--container-border-right, var(--container-border));
- */
 
 }

@@ -6,14 +6,17 @@ specific style implementation for message type notes
 :where(
     .input-box :is(
         button, 
-        input[type="submit"],
-        input[type="button"],
-        input[type="reset"]
+        input:is(
+            [type="submit"],
+            [type="button"],
+            [type="reset"]
+        )
     )
 ) {
     /* center the text in the middle of the button. the button is already a flexbox due the reset.css */
     justify-content: center;
     align-items: center;
+
 
 
     /* 
@@ -45,7 +48,8 @@ specific style implementation for message type notes
     /* standard properties */
     color: var(--button-color);
     padding: var(--button-padding);
-    border-radius: var(--button-border-radius);
+    border-radius: var(--button-border-radius, inherit);
+    font-size: var(--button-font-size);
 
     border-left: var(--button-border-left, var(--button-border));
     border-right: var(--button-border-right, var(--button-border));
@@ -66,13 +70,17 @@ specific style implementation for message type notes
 
 /* 
 hover animation: hover-state
+
+the background transformation animation is in the style block above
 */
 :where(
     .input-box :is(
         button, 
-        input[type="submit"],
-        input[type="button"],
-        input[type="reset"]
+        input:is(
+            [type="submit"],
+            [type="button"],
+            [type="reset"]
+        )
     )
 ):hover {
     background-size: 250%;
@@ -80,10 +88,10 @@ hover animation: hover-state
     color: var(--button-hover-color);
 
 
-    border-left: var(--button-hover-border-left, var(--button-hover-border));
-    border-right: var(--button-hover-border-right, var(--button-hover-border));
-    border-top: var(--button-hover-border-top, var(--button-hover-border));
-    border-bottom: var(--button-hover-border-bottom, var(--button-hover-border));
+    border-left: var(--button-hover-border-left, var(--button-hover-border, var(--button-border-left, var(--button-border))));
+    border-right: var(--button-hover-border-right, var(--button-hover-border, var(--button-border-right, var(--button-border))));
+    border-top: var(--button-hover-border-top, var(--button-hover-border, var(--button-border-top, var(--button-border))));
+    border-bottom: var(--button-hover-border-bottom, var(--button-hover-border, var(--button-border-bottom, var(--button-border))));
 
 
 }

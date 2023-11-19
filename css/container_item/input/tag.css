@@ -9,26 +9,65 @@ specific style implementation for message type notes
 /* 
 styling for the tag. the tag is the span with text nested inside the label
 */
-:where(
+:is(
     .input-box label > span
 ) {
     /* needed to allow the tag (span) to be position absolute in case of a floating label  */
     position: absolute;
+        top: var(--tag-offset-top, 0px);
+        left: var(--tag-offset-left, 0px);
 
 
     transition: 
         font-size var(--tag-transition-duration) ease-out,
+        color var(--tag-transition-duration) ease-out,
+        padding var(--tag-transition-duration) ease-out,
         top var(--tag-transition-duration) ease-out,
-        left var(--tag-transition-duration) ease-out;
+        left var(--tag-transition-duration) ease-out,
+        background var(--tag-transition-duration) ease-out,
+        translate var(--tag-transition-duration) ease-out;
+
 
     padding: var(--tag-padding);
     background: var(--tag-background);
     color: var(--tag-color);
+    border-radius: var(--tag-border-radius, inherit);
 
     border-left: var(--tag-border-left, var(--tag-border));
     border-right: var(--tag-border-right, var(--tag-border));
     border-top: var(--tag-border-top, var(--tag-border));
     border-bottom: var(--tag-border-bottom, var(--tag-border));
 
+    font-size: var(--tag-font-size);
+    line-height: 1rem;
 
+
+    /* prevent user from selecting the text for a better UX */
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
 }
+
+
+
+/* 
+styling for the tag for a floating label
+*/
+:is(
+    .input-box label:has(
+        :is(
+            input,
+            select,
+            textarea
+        )[placeholder=" "]:placeholder-shown:not(:focus)
+    ) > span
+) {
+
+    top: 50%;
+    translate: 0 -50%;
+    background: transparent; 
+
+    color: var(--input-color);
+    font-size: var(--input-font-size);
+}
+

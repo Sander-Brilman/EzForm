@@ -21,6 +21,7 @@ base styles for the messages such as notes & alerts at the bottom of the contain
     background: var(--message-background);
     padding: var(--message-padding);
     border-radius: var(--message-border-radius);
+    font-size: var(--message-font-size);
 
     border-left: var(--message-border-left);
     border-right: var(--message-border-right);
@@ -48,9 +49,10 @@ the ::before element of the messages where the icon is rendered
 
     /* width for the spacing between the icon and the text and the height to control 
     at what hight the icon is displayed */
-    min-width: 18px;
+    height: 2ch;
     aspect-ratio: 1;
-    margin-right: 10px;
+
+    margin: 3px 10px 0 0;
 
 
     /* due use of an image mask, the background of the ::before will be the eventual color of the icon 

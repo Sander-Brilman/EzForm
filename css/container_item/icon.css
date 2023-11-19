@@ -6,18 +6,19 @@ specific style implementation for message type notes
 :where(
     .input-box i
 ) {
-    /* turn the icon into a cube */
+    /* give the icon a fixed width to ensure consistent alignment between different icons and center it */
     width: 40px;
-    aspect-ratio: 1;
-
-    /* center the icon in the middle of its width. the icon is already a flexbox due the reset.css */
     justify-content: center;
     align-items: center;
 
     background: var(--icon-background);
     color: var(--icon-color);
     padding: var(--icon-padding);
-    border-radius: var(--icon-border-radius);
+
+
+    border-radius: var(--icon-border-radius, inherit);
+
+
 
     border-left: var(--icon-border-left, var(--icon-border));
     border-right: var(--icon-border-right, var(--icon-border));

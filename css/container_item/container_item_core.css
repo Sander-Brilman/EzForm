@@ -1,0 +1,10 @@
+.input-box > * {
+    border-radius: var(--global-border-radius);
+}
+
+:where(
+    .input-box *:focus
+) {
+    outline: var(--global-focus-outline);
+    outline-offset: var(--global-focus-outline-offset);
+}

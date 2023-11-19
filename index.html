@@ -5,8 +5,9 @@
 <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/sharp-solid.css">
 <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/sharp-regular.css">
 
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+<!-- <link rel="stylesheet" href="external_sources_for_testing/normalize.css"> -->
 
 
 
@@ -45,15 +46,62 @@
 
 
     body {
-        --container-border: solid 2px #646464;
-        --container-box-shadow: 5px 5px 0px 0px #646464;
-        --container-border-bottom: initial;
+
+        /* --global-border-radius: 0px;
+        
+        
+        --container-box-shadow: none;
+        --container-border-bottom: none;
+        --container-padding: 20px 0 0 0;
+
+        --input-border: grey solid 2px;
+        --input-padding: 5px 10px;
+        --input-color: firebrick;
+
+        --tag-offset-top: -17px;
+        --tag-font-size: 1rem;
+        --tag-color: black; */
+
     }
 
 </style>
 
 
 <h1>wad qawd qwd qwd </h1>
+
+
+<div class="input-box">
+    <label>
+        <span>First & last name</span>
+        <input placeholder=" ">
+    </label>
+</div>
+
+<div class="input-box">
+    <i class="fa-duotone fa-person-skating"></i>
+
+    <label>
+        <span>Voor & Achternaam</span>
+        <input placeholder=" ">
+    </label>
+
+    <button>
+        Reset
+    </button>
+</div>
+
+<div class="input-box">
+    <i class="fa-duotone fa-person-skating"></i>
+
+    <label>
+        <span>Voor & Achternaam</span>
+        <input>
+    </label>
+
+    <button class="outline">
+        Reset
+    </button>
+</div>
 
 <!-- full container, requires a wrapper for  multiple buttons, multiple inputs and multiple icons (if you want that for some reason) -->
 <div class="input-box">
@@ -82,24 +130,18 @@
 <div class="input-box">
     <i class="fa-solid fa-wand-magic-sparkles"></i>
 
-    <label class="input">
+    <label>
         <!-- tag voor de input. check for the input required attribute for red star at the end using ::after -->
-        <span>qwdqwqwd</span>
+        <span>Magic password</span>
     
         <!-- if placeholder == ' ' then floating label -->
-        <input placeholder=" ">
+        <input placeholder=" " type="password">
     </label>
 
     <!-- use css order to always force to end -->
     <span role="note">HE kijk uit!</span>
     <span role="alert">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae sed praesentium veniam odit reprehenderit odio, doloribus expedita quibusdam dicta architecto, incidunt magnam exercitationem nemo aperiam, quam illo! Placeat, unde fuga.</span>
     <span role="note">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quod minima quis magni nihil, itaque saepe quam temporibus provident ducimus fugiat. Perspiciatis deleniti, esse illo accusamus quibusdam suscipit magni nam.</span>
-
-</div>
-
-<!-- single full-length button / share space between buttons -->
-<div class="input-box">
-    <button>Wide button</button>
 </div>
 
 <!-- single full-length button / share space between buttons -->
@@ -107,21 +149,6 @@
     <button disabled>disabled button</button>
     <button class="outline">Wide button</button>
 </div>
-
-
-<!-- single full-length button / share space between buttons -->
-<div class="input-box">
-    <input type="button" value="CLICK ME">
-</div>
-
-<div class="input-box">
-    <i class="fa-solid fa-wand-magic-sparkles"></i>
-
-    <label>
-        <button>Wide button</button>
-    </label>
-</div>
-
 
 <!-- list for radio buttons -->
 
