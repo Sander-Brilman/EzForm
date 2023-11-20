@@ -50,12 +50,12 @@
     --container-margin: 0 0 2em;
 
     --container-border: initial;
-    --container-border-bottom: solid 2px var(--global-primary-color);
+    --container-border-bottom: initial;
     --container-border-top: initial;
     --container-border-right: initial;
     --container-border-left: initial;
 
-    --container-gap: 5px;
+    --container-gap: 0 5px;
     --container-box-shadow: 0px 0px 5px 1px #d3d3d3;
 
 
@@ -137,7 +137,7 @@
     /* tag */
     --tag-background: initial;
     --tag-color: var(--global-label-color);
-    --tag-padding: initial;
+    --tag-padding: 0 5px;
     --tag-border-radius: initial;
     --tag-transition-duration: var(--global-transition-duration);
     --tag-font-size: 12px;
@@ -151,11 +151,58 @@
     --tag-border-right: initial;
     --tag-border-left: initial;
 
+    /* tag floating */
+
+    --tag-floating-offset-top: initial;
+    --tag-floating-offset-left: initial;
+
+    --tag-floating-background: initial;
+    --tag-floating-color: initial;
+    --tag-floating-font-size: initial;
+
+
+    /* tag required */
+
+    --tag-required-background: initial;
+    --tag-required-color: initial;
+
+    --tag-required-suffix-color: var(--global-error-color);
+    --tag-required-suffix: '*';
+
+
+    /* tag readonly */
+
+    --tag-readonly-background: initial;
+    --tag-readonly-color: initial;
+
+    --tag-readonly-suffix-color: initial;
+    --tag-readonly-suffix: initial;
+
+
+    /* tag invalid */
+    --tag-invalid-background: initial;
+    --tag-invalid-color: var(--global-error-color);
+
+    --tag-invalid-suffix-color: initial;
+    --tag-invalid-suffix: initial;
+
+
+
+
+    /* tag valid */
+    --tag-valid-background: initial;
+    --tag-valid-color: initial;
+
+    --tag-valid-suffix-color: initial;
+    --tag-valid-suffix: initial;
+
+
+
 
     /* input */
     --input-background: none;
     --input-color: initial;
-    --input-padding: 15px 5px 0 5px;
+    --input-padding: 17px 5px 5px 5px;
     --input-border-radius: initial;
     --input-font-size: initial;
     
@@ -164,5 +211,31 @@
     --input-border-top: initial;
     --input-border-right: initial;
     --input-border-left: initial;
+
+    /* input required */
+
+    --input-required-background: initial;
+    --input-required-color: initial;
+
+
+
+    /* input readonly */
+
+    --input-readonly-background: initial;
+    --input-readonly-color: #4d4d4d;
+
+
+    /* input invalid */
+
+    --input-invalid-background: initial;
+    --input-invalid-color: initial;
+    --input-invalid-color: red;
+
+    
+    /* input valid */
+
+    --input-valid-background: initial;
+    --input-valid-color: initial;
+    --input-valid-color: green;
 
 }

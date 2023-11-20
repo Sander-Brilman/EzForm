@@ -1,7 +1,5 @@
 /* 
 [== base styles: container_item_core.css ==]
-
-specific style implementation for message type notes
 */
 :where(
     .input-box i

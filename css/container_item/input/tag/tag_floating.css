@@ -1,0 +1,39 @@
+/* 
+[== base styles: tag_core.css ==]
+
+floating is activated when the tag's respective input has a placeholder with a single whitespace
+*/
+
+
+/* 
+styling for the tag for a floating label
+*/
+:is(
+    .input-box label:has(
+        :is(
+            input,
+            select,
+            textarea
+        )[placeholder=" "]:placeholder-shown:not(:focus)
+    ) > span
+) {
+
+    top: calc(50% + var(--tag-floating-offset-top, 0px));
+    left: var(--tag-floating-offset-left);
+
+    translate: 0 -50%;
+    
+    
+    background: var(--tag-floating-background); 
+    color: var(--tag-floating-color, var(--input-color));
+
+    border-left: var(--tag-floating-border-left, var(--tag-floating-border));
+    border-right: var(--tag-floating-border-right, var(--tag-floating-border));
+    border-top: var(--tag-floating-border-top, var(--tag-floating-border));
+    border-bottom: var(--tag-floating-border-bottom, var(--tag-floating-border));
+
+
+
+    font-size: var(--tag-floating-font-size, var(--input-font-size));
+}
+

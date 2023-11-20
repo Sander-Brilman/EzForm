@@ -34,12 +34,26 @@
 
     <!-- load inputs -->
     <link rel="stylesheet" href="css/container_item/input/input_core.css">
-        <link rel="stylesheet" href="css/container_item/input/tag.css">
+
+        <!-- load tags -->
+        <link rel="stylesheet" href="css/container_item/input/tag/tag_core.css">
+
+            <link rel="stylesheet" href="css/container_item/input/tag/tag_valid.css">
+            <link rel="stylesheet" href="css/container_item/input/tag/tag_invalid.css">
+
+            <link rel="stylesheet" href="css/container_item/input/tag/tag_required.css">
+
+
+            <link rel="stylesheet" href="css/container_item/input/tag/tag_floating.css">
+            <link rel="stylesheet" href="css/container_item/input/tag/tag_readonly.css">
+
+        
         <link rel="stylesheet" href="css/container_item/input/input_text.css">
 
 
 <style>
     body {
+        /* background: rgb(209, 237, 255); */
         max-width: 700px;
         margin: auto;
     }
@@ -47,141 +61,62 @@
 
     body {
 
-        /* --global-border-radius: 0px;
-        
-        
-        --container-box-shadow: none;
-        --container-border-bottom: none;
-        --container-padding: 20px 0 0 0;
 
-        --input-border: grey solid 2px;
-        --input-padding: 5px 10px;
-        --input-color: firebrick;
+        /* --container-box-shadow: none;
+        --input-border-bottom: solid var(--global-primary-color) 2px;
+        --input-border-radius: 0px; */
 
-        --tag-offset-top: -17px;
-        --tag-font-size: 1rem;
-        --tag-color: black; */
+        --tag-border: solid 1px grey;
+
+        --tag-invalid-border: solid firebrick 1px;
+
+        --tag-valid-border: solid 1px green;
+        --tag-valid-color: green;
 
     }
+
+
+
 
 </style>
 
 
 <h1>wad qawd qwd qwd </h1>
 
+<br>
+
 
 <div class="input-box">
     <label>
-        <span>First & last name</span>
+        <span>Voornaam</span>
+        <input required placeholder=" ">
+    </label>
+</div>
+
+<div class="input-box">
+    <label>
+        <span>Tussenvoegsel</span>
         <input placeholder=" ">
     </label>
 </div>
 
 <div class="input-box">
-    <i class="fa-duotone fa-person-skating"></i>
-
     <label>
-        <span>Voor & Achternaam</span>
-        <input placeholder=" ">
+        <span>Achternaam</span>
+        <input required >
     </label>
-
-    <button>
-        Reset
-    </button>
 </div>
 
 <div class="input-box">
-    <i class="fa-duotone fa-person-skating"></i>
-
     <label>
-        <span>Voor & Achternaam</span>
-        <input>
+        <span>Email adres</span>
+        <input type="email" required >
     </label>
-
-    <button class="outline">
-        Reset
-    </button>
 </div>
 
-<!-- full container, requires a wrapper for  multiple buttons, multiple inputs and multiple icons (if you want that for some reason) -->
 <div class="input-box">
-    <i class="fa-duotone fa-person-skating"></i>
-
     <label>
-        <span>qwdqwqwd</span>
-
-        <!-- auto hide all browser icons like calendar and apply custom icons via background svg -->
-        <input placeholder="Test placeholder">
+        <span>Land</span>
+        <input required maxlength="2" readonly value="Nedeland">
     </label>
-
-
-
-    <!-- button requires no classes -->
-    <button>
-        button
-    </button>
-
-    <!-- alerts & notes should be in the container root. they are supported in minimal containers but in this case it is not a minimal container -->
-    <span role="alert">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae sed praesentium veniam odit reprehenderit odio, doloribus expedita quibusdam dicta architecto, incidunt magnam exercitationem nemo aperiam, quam illo! Placeat, unde fuga.</span>
-
 </div>
-
-<!-- slimmed down + icon -->
-<div class="input-box">
-    <i class="fa-solid fa-wand-magic-sparkles"></i>
-
-    <label>
-        <!-- tag voor de input. check for the input required attribute for red star at the end using ::after -->
-        <span>Magic password</span>
-    
-        <!-- if placeholder == ' ' then floating label -->
-        <input placeholder=" " type="password">
-    </label>
-
-    <!-- use css order to always force to end -->
-    <span role="note">HE kijk uit!</span>
-    <span role="alert">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae sed praesentium veniam odit reprehenderit odio, doloribus expedita quibusdam dicta architecto, incidunt magnam exercitationem nemo aperiam, quam illo! Placeat, unde fuga.</span>
-    <span role="note">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quod minima quis magni nihil, itaque saepe quam temporibus provident ducimus fugiat. Perspiciatis deleniti, esse illo accusamus quibusdam suscipit magni nam.</span>
-</div>
-
-<!-- single full-length button / share space between buttons -->
-<div class="input-box">
-    <button disabled>disabled button</button>
-    <button class="outline">Wide button</button>
-</div>
-
-<!-- list for radio buttons -->
-
-<ul class="input-box">
-    <li>
-        <label>
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-            <span>Optie 1</span>
-            <input name="r" type="radio">
-        </label>
-    </li>
-    <li>
-        <label>
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-            <span>Optie 1</span>
-            <input name="r" type="radio">
-        </label>
-    </li>
-    <li>
-        <label>
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-            <span>Optie 1</span>
-            <input name="r" type="radio">
-
-            <span role="alert">HE kijk uit!</span>
-        </label>
-    </li>
-    <li>
-        <label>
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-            <span>Optie 1</span>
-            <input name="r" type="radio">
-        </label>
-        <button>bezwaar</button>
-    </li>
-</ul>

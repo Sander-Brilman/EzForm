@@ -1,7 +1,5 @@
 /* 
 [== base styles: container_item_core.css ==]
-
-specific style implementation for message type notes
 */
 
 
@@ -42,5 +40,80 @@ specific style implementation for message type notes
     border-top: var(--input-border-top, var(--input-border));
     border-bottom: var(--input-border-bottom, var(--input-border));
 
+}
+
+
+/* 
+invalid state for input
+*/
+:where(
+    .input-box label :is(
+        input, 
+        textarea, 
+        select
+    ):valid
+) {
+    background: var(--input-valid-background);
+    color: var(--input-valid-color);
+}
+
+/* 
+readonly state for input
+*/
+:where(
+    .input-box label :is(
+        input, 
+        textarea, 
+        select
+    ):read-only
+) {
+    cursor: not-allowed;
+
+    background: var(--input-readonly-background);
+    color: var(--input-readonly-color);
+}
+
+/* 
+required state for input
+*/
+:where(
+    .input-box label :is(
+        input, 
+        textarea, 
+        select
+    ):required
+) {
+    background: var(--input-required-background);
+    color: var(--input-required-color);
+}
+
+
+/* 
+invalid state for input
+*/
+:where(
+    .input-box label :is(
+        input, 
+        textarea, 
+        select
+    ):invalid
+) {
+    background: var(--input-invalid-background);
+    color: var(--input-invalid-color);
+}
+
+
+/* 
+valid state for input
+*/
+:where(
+    .input-box label :is(
+        input, 
+        textarea, 
+        select
+    ):valid
+) {
+    background: var(--input-valid-background);
+    color: var(--input-valid-color);
 }
 

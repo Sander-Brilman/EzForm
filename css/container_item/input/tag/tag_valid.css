@@ -1,0 +1,38 @@
+/* 
+[== base styles: tag_core.css ==]
+*/
+
+/* 
+tag for when the input is required
+*/
+.input-box label:has(
+    :is(
+        input,
+        select,
+        textarea
+    ):valid
+) > span {
+    background: var(--tag-valid-background, var(--tag-background));
+    color: var(--tag-valid-color, var(--tag-color, var(--global-label-color)));
+
+    border-left: var(--tag-valid-border-left, var(--tag-valid-border, var(--tag-border-left, var(--tag-border))));
+    border-right: var(--tag-valid-border-right, var(--tag-valid-border, var(--tag-border-right, var(--tag-border))));
+    border-top: var(--tag-valid-border-top, var(--tag-valid-border, var(--tag-border-top, var(--tag-border))));
+    border-bottom: var(--tag-valid-border-bottom, var(--tag-valid-border, var(--tag-border-bottom, var(--tag-border))));
+}
+
+/* 
+tag suffix for when the input is required
+*/
+.input-box label:has(
+    :is(
+        input,
+        select,
+        textarea
+    ):valid
+) > span::after {
+
+    color: var(--tag-valid-suffix-color);
+    content: var(--tag-valid-suffix);
+
+}

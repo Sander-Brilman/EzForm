@@ -1,7 +1,5 @@
 /* 
 [== base styles: input_core.css ==]
-
-specific style implementation for message type notes
 */
 
 
@@ -20,6 +18,7 @@ styling for the tag. the tag is the span with text nested inside the label
 
     transition: 
         font-size var(--tag-transition-duration) ease-out,
+        border var(--tag-transition-duration) ease-out,
         color var(--tag-transition-duration) ease-out,
         padding var(--tag-transition-duration) ease-out,
         top var(--tag-transition-duration) ease-out,
@@ -50,24 +49,13 @@ styling for the tag. the tag is the span with text nested inside the label
 
 
 
+
+
 /* 
-styling for the tag for a floating label
+styling for the tag suffix. the suffix is a pseudo ::after element where the content is being set in the respective state css file
 */
-:is(
-    .input-box label:has(
-        :is(
-            input,
-            select,
-            textarea
-        )[placeholder=" "]:placeholder-shown:not(:focus)
-    ) > span
-) {
-
-    top: 50%;
-    translate: 0 -50%;
-    background: transparent; 
-
-    color: var(--input-color);
-    font-size: var(--input-font-size);
+.input-box label > span::after {
+    margin-left: 3px;
 }
+
 
