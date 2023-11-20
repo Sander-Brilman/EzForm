@@ -44,7 +44,7 @@
 
 
 /* 
-invalid state for input
+valid state for input
 */
 :where(
     .input-box label :is(
@@ -53,8 +53,14 @@ invalid state for input
         select
     ):valid
 ) {
-    background: var(--input-valid-background);
-    color: var(--input-valid-color);
+    background: var(--input-valid-background, var(--input-background));
+    color: var(--input-valid-color, var(--input-color));
+
+    border-left: var(--input-valid-border-left, var(--input-valid-border, var(--input-border-left, var(--input-border))));
+    border-right: var(--input-valid-border-right, var(--input-valid-border, var(--input-border-right, var(--input-border))));
+    border-top: var(--input-valid-border-top, var(--input-valid-border, var(--input-border-top, var(--input-border))));
+    border-bottom: var(--input-valid-border-bottom, var(--input-valid-border, var(--input-border-bottom, var(--input-border))));
+
 }
 
 /* 
@@ -69,8 +75,14 @@ readonly state for input
 ) {
     cursor: not-allowed;
 
-    background: var(--input-readonly-background);
-    color: var(--input-readonly-color);
+    background: var(--input-readonly-background, var(--input-background));
+    color: var(--input-readonly-color, var(--input-color));
+
+    border-left: var(--input-readonly-border-left, var(--input-readonly-border, var(--input-border-left, var(--input-border))));
+    border-right: var(--input-readonly-border-right, var(--input-readonly-border, var(--input-border-right, var(--input-border))));
+    border-top: var(--input-readonly-border-top, var(--input-readonly-border, var(--input-border-top, var(--input-border))));
+    border-bottom: var(--input-readonly-border-bottom, var(--input-readonly-border, var(--input-border-bottom, var(--input-border))));
+
 }
 
 /* 
@@ -83,8 +95,14 @@ required state for input
         select
     ):required
 ) {
-    background: var(--input-required-background);
-    color: var(--input-required-color);
+    background: var(--input-required-background, var(--input-background));
+    color: var(--input-required-color, var(--input-color));
+
+    border-left: var(--input-required-border-left, var(--input-required-border, var(--input-border-left, var(--input-border))));
+    border-right: var(--input-required-border-right, var(--input-required-border, var(--input-border-right, var(--input-border))));
+    border-top: var(--input-required-border-top, var(--input-required-border, var(--input-border-top, var(--input-border))));
+    border-bottom: var(--input-required-border-bottom, var(--input-required-border, var(--input-border-bottom, var(--input-border))));
+
 }
 
 
@@ -98,22 +116,11 @@ invalid state for input
         select
     ):invalid
 ) {
-    background: var(--input-invalid-background);
-    color: var(--input-invalid-color);
+    background: var(--input-invalid-background, var(--input-background));
+    color: var(--input-invalid-color, var(--input-color));
+
+    border-left: var(--input-invalid-border-left, var(--input-invalid-border, var(--input-border-left, var(--input-border))));
+    border-right: var(--input-invalid-border-right, var(--input-invalid-border, var(--input-border-right, var(--input-border))));
+    border-top: var(--input-invalid-border-top, var(--input-invalid-border, var(--input-border-top, var(--input-border))));
+    border-bottom: var(--input-invalid-border-bottom, var(--input-invalid-border, var(--input-border-bottom, var(--input-border))));
 }
-
-
-/* 
-valid state for input
-*/
-:where(
-    .input-box label :is(
-        input, 
-        textarea, 
-        select
-    ):valid
-) {
-    background: var(--input-valid-background);
-    color: var(--input-valid-color);
-}
-

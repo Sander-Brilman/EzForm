@@ -66,12 +66,23 @@
         --input-border-bottom: solid var(--global-primary-color) 2px;
         --input-border-radius: 0px; */
 
-        --tag-border: solid 1px grey;
+        --tag-border: solid 1px rgb(214, 214, 214);
+        --tag-border-top: 0;
+        --tag-border-left: 0;
 
-        --tag-invalid-border: solid firebrick 1px;
+        --tag-color: rgb(214, 214, 214);
+
+        /* --tag-invalid-border: solid firebrick 1px;
 
         --tag-valid-border: solid 1px green;
-        --tag-valid-color: green;
+        --tag-valid-color: green; */
+
+
+        --input-background: rgb(0, 0, 0);
+        --input-color: rgb(180, 106, 255);
+        --input-border: rgb(180, 106, 255) solid 2px;
+
+        --container-background: rgb(27, 27, 27);
 
     }
 
@@ -103,7 +114,7 @@
 <div class="input-box">
     <label>
         <span>Achternaam</span>
-        <input required >
+        <input required  placeholder="" minlength="5" >
     </label>
 </div>
 

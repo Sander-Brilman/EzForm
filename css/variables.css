@@ -160,6 +160,12 @@
     --tag-floating-color: initial;
     --tag-floating-font-size: initial;
 
+    --tag-floating-border: initial;
+    --tag-floating-border-bottom: initial;
+    --tag-floating-border-top: initial;
+    --tag-floating-border-right: initial;
+    --tag-floating-border-left: initial;
+
 
     /* tag required */
 
@@ -169,6 +175,11 @@
     --tag-required-suffix-color: var(--global-error-color);
     --tag-required-suffix: '*';
 
+    --tag-required-border: initial;
+    --tag-required-border-bottom: initial;
+    --tag-required-border-top: initial;
+    --tag-required-border-right: initial;
+    --tag-required-border-left: initial;
 
     /* tag readonly */
 
@@ -178,6 +189,11 @@
     --tag-readonly-suffix-color: initial;
     --tag-readonly-suffix: initial;
 
+    --tag-readonly-border: initial;
+    --tag-readonly-border-bottom: initial;
+    --tag-readonly-border-top: initial;
+    --tag-readonly-border-right: initial;
+    --tag-readonly-border-left: initial;
 
     /* tag invalid */
     --tag-invalid-background: initial;
@@ -186,6 +202,11 @@
     --tag-invalid-suffix-color: initial;
     --tag-invalid-suffix: initial;
 
+    --tag-invalid-border: initial;
+    --tag-invalid-border-bottom: initial;
+    --tag-invalid-border-top: initial;
+    --tag-invalid-border-right: initial;
+    --tag-invalid-border-left: initial;
 
 
 
@@ -196,7 +217,11 @@
     --tag-valid-suffix-color: initial;
     --tag-valid-suffix: initial;
 
-
+    --tag-valid-border: initial;
+    --tag-valid-border-bottom: initial;
+    --tag-valid-border-top: initial;
+    --tag-valid-border-right: initial;
+    --tag-valid-border-left: initial;
 
 
     /* input */
@@ -217,6 +242,11 @@
     --input-required-background: initial;
     --input-required-color: initial;
 
+    --input-required-border: initial;
+    --input-required-border-bottom: initial;
+    --input-required-border-top: initial;
+    --input-required-border-right: initial;
+    --input-required-border-left: initial;
 
 
     /* input readonly */
@@ -224,18 +254,33 @@
     --input-readonly-background: initial;
     --input-readonly-color: #4d4d4d;
 
+    --input-readonly-border: initial;
+    --input-readonly-border-bottom: initial;
+    --input-readonly-border-top: initial;
+    --input-readonly-border-right: initial;
+    --input-readonly-border-left: initial;
+
 
     /* input invalid */
 
     --input-invalid-background: initial;
     --input-invalid-color: initial;
-    --input-invalid-color: red;
+
+    --input-invalid-border: initial;
+    --input-invalid-border-bottom: initial;
+    --input-invalid-border-top: initial;
+    --input-invalid-border-right: initial;
+    --input-invalid-border-left: initial;
 
     
     /* input valid */
 
     --input-valid-background: initial;
     --input-valid-color: initial;
-    --input-valid-color: green;
 
+    --input-valid-border: initial;
+    --input-valid-border-bottom: initial;
+    --input-valid-border-top: initial;
+    --input-valid-border-right: initial;
+    --input-valid-border-left: initial;
 }
