@@ -200,7 +200,7 @@
     --tag-invalid-color: var(--global-error-color);
 
     --tag-invalid-suffix-color: initial;
-    --tag-invalid-suffix: initial;
+    --tag-invalid-suffix: '!';
 
     --tag-invalid-border: initial;
     --tag-invalid-border-bottom: initial;
