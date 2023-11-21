@@ -3,9 +3,8 @@
 */
 
 
-:where(
-    .input-box label
-) {
+
+.input-box :where(label) {
     /* needed to allow the tag (span) to be position absolute in case of a floating label  */
     position: relative;
 
@@ -17,12 +16,11 @@
 /* 
     input, textarea, select are all styles the same.
 */
-:where(
-    .input-box label :is(
-        input, 
-        textarea, 
-        select
-    )
+
+.input-box label :where(
+    input, 
+    textarea, 
+    select
 ) {
 
     /* flex-grow fro growing the input to the same size as the label it is nested in */
@@ -46,13 +44,12 @@
 /* 
 invalid state for input
 */
-:where(
-    .input-box label :is(
-        input, 
-        textarea, 
-        select
-    ):valid
-) {
+
+.input-box :where(label :is(
+    input, 
+    textarea, 
+    select
+):valid) {
     background: var(--input-valid-background);
     color: var(--input-valid-color);
 }
@@ -60,13 +57,13 @@ invalid state for input
 /* 
 readonly state for input
 */
-:where(
-    .input-box label :is(
-        input, 
-        textarea, 
-        select
-    ):read-only
-) {
+
+.input-box :where(label :is(
+    input, 
+    textarea, 
+    select
+):read-only) 
+{
     cursor: not-allowed;
 
     background: var(--input-readonly-background);
@@ -76,13 +73,12 @@ readonly state for input
 /* 
 required state for input
 */
-:where(
-    .input-box label :is(
-        input, 
-        textarea, 
-        select
-    ):required
-) {
+
+.input-box :where(label :is(
+    input, 
+    textarea, 
+    select
+):required) {
     background: var(--input-required-background);
     color: var(--input-required-color);
 }
@@ -91,13 +87,13 @@ required state for input
 /* 
 invalid state for input
 */
-:where(
-    .input-box label :is(
-        input, 
-        textarea, 
-        select
-    ):invalid
-) {
+
+.input-box :where(label :is(
+    input, 
+    textarea, 
+    select
+):invalid) 
+{
     background: var(--input-invalid-background);
     color: var(--input-invalid-color);
 }
@@ -106,13 +102,13 @@ invalid state for input
 /* 
 valid state for input
 */
-:where(
-    .input-box label :is(
-        input, 
-        textarea, 
-        select
-    ):valid
-) {
+
+.input-box :where(label :is(
+    input, 
+    textarea, 
+    select
+):valid) 
+{
     background: var(--input-valid-background);
     color: var(--input-valid-color);
 }

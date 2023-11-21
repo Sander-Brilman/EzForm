@@ -1,17 +1,23 @@
 /* 
 [== base styles: tag_core.css ==]
+
+these styles will be activated once the respective input field of the tag is valid
+
+for these styles to work propperly a placeholder of any value is needed 
+
 */
 
 /* 
-tag for when the input is required
+tag for when the input is valid
 */
-.input-box label:has(
+.input-box :where(label:has(
     :is(
         input,
         select,
         textarea
-    ):valid
-) > span {
+    ):valid:is([placeholder]:not(:placeholder-shown), :not([placeholder]))
+) > span) 
+{
     background: var(--tag-valid-background, var(--tag-background));
     color: var(--tag-valid-color, var(--tag-color, var(--global-label-color)));
 
@@ -22,15 +28,15 @@ tag for when the input is required
 }
 
 /* 
-tag suffix for when the input is required
+tag suffix for when the input is valid
 */
-.input-box label:has(
+.input-box :where(label:has(
     :is(
         input,
         select,
         textarea
     ):valid
-) > span::after {
+) > span)::after {
 
     color: var(--tag-valid-suffix-color);
     content: var(--tag-valid-suffix);

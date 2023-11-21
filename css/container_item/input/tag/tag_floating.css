@@ -8,22 +8,22 @@ floating is activated when the tag's respective input has a placeholder with a s
 /* 
 styling for the tag for a floating label
 */
-:is(
-    .input-box label:has(
-        :is(
-            input,
-            select,
-            textarea
-        )[placeholder=" "]:placeholder-shown:not(:focus)
-    ) > span
-) {
+.input-box :where(label:has(
+    :is(
+        input,
+        select,
+        textarea
+    )[placeholder=" "]:placeholder-shown:not(:focus)
+) > span)
+{
 
     top: calc(50% + var(--tag-floating-offset-top, 0px));
     left: var(--tag-floating-offset-left);
 
     translate: 0 -50%;
     
-    
+
+    padding: var(--tag-floating-padding, var(--tag-padding));
     background: var(--tag-floating-background); 
     color: var(--tag-floating-color, var(--input-color));
 

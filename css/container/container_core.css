@@ -11,9 +11,9 @@ a normal div with the class .input box will only be styled as a container if it
 contains atleast 1 label. 
 
 */
-:where(
-    .input-box:has(label)
-) {
+
+.input-box:where(:has(label)) 
+{
     /* the container is already a flexbox due the reset.css */
     /* flex wrap for allowing messages to be on a new line by setting a full width */
     flex-wrap: wrap;        
@@ -39,9 +39,7 @@ contains atleast 1 label.
 }
 
 
-:where(
-    .input-box
-) {
+.input-box {
     /* the gap between container items such as icons, labels with inputs, buttons and messages */
     gap: var(--container-gap);
 

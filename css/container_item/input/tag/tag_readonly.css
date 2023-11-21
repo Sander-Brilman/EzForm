@@ -6,13 +6,13 @@
 /* 
 tag for when the input is read-only
 */
-.input-box label:has(
+.input-box :where(label:has(
     :is(
         input,
         select,
         textarea
     ):read-only
-) > span {
+) > span) {
 
     background: var(--tag-readonly-background);
     color: var(--tag-readonly-color);
@@ -31,13 +31,13 @@ tag for when the input is read-only
 /* 
 tag suffix for when the input is read-only
 */
-.input-box label:has(
+.input-box :where(label:has(
     :is(
         input,
         select,
         textarea
     ):read-only
-) > span::after {
+) > span)::after {
 
     color: var(--tag-readonly-suffix-color);
     content: var(--tag-readonly-suffix);

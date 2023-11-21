@@ -2,9 +2,9 @@
     border-radius: var(--global-border-radius);
 }
 
-:where(
-    .input-box *:focus
-) {
+
+.input-box :where(*:focus) 
+{
     outline: var(--global-focus-outline);
     outline-offset: var(--global-focus-outline-offset);
 }

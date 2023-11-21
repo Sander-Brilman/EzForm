@@ -7,9 +7,8 @@
 /* 
 styling for the tag. the tag is the span with text nested inside the label
 */
-:is(
-    .input-box label > span
-) {
+.input-box :where(label > span) 
+{
     /* needed to allow the tag (span) to be position absolute in case of a floating label  */
     position: absolute;
         top: var(--tag-offset-top, 0px);

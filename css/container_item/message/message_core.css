@@ -3,11 +3,9 @@
 
 base styles for the messages such as notes & alerts at the bottom of the containers
 */
-:where(
-    .input-box :is(
-        [role="alert"], 
-        [role="note"]
-    )
+.input-box :where(
+    [role="alert"], 
+    [role="note"]
 ) {
     /* Set width to 100% to put it on a new line using the flex-wrap on the parent */
     width: 100%;
@@ -32,11 +30,9 @@ base styles for the messages such as notes & alerts at the bottom of the contain
 /* 
 the ::before element of the messages where the icon is rendered 
 */
-:where(
-    .input-box :is(
-        [role="alert"],
-        [role="note"]
-    )
+.input-box :where(
+    [role="alert"],
+    [role="note"]
 )::before {
 
     /* needed for the ::before to appear at all */

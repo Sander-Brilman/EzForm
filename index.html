@@ -38,12 +38,13 @@
         <!-- load tags -->
         <link rel="stylesheet" href="css/container_item/input/tag/tag_core.css">
 
+            <link rel="stylesheet" href="css/container_item/input/tag/tag_required.css">
+
             <link rel="stylesheet" href="css/container_item/input/tag/tag_valid.css">
             <link rel="stylesheet" href="css/container_item/input/tag/tag_invalid.css">
 
-            <link rel="stylesheet" href="css/container_item/input/tag/tag_required.css">
 
-
+            <!-- override all others -->
             <link rel="stylesheet" href="css/container_item/input/tag/tag_floating.css">
             <link rel="stylesheet" href="css/container_item/input/tag/tag_readonly.css">
 
@@ -66,12 +67,22 @@
         --input-border-bottom: solid var(--global-primary-color) 2px;
         --input-border-radius: 0px; */
 
-        --tag-border: solid 1px grey;
+        --tag-border: solid 1px purple;
+        --tag-color: white;
+        --tag-background: rgba(128, 0, 128, 0.507);
 
+/* 
         --tag-invalid-border: solid firebrick 1px;
+        --tag-invalid-color: white;
+        --tag-invalid-background: rgba(178, 34, 34, 0.493);
 
         --tag-valid-border: solid 1px green;
-        --tag-valid-color: green;
+        --tag-valid-color: white;
+        --tag-valid-background: rgba(0, 128, 0, 0.486);
+
+        --tag-floating-border: solid black 1px;
+        --tag-floating-padding: 5px;
+        --tag-floating-background: lightgrey; */
 
     }
 
@@ -84,6 +95,20 @@
 <h1>wad qawd qwd qwd </h1>
 
 <br>
+<div class="input-box">
+    <label>
+        <span>Voornaam</span>
+        <input required >
+    </label>
+</div>
+
+
+<div class="input-box">
+    <label>
+        <span>Voornaam</span>
+        <input required minlength="10" placeholder=" ">
+    </label>
+</div>
 
 
 <div class="input-box">
@@ -93,30 +118,12 @@
     </label>
 </div>
 
-<div class="input-box">
-    <label>
-        <span>Tussenvoegsel</span>
-        <input placeholder=" ">
-    </label>
-</div>
+
 
 <div class="input-box">
     <label>
-        <span>Achternaam</span>
-        <input required >
+        <span>Voornaam</span>
+        <input type="email" placeholder="">
     </label>
 </div>
 
-<div class="input-box">
-    <label>
-        <span>Email adres</span>
-        <input type="email" required >
-    </label>
-</div>
-
-<div class="input-box">
-    <label>
-        <span>Land</span>
-        <input required maxlength="2" readonly value="Nedeland">
-    </label>
-</div>

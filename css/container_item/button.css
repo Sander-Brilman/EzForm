@@ -1,14 +1,12 @@
 /* 
 [== base styles: container_item_core.css ==]
 */
-:where(
-    .input-box :is(
-        button, 
-        input:is(
-            [type="submit"],
-            [type="button"],
-            [type="reset"]
-        )
+.input-box :where(
+    button, 
+    input:is(
+        [type="submit"],
+        [type="button"],
+        [type="reset"]
     )
 ) {
     /* center the text in the middle of the button. the button is already a flexbox due the reset.css */
