@@ -42,7 +42,7 @@
 
 
 /* 
-invalid state for input
+valid state for input
 */
 
 .input-box :where(label :is(
@@ -66,8 +66,14 @@ readonly state for input
 {
     cursor: not-allowed;
 
-    background: var(--input-readonly-background);
-    color: var(--input-readonly-color);
+    background: var(--input-readonly-background, var(--input-background));
+    color: var(--input-readonly-color, var(--input-color));
+
+    border-left: var(--input-readonly-border-left, var(--input-readonly-border, var(--input-border-left, var(--input-border))));
+    border-right: var(--input-readonly-border-right, var(--input-readonly-border, var(--input-border-right, var(--input-border))));
+    border-top: var(--input-readonly-border-top, var(--input-readonly-border, var(--input-border-top, var(--input-border))));
+    border-bottom: var(--input-readonly-border-bottom, var(--input-readonly-border, var(--input-border-bottom, var(--input-border))));
+
 }
 
 /* 
