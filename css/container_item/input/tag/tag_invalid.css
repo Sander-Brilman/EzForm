@@ -2,22 +2,7 @@
 [== base styles: tag_core.css ==]
 
 
-complicated selectors explained:
 
-the input will be counted as invalid if it is required and not yet filled-in
-however we want the invalid styles only to show up after a value has been filled in
-
-as long as it has not been filled in we want the required style to be shown (as long as it is marked as such ofcourse)
-to detect if any value has been entered a placeholder of any value is needed.
-
-the selector below selects all tags if it repective input meets these conditions:
-
-- it is invalid (either due being blank or other validation contrainsts)
-    - if it is marked as required it needs a placeholder, and that placeholder must not be shown (AKA a value is filled in)
-    - if it is not required
-
-
-this means when using a input is marked as required 
 
 */
 
@@ -28,7 +13,7 @@ this means when using a input is marked as required
         input,
         select,
         textarea
-    ):invalid:is(:required[placeholder]:not(:placeholder-shown),:not(:required))
+    ):user-invalid
 ) > span) {
 
     background: var(--tag-invalid-background, var(--tag-background));
@@ -48,7 +33,7 @@ tag suffix for when the input is required
         input,
         select,
         textarea
-    ):invalid:is([placeholder]:required:not(:placeholder-shown),:not(:required))
+    ):user-invalid
 ) > span)::after {
 
     color: var(--tag-invalid-suffix-color);

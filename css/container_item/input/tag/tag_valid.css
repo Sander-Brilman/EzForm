@@ -15,7 +15,7 @@ tag for when the input is valid
         input,
         select,
         textarea
-    ):valid:is([placeholder]:not(:placeholder-shown), :not([placeholder]))
+    ):user-valid
 ) > span) 
 {
     background: var(--tag-valid-background, var(--tag-background));
@@ -35,7 +35,7 @@ tag suffix for when the input is valid
         input,
         select,
         textarea
-    ):valid
+    ):user-valid
 ) > span)::after {
 
     color: var(--tag-valid-suffix-color);

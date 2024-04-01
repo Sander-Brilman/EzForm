@@ -49,7 +49,7 @@ valid state for input
     input, 
     textarea, 
     select
-):valid) {
+):user-valid) {
     background: var(--input-valid-background);
     color: var(--input-valid-color);
 }
@@ -98,7 +98,7 @@ invalid state for input
     input, 
     textarea, 
     select
-):invalid) 
+):user-invalid) 
 {
     background: var(--input-invalid-background);
     color: var(--input-invalid-color);
@@ -113,7 +113,7 @@ valid state for input
     input, 
     textarea, 
     select
-):valid) 
+):user-valid) 
 {
     background: var(--input-valid-background);
     color: var(--input-valid-color);
