@@ -2,7 +2,7 @@
 [== base styles: container_item_core.css ==]
 */
 
-.input-box :where(i) 
+.input-box :where(i, label > i)
 {
     /* give the icon a fixed width to ensure consistent alignment between different icons and center it */
     width: 40px;
@@ -26,4 +26,19 @@
 
     /* icons are usually set with text and a specific imported font. so font-size == icon size */
     font-size: var(--icon-font-size);
+}
+
+
+/* 
+minimal container styles for the icon
+*/
+
+label.input-box > i {
+    /* grid-column-start: 1; */
+    grid-row: 1;
+}
+
+label.input-box > :is(input, select, textarea) ~ :is(i, button) {
+    /* grid-column-start: 6; */
+    grid-row: 1;
 }

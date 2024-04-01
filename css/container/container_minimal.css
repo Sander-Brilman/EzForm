@@ -1,0 +1,23 @@
+/* 
+[== base styles: container_core.css ==]
+
+minimal container using the label directly as host
+*/
+
+
+label.input-box {
+    display: grid;
+
+    grid-template-columns: var(--template, 1fr);
+    --input-column: 1;
+}
+
+label.input-box:has(:is(button, i):nth-child(1)) {
+    --template: auto 1fr;
+    --input-column: 2;
+}
+
+label.input-box:has(:is(button, i):not(input ~ *):nth-child(2)) {
+    --template: auto auto 1fr;
+    --input-column: 3;
+}

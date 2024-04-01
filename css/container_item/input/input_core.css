@@ -17,13 +17,13 @@
     input, textarea, select are all styles the same.
 */
 
-.input-box label :where(
+.input-box :is(
     input, 
     textarea, 
     select
 ) {
 
-    /* flex-grow fro growing the input to the same size as the label it is nested in */
+    /* flex-grow for growing the input to the same size as the label it is nested in */
     flex-grow: 1;
 
     /* standard properties */
@@ -119,3 +119,13 @@ valid state for input
     color: var(--input-valid-color);
 }
 
+
+
+/*
+minimal container styles
+*/
+
+label.input-box > :is(input, select, textarea) {
+    grid-column: var(--input-column);
+    grid-row: 1;
+}

@@ -7,10 +7,10 @@
 /* 
 styling for the tag. the tag is the span with text nested inside the label
 */
-.input-box :where(label > span) 
+.input-box :where(label > span:not([role="alert"], [role="note"]))
 {
     /* needed to allow the tag (span) to be position absolute in case of a floating label  */
-    position: absolute;
+    position: relative;
         top: var(--tag-offset-top, 0px);
         left: var(--tag-offset-left, 0px);
 
@@ -53,8 +53,17 @@ styling for the tag. the tag is the span with text nested inside the label
 /* 
 styling for the tag suffix. the suffix is a pseudo ::after element where the content is being set in the respective state css file
 */
-.input-box label > span::after {
+.input-box label > span:not([role="alert"], [role="note"])::after {
     margin-left: 3px;
 }
 
 
+/* 
+minimal container styles
+*/
+
+label.input-box > span:not([role="alert"], [role="note"]) {
+    grid-column: var(--input-column);
+    grid-row: 1;
+    height: fit-content;
+}

@@ -19,7 +19,6 @@
 
 <!-- load containers -->
 <link rel="stylesheet" href="css/container/container_core.css">
-    <link rel="stylesheet" href="css/container/container_list.css">
     <link rel="stylesheet" href="css/container/container_minimal.css">
 
 <!-- load container items -->
@@ -54,73 +53,83 @@
 
 <style>
     body {
-        /* background: rgb(209, 237, 255); */
-        max-width: 700px;
+        max-width: 900px;
         margin: auto;
     }
 
 
     body {
+        --container-border-bottom: solid var(--global-primary-color) 2px;
+        --input-border-radius: 0px; 
 
 
-        /* --container-box-shadow: none;
-        --input-border-bottom: solid var(--global-primary-color) 2px;
-        --input-border-radius: 0px; */
-
-
-/* 
-        --tag-invalid-border: solid firebrick 1px;
-        --tag-invalid-color: white;
-        --tag-invalid-background: rgba(178, 34, 34, 0.493);
-
-        --tag-valid-border: solid 1px green;
-        --tag-valid-color: white;
-        --tag-valid-background: rgba(0, 128, 0, 0.486);
-
-        --tag-floating-border: solid black 1px;
-        --tag-floating-padding: 5px;
-        --tag-floating-background: lightgrey; */
 
     }
 
 
 
-
 </style>
 
-
-<h1>wad qawd qwd qwd </h1>
-
 <br>
+<br>
+<br>
+
+<!-- normal -->
 <div class="input-box">
+    <i class="fa-duotone fa-key"></i>
+    <span>06-</span>
+
     <label>
-        <span>Voornaam</span>
-        <input required >
+        <span>telefoon nummer</span>
+        <input placeholder=" " >
     </label>
+
+    <button>show password</button>
+
+    <span role="alert">password must be longer then 8 characters</span>
 </div>
 
+<label class="input-box">
+    <span>password</span>
+    <input required placeholder=" " >
 
-<div class="input-box">
+    <i class="fa-duotone fa-code"></i>
+</label>
+
+<label class="input-box">
+    <i class="fa-duotone fa-code"></i>
+
+    <span>password readonly</span>
+    <input disabled value="123123" placeholder=" " >
+</label>
+
+<label class="input-box">
+    <i class="fa-duotone fa-code"></i>
+
+    <span>password</span> 
+    <input type="password" placeholder=" " >
+
+    <button type="button">show password</button>
+
+    <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    <span role="alert">password cannot be the same as your old password</span>
+</label> 
+
+<!-- <label class="input-box">
+    <span>kleur</span>
+    <input type="color" >
+
+    <button>showcase color</button>
+</label> -->
+
+<!-- special case -->
+<!-- <div class="input-box">
     <label>
-        <span>Voornaam</span>
-        <input required minlength="10" placeholder=" ">
+        <span>kleur</span>
+        <input type="radio" >
     </label>
-</div>
-
-
-<div class="input-box">
     <label>
-        <span>Voornaam</span>
-        <input required placeholder=" ">
+        <span>kleur</span>
+        <input type="radio" >
     </label>
-</div>
-
-
-
-<div class="input-box">
-    <label>
-        <span>Voornaam</span>
-        <input type="email" placeholder="">
-    </label>
-</div>
-
+</div> -->

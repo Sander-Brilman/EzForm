@@ -14,7 +14,16 @@ styling for the tag for a floating label
         select,
         textarea
     )[placeholder=" "]:placeholder-shown:not(:focus)
-) > span)
+) > span:not([role="alert"], [role="note"])),
+
+label.input-box:has(
+    :is(
+        input,
+        select,
+        textarea
+    )[placeholder=" "]:placeholder-shown:not(:focus)
+) > span:not([role="alert"], [role="note"])
+
 {
 
     top: calc(50% + var(--tag-floating-offset-top, 0px));

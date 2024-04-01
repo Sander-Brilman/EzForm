@@ -7,6 +7,7 @@ base styles for the messages such as notes & alerts at the bottom of the contain
     [role="alert"], 
     [role="note"]
 ) {
+
     /* Set width to 100% to put it on a new line using the flex-wrap on the parent */
     width: 100%;
 
@@ -25,15 +26,17 @@ base styles for the messages such as notes & alerts at the bottom of the contain
     border-right: var(--message-border-right);
     border-top: var(--message-border-top);
     border-bottom: var(--message-border-bottom);
+
+    grid-column: 1 / 9;
 }
+
+
 
 /* 
 the ::before element of the messages where the icon is rendered 
 */
-.input-box :where(
-    [role="alert"],
-    [role="note"]
-)::before {
+.input-box :is([role="alert"], [role="note"])::before
+{
 
     /* needed for the ::before to appear at all */
     content: '';
