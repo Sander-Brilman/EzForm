@@ -1,0 +1,8 @@
+
+
+.input-box:not(label) {
+    /* flex wrap for allowing messages to be on a new line by setting a full width */
+    flex-wrap: wrap;        
+
+    /* the gap between container items such as icons, labels with inputs, buttons and messages */
+}

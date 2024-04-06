@@ -1,4 +1,3 @@
-
 /* 
 a container can be either:
 
@@ -10,32 +9,18 @@ a element with the class .input box will only be styled as a container if it
 contains atleast 1 label. 
 */
 
-
 .input-box {
-    /* the gap between container items such as icons, labels with inputs, buttons and messages */
-    gap: var(--container-gap);
-    margin: var(--container-margin);
-
-    display: flex;
-
     padding: var(--container-padding);
     box-shadow: var(--container-box-shadow);
-
-    position: relative;
 
     background: var(--container-background);
     border-radius: var(--container-border-radius, var(--global-border-radius));
     
-    /* border styles */
     border-top: var(--container-border-top, var(--container-border));
     border-left: var(--container-border-left, var(--container-border));
     border-bottom: var(--container-border-bottom, var(--container-border));
     border-right: var(--container-border-right, var(--container-border));
-}
 
-.input-box:where(:has(label)) 
-{
-    /* the container is already a flexbox due the reset.css */
-    /* flex wrap for allowing messages to be on a new line by setting a full width */
-    flex-wrap: wrap;        
+    gap: var(--container-gap);
+
 }

@@ -1,9 +1,27 @@
+.input-box,
+.input-box > * {
+    border-radius: var(--global-border-radius);
+    box-sizing: content-box;
+    
+    /* display flex for putting all the items for that element side-by-side.  */
+    display: flex;
+
+    line-height: 20px !important;
+}
+
+.input-box *:focus 
+{
+    outline: var(--global-focus-outline);
+    outline-offset: var(--global-focus-outline-offset);
+}
+
+
+
+
 :root {
-
-
     /* 
-    shared (global) settings being re-used in multiple places. 
-    can be overridden using the specific css-style-specific variables listed below
+        shared (global) settings being re-used in multiple places. 
+        can be overridden using the specific css-style-specific variables listed below
     */
 
     --global-primary-color: blue;
@@ -12,7 +30,7 @@
     --global-label-color: #6f6f6f;
     --global-error-color: #b22222;
 
-    --global-border-radius: 5px;
+    --global-border-radius: 0px;
 
     --global-button-color: var(--global-primary-color);
     --global-button-hover-color: rgba(0, 0, 0, 0.212);
@@ -45,25 +63,25 @@
 
     /* container */
     --container-background: white;
-    --container-padding: 5px;
+    --container-padding: 8px;
     --container-border-radius: initial;
-    --container-margin: 0 0 2em;
+    --container-box-shadow: 0px 0px 5px 1px #d3d3d3;
 
     --container-border: initial;
-    --container-border-bottom: initial;
+    --container-border-bottom: solid var(--global-primary-color);
     --container-border-top: initial;
-    --container-border-right: initial;
-    --container-border-left: initial;
+    --container-border-right: solid white;
+    --container-border-left: solid white;
 
-    --container-gap: 0;
-    --container-box-shadow: 0px 0px 5px 1px #d3d3d3;
+    --container-gap: 5px 5px;
+
 
 
 
     /* icon */
     --icon-background: initial;
     --icon-color: var(--global-primary-color);
-    --icon-padding: 0;
+    --icon-padding: 8px;
     --icon-border-radius: initial;
     --icon-font-size: 22px;
     
@@ -80,6 +98,7 @@
     --note-border-radius: initial;
     --note-icon-color: var(--global-label-color);
     --note-font-size: initial;
+    --note-font-size: .9rem;
 
     --note-border: initial;
     --note-border-bottom: initial;
@@ -95,6 +114,7 @@
     --alert-border-radius: inherit;
     --alert-icon-color: var(--global-error-color);
     --alert-font-size: initial;
+    --alert-font-size: .9rem;
 
     --alert-border: initial;
     --alert-border-bottom: initial;
@@ -140,7 +160,7 @@
     --tag-padding: 0 5px;
     --tag-border-radius: initial;
     --tag-transition-duration: var(--global-transition-duration);
-    --tag-font-size: 12px;
+    --tag-font-size: .85rem;
 
     --tag-offset-top: initial;
     --tag-offset-left: initial;
@@ -228,6 +248,7 @@
     --input-background: none;
     --input-color: initial;
     --input-padding: 17px 5px 5px 5px;
+    --input-padding: 4px 5px;
     --input-border-radius: initial;
     --input-font-size: initial;
     

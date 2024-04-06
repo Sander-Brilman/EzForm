@@ -1,0 +1,13 @@
+/* 
+invalid state for input
+*/
+
+.input-box :is(
+    input, 
+    textarea, 
+    select
+):user-invalid
+{
+    background: var(--input-invalid-background);
+    color: var(--input-invalid-color);
+}

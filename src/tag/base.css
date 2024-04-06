@@ -1,14 +1,12 @@
 /* 
-[== base styles: input_core.css ==]
-*/
-
-
-
-/* 
 styling for the tag. the tag is the span with text nested inside the label
 */
-.input-box :where(label > span:not([role="alert"], [role="note"]))
+.input-box :is(label > span:not([role]))
 {
+    display: block;
+
+    width: fit-content;
+    
     /* needed to allow the tag (span) to be position absolute in case of a floating label  */
     position: relative;
         top: var(--tag-offset-top, 0px);
@@ -37,17 +35,16 @@ styling for the tag. the tag is the span with text nested inside the label
     border-bottom: var(--tag-border-bottom, var(--tag-border));
 
     font-size: var(--tag-font-size);
-    line-height: 1rem;
-
+    
+    line-height: 1rem !important;
+    font-weight: lighter;
+    font-style: italic;
 
     /* prevent user from selecting the text for a better UX */
     -webkit-user-select: none;
     user-select: none;
     pointer-events: none;
 }
-
-
-
 
 
 /* 
@@ -61,9 +58,9 @@ styling for the tag suffix. the suffix is a pseudo ::after element where the con
 /* 
 minimal container styles
 */
-
 label.input-box > span:not([role="alert"], [role="note"]) {
     grid-column: var(--input-column);
     grid-row: 1;
+
     height: fit-content;
 }

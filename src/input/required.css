@@ -1,0 +1,12 @@
+/* 
+required state for input
+*/
+
+.input-box :is(
+    input, 
+    textarea, 
+    select
+):required {
+    background: var(--input-required-background);
+    color: var(--input-required-color);
+}

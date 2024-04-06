@@ -1,0 +1,31 @@
+/* 
+    base styles for all methods of input. including inputs, textarea and select
+*/
+
+.input-box :is(
+    input, 
+    textarea, 
+    select
+) {
+    /* standard properties */
+    padding: var(--input-padding);
+    background: var(--input-background);
+    color: var(--input-color);
+    border-radius: var(--input-border-radius, var(--global-border-radius));
+    font-size: var(--input-font-size);
+
+    border-left: var(--input-border-left, var(--input-border));
+    border-right: var(--input-border-right, var(--input-border));
+    border-top: var(--input-border-top, var(--input-border));
+    border-bottom: var(--input-border-bottom, var(--input-border));
+}
+
+
+/*
+minimal container styles
+*/
+
+label.input-box > :is(input, select, textarea) {
+    grid-column: var(--input-column);
+    grid-row: 2;
+}

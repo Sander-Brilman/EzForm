@@ -1,0 +1,12 @@
+/* 
+valid state for input
+*/
+
+.input-box :is(
+    input, 
+    textarea, 
+    select
+):user-valid {
+    background: var(--input-valid-background);
+    color: var(--input-valid-color);
+}

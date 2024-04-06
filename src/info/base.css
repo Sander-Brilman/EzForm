@@ -3,7 +3,7 @@
 
 base styles for the messages such as notes & alerts at the bottom of the containers
 */
-.input-box :where(
+.input-box :is(
     [role="alert"], 
     [role="note"]
 ) {
@@ -16,18 +16,18 @@ base styles for the messages such as notes & alerts at the bottom of the contain
     order: 3;
 
     /* variables will be set by the specific implementation in the message_note.css & message_alert.css files  */
-    color: var(--message-color);
-    background: var(--message-background);
-    padding: var(--message-padding);
-    border-radius: var(--message-border-radius);
-    font-size: var(--message-font-size);
+    color: var(--internal-info-color);
+    background: var(--internal-info-background);
+    padding: var(--internal-info-padding);
+    border-radius: var(--internal-info-border-radius, var(--global-border-radius));
+    font-size: var(--internal-info-font-size);
 
-    border-left: var(--message-border-left);
-    border-right: var(--message-border-right);
-    border-top: var(--message-border-top);
-    border-bottom: var(--message-border-bottom);
+    border-left: var(--internal-info-border-left);
+    border-right: var(--internal-info-border-right);
+    border-top: var(--internal-info-border-top);
+    border-bottom: var(--internal-info-border-bottom);
 
-    grid-column: 1 / 9;
+    line-height: 23px !important;
 }
 
 
@@ -37,7 +37,6 @@ the ::before element of the messages where the icon is rendered
 */
 .input-box :is([role="alert"], [role="note"])::before
 {
-
     /* needed for the ::before to appear at all */
     content: '';
 
@@ -48,25 +47,43 @@ the ::before element of the messages where the icon is rendered
 
     /* width for the spacing between the icon and the text and the height to control 
     at what hight the icon is displayed */
-    min-width: 25px;
-    height: 2ch;
+    min-width: 1em;
+    height: 1em;
 
     margin: 3px 5px 0 0;
 
 
     /* due use of an image mask, the background of the ::before will be the eventual color of the icon 
-    this means the variable --message-icon-color can possibly be a gradient. */
-    background: var(--message-icon-color);
+    this means the variable --internal-info-icon-color can possibly be a gradient. */
+    background: var(--internal-info-icon-color);
 
 
     /* mask-image for the svg icon at the start of the message 
-    --message-svg-icon will be set by the specific implementation in the message_note.css & message_alert.css files */
-    mask-image: var(--message-icon);
-    -webkit-mask-image: var(--message-icon);
+    --internal-info-svg-icon will be set by the specific implementation in the message_note.css & message_alert.css files */
+    mask-image: var(--internal-info-icon);
+    -webkit-mask-image: var(--internal-info-icon);
+
+    mask-size: 1em;
 
     mask-position: center ;
     -webkit-mask-position: center ;
     
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
+}
+
+
+
+/* 
+minimal container styles
+*/
+
+label.input-box > :is(
+    [role="alert"], 
+    [role="note"]
+) {
+    /* since minimal containers use a grid instead of flexbox this is used to make it take up the full width */
+    grid-column: 1/3;
+    
+    margin-top: var(--container-gap-y);
 }

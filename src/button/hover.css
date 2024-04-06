@@ -1,0 +1,27 @@
+/* 
+hover animation: hover-state
+
+the background transformation animation is in the style block above
+*/
+:where(
+    .input-box :is(
+        button, 
+        input:is(
+            [type="submit"],
+            [type="button"],
+            [type="reset"]
+        )
+    )
+):hover {
+    background-size: 250%;
+
+    color: var(--button-hover-color);
+
+
+    border-left: var(--button-hover-border-left, var(--button-hover-border, var(--button-border-left, var(--button-border))));
+    border-right: var(--button-hover-border-right, var(--button-hover-border, var(--button-border-right, var(--button-border))));
+    border-top: var(--button-hover-border-top, var(--button-hover-border, var(--button-border-top, var(--button-border))));
+    border-bottom: var(--button-hover-border-bottom, var(--button-hover-border, var(--button-border-bottom, var(--button-border))));
+
+
+}

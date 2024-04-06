@@ -7,65 +7,76 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-<!-- <link rel="stylesheet" href="external_sources_for_testing/normalize.css"> -->
 
 
 
-<!-- reset browser styles -->
-<link rel="stylesheet" href="css/reset.css">
-
-<!-- load variables -->
-<link rel="stylesheet" href="css/variables.css">
-
-<!-- load containers -->
-<link rel="stylesheet" href="css/container/container_core.css">
-    <link rel="stylesheet" href="css/container/container_minimal.css">
-
-<!-- load container items -->
-<link rel="stylesheet" href="css/container_item/container_item_core.css">
-    <link rel="stylesheet" href="css/container_item/button.css">
-    <link rel="stylesheet" href="css/container_item/icon.css">
-
-    <!-- load messages -->
-    <link rel="stylesheet" href="css/container_item/message/message_core.css">
-        <link rel="stylesheet" href="css/container_item/message/message_note.css">
-        <link rel="stylesheet" href="css/container_item/message/message_alert.css">
-
-    <!-- load inputs -->
-    <link rel="stylesheet" href="css/container_item/input/input_core.css">
-
-        <!-- load tags -->
-        <link rel="stylesheet" href="css/container_item/input/tag/tag_core.css">
-
-            <link rel="stylesheet" href="css/container_item/input/tag/tag_required.css">
-
-            <link rel="stylesheet" href="css/container_item/input/tag/tag_valid.css">
-            <link rel="stylesheet" href="css/container_item/input/tag/tag_invalid.css">
 
 
-            <!-- override all others -->
-            <link rel="stylesheet" href="css/container_item/input/tag/tag_floating.css">
-            <link rel="stylesheet" href="css/container_item/input/tag/tag_readonly.css">
 
-        
-        <link rel="stylesheet" href="css/container_item/input/input_text.css">
+<link rel="stylesheet" href="src/global.css">
+
+<link rel="stylesheet" href="src/container/base.css">
+<link rel="stylesheet" href="src/container/minimal.css">
+<link rel="stylesheet" href="src/container/advanced.css">
+
+<link rel="stylesheet" href="src/button/base.css">
+<link rel="stylesheet" href="src/button/hover.css">
+<link rel="stylesheet" href="src/button/locked.css">
+
+<link rel="stylesheet" href="src/icon/base.css">
+
+<link rel="stylesheet" href="src/info/base.css">
+<link rel="stylesheet" href="src/info/alert.css">
+<link rel="stylesheet" href="src/info/note.css">
+
+<link rel="stylesheet" href="src/input/base.css">
+
+<link rel="stylesheet" href="src/tag/base.css">
+<link rel="stylesheet" href="src/tag/required.css">
+<link rel="stylesheet" href="src/tag/valid.css">
+<link rel="stylesheet" href="src/tag/invalid.css">
+<link rel="stylesheet" href="src/tag/floating.css">
+<link rel="stylesheet" href="src/tag/locked.css">
+
 
 
 <style>
     body {
-        max-width: 900px;
+        max-width: 600px;
         margin: auto;
+
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+
+    .input-box {
+        margin-bottom: 30px;
     }
 
 
     body {
-        --container-border-bottom: solid var(--global-primary-color) 2px;
-        --input-border-radius: 0px; 
+        /* --container-border: solid black 2px;
+        --container-border-left: solid black 2px;
+        --container-border-right: solid black 2px;
+        --container-border-bottom: solid black 2px;
+        --container-gap: 0px;
+    
+        --container-box-shadow: 
+        5px 5px 0px 0px black,
+        10px 10px 0px 0px rgba(0, 0, 0, 0.534);
 
+        --icon-color: firebrick;
+        --icon-padding: 10px 15px;
+        --icon-border-right: solid black 1px;
+        --icon-border-bottom: solid black 1px;
 
+        --input-border-bottom: solid black 1px;
+        --input-padding: 5px 10px;
+
+        --tag-padding: 0px 10px; */
 
     }
-
 
 
 </style>
@@ -75,47 +86,119 @@
 <br>
 
 <!-- normal -->
-<div class="input-box">
-    <i class="fa-duotone fa-key"></i>
-    <span>06-</span>
 
-    <label>
-        <span>telefoon nummer</span>
-        <input placeholder=" " >
+
+<h1>minimal containers</h1>
+
+<details>
+    <summary>testing</summary>
+
+
+
+    <label class="input-box">
+        <i class="fa-regular fa-circle-info"></i>
+
+        <span>Tell us about yourself</span>
+        <input  >
     </label>
 
-    <button>show password</button>
+    <label class="input-box">
+        <i class="fa-solid fa-book"></i>
 
-    <span role="alert">password must be longer then 8 characters</span>
-</div>
+        <span>What is your favorite book?</span>
+        <input >
 
+    </label>
+
+    <label class="input-box">
+        <i class="fa-solid fa-bicycle"></i>
+
+        <span>What type of bike to you ride?</span>
+        <input >
+
+        <span role="note">If none, leave empty</span>
+    </label>
+
+
+</details>
+
+
+
+
+
+<details open>
+    <summary>minimal default</summary>
+
+    <label class="input-box">
+        <span>default</span>
+        <input>
+    </label>
+    
+    <label class="input-box">
+        <span>
+            <i class="fa-duotone fa-balloons"></i>
+            default + icon in span
+        </span>
+        <input >
+    </label>
+
+    <label class="input-box">
+        <span>default + icon left</span>
+        <input >
+
+        <i class="fa-duotone fa-key"></i>
+    </label>
+
+    <label class="input-box">
+        <i class="fa-sharp fa-solid fa-music"></i>
+
+        <span>default + icon</span>
+        <input >
+    </label>
+
+    <label class="input-box">
+        <i class="fa-duotone fa-key"></i>
+        
+        <span>default + icon + note</span> 
+        <input>
+        
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </label> 
+
+    <label class="input-box">
+        <span>default + alert</span> 
+        <input>
+        
+        <span role="alert">Field cannot be empty!</span>
+    </label> 
+
+    <label class="input-box">
+        <span>Type "i am sure" to confirm delete</span> 
+        <input>
+        
+        <span role="note">This action cannot be undone</span>
+    </label> 
+
+    <label class="input-box">
+        
+        <span>default + icon left + note + alert</span> 
+        <input>
+        
+        <i class="fa-duotone fa-key"></i>
+
+        <span role="alert">password does not meet requirements!</span>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </label> 
+</details>
+
+
+
+
+    <!-- <span role="alert">password cannot be the same as your old password</span> -->
+
+<!-- 
+    
 <label class="input-box">
-    <span>password</span>
-    <input required placeholder=" " >
-
-    <i class="fa-duotone fa-code"></i>
-</label>
-
-<label class="input-box">
-    <i class="fa-duotone fa-code"></i>
-
-    <span>password readonly</span>
-    <input disabled value="123123" placeholder=" " >
-</label>
-
-<label class="input-box">
-    <i class="fa-duotone fa-code"></i>
-
-    <span>password</span> 
-    <input type="password" placeholder=" " >
-
-    <button type="button">show password</button>
-
-    <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
-    <span role="alert">password cannot be the same as your old password</span>
-</label> 
-
-<!-- <label class="input-box">
     <span>kleur</span>
     <input type="color" >
 
@@ -132,4 +215,20 @@
         <span>kleur</span>
         <input type="radio" >
     </label>
-</div> -->
+</div> 
+
+<div class="input-box">
+    <i class="fa-duotone fa-key"></i>
+    <span>06-</span>
+
+    <label>
+        <span>telefoon nummer</span>
+        <input placeholder=" " >
+    </label>
+
+    <button>show password</button>
+
+    <span role="alert">password must be longer then 8 characters</span>
+</div>
+
+-->
