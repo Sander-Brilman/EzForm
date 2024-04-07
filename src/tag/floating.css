@@ -4,7 +4,6 @@ styling for the tag for a floating label
 .input-box :where(label:has(
     :is(
         input,
-        select,
         textarea
     )[placeholder=" "]:placeholder-shown:not(:focus)
 ) > span:not([role="alert"], [role="note"])),
@@ -12,7 +11,6 @@ styling for the tag for a floating label
 label.input-box:has(
     :is(
         input,
-        select,
         textarea
     )[placeholder=" "]:placeholder-shown:not(:focus)
 ) > span:not([role="alert"], [role="note"])
@@ -41,7 +39,6 @@ label.input-box:has(
 
 :is(.input-box > label, label.input-box) > :is(
     input,
-    select,
     textarea
 )[placeholder=" "] {
     grid-row: 1;

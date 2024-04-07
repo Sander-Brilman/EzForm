@@ -31,19 +31,35 @@
         grid-column: 5;
     }
 
+    select {
+        /* border: none; */
+        padding: 0 !important;
+        margin: 0 !important;
+
+    }
+    
+    option::before {
+        content: 'HALLo';
+    }
+
+    option {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
 
 </style>
 
 
-<div>
 
-    <span>1</span>
-    <span>2</span>
-    <span>6</span>
-
-    <h1>5</h1>
-
-    <span>3</span>
-    <span>4</span>
-
-</div>
+<label>
+    SomeText
+    <br>
+    <select>
+        <option>Apple</option>
+        <option>Banana</option>
+        <option>Cherry</option>
+        <option>Date</option>
+        <option>Elderberry</option>
+    </select>
+</label>

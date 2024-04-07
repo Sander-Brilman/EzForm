@@ -15,21 +15,31 @@
 
 <link rel="stylesheet" href="src/global.css">
 
+
 <link rel="stylesheet" href="src/container/base.css">
 <link rel="stylesheet" href="src/container/minimal.css">
 <link rel="stylesheet" href="src/container/advanced.css">
+
 
 <link rel="stylesheet" href="src/button/base.css">
 <link rel="stylesheet" href="src/button/hover.css">
 <link rel="stylesheet" href="src/button/locked.css">
 
+
 <link rel="stylesheet" href="src/icon/base.css">
+
 
 <link rel="stylesheet" href="src/info/base.css">
 <link rel="stylesheet" href="src/info/alert.css">
 <link rel="stylesheet" href="src/info/note.css">
 
+
 <link rel="stylesheet" href="src/input/base.css">
+<link rel="stylesheet" href="src/input/floating.css">
+
+<link rel="stylesheet" href="src/input/type/textarea.css">
+<link rel="stylesheet" href="src/input/type/checkbox.css">
+
 
 <link rel="stylesheet" href="src/tag/base.css">
 <link rel="stylesheet" href="src/tag/required.css">
@@ -38,6 +48,7 @@
 <link rel="stylesheet" href="src/tag/floating.css">
 <link rel="stylesheet" href="src/tag/locked.css">
 
+<link rel="stylesheet" href="src/tag/inputTypes/checkbox.css">
 
 
 <style>
@@ -76,6 +87,8 @@
 
         --tag-padding: 0px 10px; */
 
+
+
     }
 
 
@@ -93,13 +106,16 @@
 <details>
     <summary>testing</summary>
 
+    <label class="input-box">
+        <span>qwdqwd</span>
+    </label>
 
 
     <label class="input-box">
         <i class="fa-regular fa-circle-info"></i>
 
         <span>Tell us about yourself</span>
-        <input  >
+        <input placeholder=" " >
     </label>
 
     <label class="input-box">
@@ -114,7 +130,7 @@
         <i class="fa-solid fa-bicycle"></i>
 
         <span>What type of bike to you ride?</span>
-        <input >
+        <input placeholder=" " >
 
         <span role="note">If none, leave empty</span>
     </label>
@@ -124,14 +140,19 @@
 
 
 
+<hr>
 
-
-<details open>
-    <summary>minimal default</summary>
+<details>
+    <summary>minimal - text - default</summary>
 
     <label class="input-box">
         <span>default</span>
         <input>
+    </label>
+
+    <label class="input-box">
+        <span>required</span>
+        <input required>
     </label>
     
     <label class="input-box">
@@ -191,44 +212,489 @@
     </label> 
 </details>
 
+<details>
+    <summary>minimal - text - floating</summary>
 
+    <label class="input-box">
+        <span>default</span>
+        <input placeholder=" ">
+    </label>
 
-
-    <!-- <span role="alert">password cannot be the same as your old password</span> -->
-
-<!-- 
+    <label class="input-box">
+        <span>required</span>
+        <input required placeholder=" ">
+    </label>
     
-<label class="input-box">
-    <span>kleur</span>
-    <input type="color" >
-
-    <button>showcase color</button>
-</label> -->
-
-<!-- special case -->
-<!-- <div class="input-box">
-    <label>
-        <span>kleur</span>
-        <input type="radio" >
+    <label class="input-box">
+        <span>
+            <i class="fa-duotone fa-balloons"></i>
+            default + icon in span
+        </span>
+        <input  placeholder=" ">
     </label>
-    <label>
-        <span>kleur</span>
-        <input type="radio" >
-    </label>
-</div> 
 
-<div class="input-box">
-    <i class="fa-duotone fa-key"></i>
-    <span>06-</span>
-
-    <label>
-        <span>telefoon nummer</span>
+    <label class="input-box">
+        <span>default + icon left</span>
         <input placeholder=" " >
+
+        <i class="fa-duotone fa-key"></i>
     </label>
 
-    <button>show password</button>
+    <label class="input-box">
+        <i class="fa-sharp fa-solid fa-music"></i>
 
-    <span role="alert">password must be longer then 8 characters</span>
-</div>
+        <span>default + icon</span>
+        <input placeholder=" ">
+    </label>
 
--->
+    <label class="input-box">
+        <i class="fa-duotone fa-key"></i>
+        
+        <span>default + icon + note</span> 
+        <input placeholder=" ">
+        
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </label> 
+
+    <label class="input-box">
+        <span>default + alert</span> 
+        <input placeholder=" ">
+        
+        <span role="alert">Field cannot be empty!</span>
+    </label> 
+
+    <label class="input-box">
+        <span>Type "i am sure" to confirm delete</span> 
+        <input placeholder=" ">
+        
+        <span role="note">This action cannot be undone</span>
+    </label> 
+
+    <label class="input-box">
+        
+        <span>default + icon left + note + alert</span> 
+        <input placeholder=" ">
+        
+        <i class="fa-duotone fa-key"></i>
+
+        <span role="alert">password does not meet requirements!</span>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </label> 
+</details>
+
+<hr>
+
+<details>
+    <summary>minimal - textarea - default</summary>
+
+    <label class="input-box">
+        <span>default</span>
+        <textarea></textarea>
+    </label>
+
+    <label class="input-box">
+        <span>required</span>
+        <textarea required></textarea>
+    </label>
+    
+    <label class="input-box">
+        <span>
+            <i class="fa-duotone fa-balloons"></i>
+            default + icon in span
+        </span>
+        <textarea></textarea>
+    </label>
+
+    <label class="input-box">
+        <span>default + icon left</span>
+        <textarea></textarea>
+
+        <i class="fa-duotone fa-key"></i>
+    </label>
+
+    <label class="input-box">
+        <i class="fa-sharp fa-solid fa-music"></i>
+
+        <span>default + icon</span>
+
+        <textarea></textarea>
+    </label>
+
+    <label class="input-box">
+        <i class="fa-duotone fa-key"></i>
+        
+        <span>default + icon + note</span> 
+        <textarea></textarea>
+        
+
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </label> 
+
+    <label class="input-box">
+        <span>default + alert</span> 
+        <textarea></textarea>
+        
+        <span role="alert">Field cannot be empty!</span>
+    </label> 
+
+    <label class="input-box">
+        <span>Type "i am sure" to confirm delete</span> 
+        <textarea></textarea>
+        
+        <span role="note">This action cannot be undone</span>
+    </label> 
+
+    <label class="input-box">
+        
+        <span>default + icon left + note + alert</span> 
+        <textarea></textarea>
+        
+        <i class="fa-duotone fa-key"></i>
+
+        <span role="alert">password does not meet requirements!</span>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </label> 
+</details>
+
+<details>
+    <summary>minimal - textarea - floating</summary>
+
+    <label class="input-box">
+        <span>default</span>
+        <textarea placeholder=" "></textarea>
+    </label>
+
+    <label class="input-box">
+        <span>required</span>
+        <textarea required placeholder=" "></textarea>
+    </label>
+    
+    <label class="input-box">
+        <span>
+            <i class="fa-duotone fa-balloons"></i>
+            default + icon in span
+        </span>
+        <textarea placeholder=" "></textarea>
+    </label>
+
+    <label class="input-box">
+        <span>default + icon left</span>
+        <textarea placeholder=" "></textarea>
+
+        <i class="fa-duotone fa-key"></i>
+    </label>
+
+    <label class="input-box">
+        <i class="fa-sharp fa-solid fa-music"></i>
+
+        <span>default + icon</span>
+
+        <textarea placeholder=" "></textarea>
+    </label>
+
+    <label class="input-box">
+        <i class="fa-duotone fa-key"></i>
+        
+        <span>default + icon + note</span> 
+        <textarea placeholder=" "></textarea>
+        
+
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </label> 
+
+    <label class="input-box">
+        <span>default + alert</span> 
+        <textarea placeholder=" "></textarea>
+        
+        <span role="alert">Field cannot be empty!</span>
+    </label> 
+
+    <label class="input-box">
+        <span>Type "i am sure" to confirm delete</span> 
+        <textarea placeholder=" "></textarea>
+        
+        <span role="note">This action cannot be undone</span>
+    </label> 
+
+    <label class="input-box">
+        
+        <span>default + icon left + note + alert</span> 
+        <textarea placeholder=" "></textarea>
+        
+        <i class="fa-duotone fa-key"></i>
+
+        <span role="alert">password does not meet requirements!</span>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </label> 
+</details>
+
+<hr>
+
+<details>
+    <summary>minimal - select - default</summary>
+
+    <label class="input-box">
+        <span>default</span>
+        <select>
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Cherry</option>
+            <option>Date</option>
+            <option>Elderberry</option>
+        </select>
+    </label>
+
+    <label class="input-box">
+        <span>required</span>
+        <select required>
+            <option disabled selected>select something</option>
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Cherry</option>
+            <option>Date</option>
+            <option>Elderberry</option>
+        </select>
+    </label>
+    
+    <label class="input-box">
+        <span>
+            <i class="fa-duotone fa-balloons"></i>
+            default + icon in span
+        </span>
+        <select>
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Cherry</option>
+            <option>Date</option>
+            <option>Elderberry</option>
+        </select>
+    </label>
+
+    <label class="input-box">
+        <span>default + icon left</span>
+        <select>
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Cherry</option>
+            <option>Date</option>
+            <option>Elderberry</option>
+        </select>
+
+        <i class="fa-duotone fa-key"></i>
+    </label>
+
+    <label class="input-box">
+        <i class="fa-sharp fa-solid fa-music"></i>
+
+        <span>default + icon</span>
+
+        <select>
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Cherry</option>
+            <option>Date</option>
+            <option>Elderberry</option>
+        </select>
+    </label>
+
+    <label class="input-box">
+        <i class="fa-duotone fa-key"></i>
+        
+        <span>default + icon + note</span> 
+        <select>
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Cherry</option>
+            <option>Date</option>
+            <option>Elderberry</option>
+        </select>
+        
+
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </label> 
+
+    <label class="input-box">
+        <span>default + alert</span> 
+        <select>
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Cherry</option>
+            <option>Date</option>
+            <option>Elderberry</option>
+        </select>
+        
+        <span role="alert">Field cannot be empty!</span>
+    </label> 
+
+    <label class="input-box">
+        <span>Type "i am sure" to confirm delete</span> 
+        <select>
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Cherry</option>
+            <option>Date</option>
+            <option>Elderberry</option>
+        </select>
+        
+        <span role="note">This action cannot be undone</span>
+    </label> 
+
+    <label class="input-box">
+        
+        <span>default + icon left + note + alert</span> 
+        <select>
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Cherry</option>
+            <option>Date</option>
+            <option>Elderberry</option>
+        </select>
+        
+        <i class="fa-duotone fa-key"></i>
+
+        <span role="alert">password does not meet requirements!</span>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </label> 
+</details>
+
+<hr>
+
+<details open>
+    <summary>minimal - checkbox - default</summary>
+
+    <label class="input-box">
+        <span>default</span>
+        <input type="checkbox">
+    </label>
+
+    <label class="input-box">
+        <span>required</span>
+        <input type="checkbox" required>
+    </label>
+    
+    <label class="input-box">
+        <span>
+            <i class="fa-duotone fa-balloons"></i>
+            default + icon in span
+        </span>
+        <input type="checkbox" >
+    </label>
+
+    <label class="input-box">
+        <span>default + icon left</span>
+        <input type="checkbox" >
+
+        <i class="fa-duotone fa-key"></i>
+    </label>
+
+    <label class="input-box">
+        <i class="fa-sharp fa-solid fa-music"></i>
+
+        <span>default + icon</span>
+        <input type="checkbox" >
+    </label>
+
+    <label class="input-box">
+        <i class="fa-duotone fa-key"></i>
+        
+        <span>default + icon + note</span> 
+        <input type="checkbox">
+        
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </label> 
+
+    <label class="input-box">
+        <span>default + alert</span> 
+        <input type="checkbox">
+        
+        <span role="alert">Field cannot be empty!</span>
+    </label> 
+
+    <label class="input-box">
+        <span>Type "i am sure" to confirm delete</span> 
+        <input type="checkbox">
+        
+        <span role="note">This action cannot be undone</span>
+    </label> 
+
+    <label class="input-box">
+        
+        <span>default + icon left + note + alert</span> 
+        <input type="checkbox">
+        
+        <i class="fa-duotone fa-key"></i>
+
+        <span role="alert">password does not meet requirements!</span>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </label> 
+</details>
+
+<details>
+    <summary>minimal - checkbox switch - default</summary>
+
+    <label class="input-box">
+        <span>default</span>
+        <input type="checkbox" role="switch">
+    </label>
+
+    <label class="input-box">
+        <span>required</span>
+        <input type="checkbox" role="switch" required>
+    </label>
+    
+    <label class="input-box">
+        <span>
+            <i class="fa-duotone fa-balloons"></i>
+            default + icon in span
+        </span>
+        <input type="checkbox" role="switch" >
+    </label>
+
+    <label class="input-box">
+        <span>default + icon left</span>
+        <input type="checkbox" role="switch" >
+
+        <i class="fa-duotone fa-key"></i>
+    </label>
+
+    <label class="input-box">
+        <i class="fa-sharp fa-solid fa-music"></i>
+
+        <span>default + icon</span>
+        <input type="checkbox" role="switch" >
+    </label>
+
+    <label class="input-box">
+        <i class="fa-duotone fa-key"></i>
+        
+        <span>default + icon + note</span> 
+        <input type="checkbox" role="switch">
+        
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </label> 
+
+    <label class="input-box">
+        <span>default + alert</span> 
+        <input type="checkbox" role="switch">
+        
+        <span role="alert">Field cannot be empty!</span>
+    </label> 
+
+    <label class="input-box">
+        <span>Type "i am sure" to confirm delete</span> 
+        <input type="checkbox" role="switch">
+        
+        <span role="note">This action cannot be undone</span>
+    </label> 
+
+    <label class="input-box">
+        
+        <span>default + icon left + note + alert</span> 
+        <input type="checkbox" role="switch">
+        
+        <i class="fa-duotone fa-key"></i>
+
+        <span role="alert">password does not meet requirements!</span>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </label> 
+</details>

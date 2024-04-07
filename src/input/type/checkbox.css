@@ -1,0 +1,9 @@
+
+
+.input-box input[type="checkbox"] {
+    grid-row-start: 1; 
+    /* justify-self: start; */
+
+    grid-row: 1 / 3;
+
+}

@@ -1,24 +1,3 @@
 /* 
 minimal container using the label directly as host
 */
-
-label.input-box {
-    display: grid;
-    grid-template-columns: 1fr;
-    --input-column: 1;
-
-    row-gap: 0px;
-}
-
-/* icon on the right */
-label.input-box:has(i)
-{
-    grid-template-columns: 1fr auto;
-}
-
-/* icon on the left */
-label.input-box:has(i ~ :is(input, textarea, select))
-{
-    grid-template-columns: auto 1fr;
-    --input-column: 2;
-}

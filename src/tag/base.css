@@ -4,24 +4,30 @@ styling for the tag. the tag is the span with text nested inside the label
 .input-box :is(label > span:not([role]))
 {
     display: block;
+    box-sizing: border-box;
 
-    width: fit-content;
+    width: var(--tag-width);
     
     /* needed to allow the tag (span) to be position absolute in case of a floating label  */
     position: relative;
         top: var(--tag-offset-top, 0px);
         left: var(--tag-offset-left, 0px);
 
-
+    /* 
+    here this new internal variable is used instead of the --tag-transition-duration directly 
+    
+    because internal variables get a minified name resulting in a smaller total output size at build time
+    */
+    --internal-tag-transition: var(--tag-transition-duration) ease-out;
     transition: 
-        font-size var(--tag-transition-duration) ease-out,
-        border var(--tag-transition-duration) ease-out,
-        color var(--tag-transition-duration) ease-out,
-        padding var(--tag-transition-duration) ease-out,
-        top var(--tag-transition-duration) ease-out,
-        left var(--tag-transition-duration) ease-out,
-        background var(--tag-transition-duration) ease-out,
-        translate var(--tag-transition-duration) ease-out;
+        font-size var(--internal-tag-transition),
+        border var(--internal-tag-transition),
+        color var(--internal-tag-transition),
+        padding var(--internal-tag-transition),
+        top var(--internal-tag-transition),
+        left var(--internal-tag-transition),
+        background var(--internal-tag-transition),
+        translate var(--internal-tag-transition);
 
 
     padding: var(--tag-padding);
@@ -46,6 +52,11 @@ styling for the tag. the tag is the span with text nested inside the label
     pointer-events: none;
 }
 
+.input-box:has(:is(input, textarea, select):focus) :is(label > span:not([role])) {
+    font-weight: bold;
+}
+
+
 
 /* 
 styling for the tag suffix. the suffix is a pseudo ::after element where the content is being set in the respective state css file
@@ -59,7 +70,7 @@ styling for the tag suffix. the suffix is a pseudo ::after element where the con
 minimal container styles
 */
 label.input-box > span:not([role="alert"], [role="note"]) {
-    grid-column: var(--input-column);
+    grid-column: var(--internal-input-column);
     grid-row: 1;
 
     height: fit-content;

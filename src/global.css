@@ -73,7 +73,7 @@
     --container-border-right: solid white;
     --container-border-left: solid white;
 
-    --container-gap: 5px 5px;
+    --container-gap: 5px;
 
 
 
@@ -94,7 +94,7 @@
     /* note message */
     --note-color: var(--global-label-color);
     --note-background: none;
-    --note-padding: 5px;
+    --note-padding: 0;
     --note-border-radius: initial;
     --note-icon-color: var(--global-label-color);
     --note-font-size: initial;
@@ -110,7 +110,7 @@
     /* alert message */
     --alert-color: var(--global-error-color);
     --alert-background: none;
-    --alert-padding: 5px;
+    --alert-padding: 0;
     --alert-border-radius: inherit;
     --alert-icon-color: var(--global-error-color);
     --alert-font-size: initial;
@@ -155,12 +155,13 @@
 
 
     /* tag */
-    --tag-background: initial;
+    --tag-background: var(--container-background);
     --tag-color: var(--global-label-color);
     --tag-padding: 0 5px;
     --tag-border-radius: initial;
     --tag-transition-duration: var(--global-transition-duration);
     --tag-font-size: .85rem;
+    --tag-width: fit-content;
 
     --tag-offset-top: initial;
     --tag-offset-left: initial;
@@ -247,7 +248,6 @@
     /* input */
     --input-background: none;
     --input-color: initial;
-    --input-padding: 17px 5px 5px 5px;
     --input-padding: 4px 5px;
     --input-border-radius: initial;
     --input-font-size: initial;
@@ -257,6 +257,21 @@
     --input-border-top: initial;
     --input-border-right: initial;
     --input-border-left: initial;
+
+    /* input floating */
+    --input-floating-background: none;
+    --input-floating-color: initial;
+    --input-floating-padding: 19px 5px 5px 5px;
+    --input-floating-border-radius: initial;
+    --input-floating-font-size: initial;
+
+    --input-floating-border: initial;
+    --input-floating-border-bottom: initial;
+    --input-floating-border-top: initial;
+    --input-floating-border-right: initial;
+    --input-floating-border-left: initial;
+
+
 
     /* input required */
 

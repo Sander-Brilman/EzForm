@@ -1,0 +1,17 @@
+
+.input-box :is(
+    input, 
+    textarea, 
+)[placeholder=" "] {
+    /* standard properties */
+    padding: var(--input-floating-padding);
+    background: var(--input-floating-background);
+    color: var(--input-floating-color);
+    border-radius: var(--input-floating-border-radius, var(--global-border-radius));
+    font-size: var(--input-floating-font-size);
+
+    border-left: var(--input-floating-border-left, var(--input-floating-border));
+    border-right: var(--input-floating-border-right, var(--input-floating-border));
+    border-top: var(--input-floating-border-top, var(--input-floating-border));
+    border-bottom: var(--input-floating-border-bottom, var(--input-floating-border));
+}

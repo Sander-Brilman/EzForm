@@ -3,10 +3,6 @@ a container can be either:
 
 - a element (usually a div) with the class .input-box
 - a label as a minimal container
-
-
-a element with the class .input box will only be styled as a container if it
-contains atleast 1 label. 
 */
 
 .input-box {
@@ -21,6 +17,35 @@ contains atleast 1 label.
     border-bottom: var(--container-border-bottom, var(--container-border));
     border-right: var(--container-border-right, var(--container-border));
 
-    gap: var(--container-gap);
+    /* min-height: 63px; */
 
+    gap: var(--container-gap);
+}
+
+:is(label.input-box, .input-box > label) {
+    display: grid;
+
+    grid-template-columns: var(--internal-template-columns, 1fr);
+
+    --internal-input-column: 1;
+
+    gap: var(--container-gap);
+    /* remove the row-gap provided by css grid and artificially re-create it using a top margin at info and alert elements
+
+    This is because the tag and the input are in separate rows.
+    Leaving the row-gap as-is would mean there would be a gap between the tag and the input */
+    row-gap: 0px;
+}
+
+/* icon on the right */
+:is(label.input-box, .input-box > label):has(> i)
+{
+    --internal-template-columns: 1fr auto;
+}
+
+/* icon on the left */
+:is(label.input-box, .input-box > label):has(> i ~ :is(input, textarea, select))
+{
+    --internal-template-columns: auto 1fr;
+    --internal-input-column: 2;
 }

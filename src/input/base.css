@@ -26,6 +26,6 @@ minimal container styles
 */
 
 label.input-box > :is(input, select, textarea) {
-    grid-column: var(--input-column);
+    grid-column: var(--internal-input-column);
     grid-row: 2;
 }

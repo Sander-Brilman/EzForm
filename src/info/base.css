@@ -50,7 +50,10 @@ the ::before element of the messages where the icon is rendered
     min-width: 1em;
     height: 1em;
 
-    margin: 3px 5px 0 0;
+    /* margin: 3px 5px 0 0; */
+    margin: var(--icon-padding);
+    margin-top: 3px;
+    margin-bottom: 0;
 
 
     /* due use of an image mask, the background of the ::before will be the eventual color of the icon 
@@ -59,7 +62,7 @@ the ::before element of the messages where the icon is rendered
 
 
     /* mask-image for the svg icon at the start of the message 
-    --internal-info-svg-icon will be set by the specific implementation in the message_note.css & message_alert.css files */
+    --internal-info-svg-icon will be set by the specific implementation in the note.css & alert.css files */
     mask-image: var(--internal-info-icon);
     -webkit-mask-image: var(--internal-info-icon);
 
@@ -83,7 +86,9 @@ label.input-box > :is(
     [role="note"]
 ) {
     /* since minimal containers use a grid instead of flexbox this is used to make it take up the full width */
-    grid-column: 1/3;
+    grid-column: 1 / -1;
     
-    margin-top: var(--container-gap-y);
+    margin: var(--container-gap) 0 0;
+    margin-left: 0;
+    margin-right: 0;
 }
