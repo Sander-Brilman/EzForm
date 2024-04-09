@@ -1,5 +1,5 @@
 
-.input-box :is(
+.Vstyle-input :is(
     input, 
     textarea, 
 )[placeholder=" "] {

@@ -1,14 +1,14 @@
 /* 
 styling for the tag for a floating label
 */
-.input-box :where(label:has(
+.Vstyle-input :where(label:has(
     :is(
         input,
         textarea
     )[placeholder=" "]:placeholder-shown:not(:focus)
 ) > span:not([role="alert"], [role="note"])),
 
-label.input-box:has(
+label.Vstyle-input:has(
     :is(
         input,
         textarea
@@ -37,7 +37,7 @@ label.input-box:has(
     font-size: var(--tag-floating-font-size, var(--input-font-size));
 }
 
-:is(.input-box > label, label.input-box) > :is(
+:is(.Vstyle-input > label, label.Vstyle-input) > :is(
     input,
     textarea
 )[placeholder=" "] {

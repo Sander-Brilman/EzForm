@@ -1,11 +1,11 @@
 /* 
 a container can be either:
 
-- a element (usually a div) with the class .input-box
+- a element (usually a div) with the class .Vstyle-input
 - a label as a minimal container
 */
 
-.input-box {
+.Vstyle-input {
     padding: var(--container-padding);
     box-shadow: var(--container-box-shadow);
 
@@ -22,7 +22,7 @@ a container can be either:
     gap: var(--container-gap);
 }
 
-:is(label.input-box, .input-box > label) {
+:is(label.Vstyle-input, .Vstyle-input > label) {
     display: grid;
 
     grid-template-columns: var(--internal-template-columns, 1fr);
@@ -38,13 +38,13 @@ a container can be either:
 }
 
 /* icon on the right */
-:is(label.input-box, .input-box > label):has(> i)
+:is(label.Vstyle-input, .Vstyle-input > label):has(> i)
 {
     --internal-template-columns: 1fr auto;
 }
 
 /* icon on the left */
-:is(label.input-box, .input-box > label):has(> i ~ :is(input, textarea, select))
+:is(label.Vstyle-input, .Vstyle-input > label):has(> i ~ :is(input, textarea, select))
 {
     --internal-template-columns: auto 1fr;
     --internal-input-column: 2;

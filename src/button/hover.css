@@ -3,8 +3,9 @@ hover animation: hover-state
 
 the background transformation animation is in the style block above
 */
-:where(
-    .input-box :is(
+:is(
+    .Vstyle-button,
+    .Vstyle-input :is(
         button, 
         input:is(
             [type="submit"],

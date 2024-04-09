@@ -3,7 +3,7 @@
 
 base styles for the messages such as notes & alerts at the bottom of the containers
 */
-.input-box :is(
+.Vstyle-input :is(
     [role="alert"], 
     [role="note"]
 ) {
@@ -35,7 +35,7 @@ base styles for the messages such as notes & alerts at the bottom of the contain
 /* 
 the ::before element of the messages where the icon is rendered 
 */
-.input-box :is([role="alert"], [role="note"])::before
+.Vstyle-input :is([role="alert"], [role="note"])::before
 {
     /* needed for the ::before to appear at all */
     content: '';
@@ -50,7 +50,6 @@ the ::before element of the messages where the icon is rendered
     min-width: 1em;
     height: 1em;
 
-    /* margin: 3px 5px 0 0; */
     margin: var(--icon-padding);
     margin-top: 3px;
     margin-bottom: 0;
@@ -81,13 +80,18 @@ the ::before element of the messages where the icon is rendered
 minimal container styles
 */
 
-label.input-box > :is(
+label.Vstyle-input > :is(
     [role="alert"], 
     [role="note"]
 ) {
     /* since minimal containers use a grid instead of flexbox this is used to make it take up the full width */
     grid-column: 1 / -1;
     
+    /* 
+    basically we only want the top margin here to act as gap,
+    but since --container-gap can contain either 1 value or 2 it cannot be used in top-margin directly
+    hence this workaround
+    */
     margin: var(--container-gap) 0 0;
     margin-left: 0;
     margin-right: 0;

@@ -1,4 +1,4 @@
-.input-box > :is(i, label > i)
+.Vstyle-input > :is(i, label > i)
 {
     /* give the icon a fixed width and center it to ensure consistent alignment between icons of different widths*/
     width: 1em;
@@ -29,6 +29,6 @@
 minimal container styles for the icon
 */
 
-label.input-box > i {
+label.Vstyle-input > i {
     grid-row: span 2;
 }

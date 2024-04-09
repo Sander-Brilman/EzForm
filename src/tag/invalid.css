@@ -8,7 +8,7 @@
 
 
 
-.input-box :where(label:has(
+.Vstyle-input :where(label:has(
     :is(
         input,
         select,
@@ -28,7 +28,7 @@
 /* 
 tag suffix for when the input is required
 */
-.input-box :where(label:has(
+.Vstyle-input :where(label:has(
     :is(
         input,
         select,

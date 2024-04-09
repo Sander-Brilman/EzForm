@@ -20,6 +20,8 @@
 <link rel="stylesheet" href="src/container/minimal.css">
 <link rel="stylesheet" href="src/container/advanced.css">
 
+<link rel="stylesheet" href="src/container/inputTypes/checkbox.css">
+
 
 <link rel="stylesheet" href="src/button/base.css">
 <link rel="stylesheet" href="src/button/hover.css">
@@ -61,7 +63,7 @@
 
 
 
-    .input-box {
+    .Vstyle-input {
         margin-bottom: 30px;
     }
 
@@ -106,35 +108,47 @@
 <details>
     <summary>testing</summary>
 
-    <label class="input-box">
-        <span>qwdqwd</span>
-    </label>
+
+    <style>
+        .no-box {
+            --container-box-shadow: none;
+            --container-border-bottom: none;
+            --container-padding: none;
+            --input-padding: none;
+        }
+    </style>
 
 
-    <label class="input-box">
-        <i class="fa-regular fa-circle-info"></i>
 
-        <span>Tell us about yourself</span>
-        <input placeholder=" " >
-    </label>
-
-    <label class="input-box">
+    <label class="Vstyle-input">
         <i class="fa-solid fa-book"></i>
 
         <span>What is your favorite book?</span>
-        <input >
+        <input placeholder="" >
 
     </label>
 
-    <label class="input-box">
-        <i class="fa-solid fa-bicycle"></i>
+    <label class="Vstyle-input">
+        <i class="fa-regular fa-circle-info"></i>
 
-        <span>What type of bike to you ride?</span>
-        <input placeholder=" " >
+        <span>Tell us about yourself</span>
+        <textarea placeholder="" ></textarea>
 
-        <span role="note">If none, leave empty</span>
+        <span role="note">In about 200 words</span>
     </label>
 
+    <label class="Vstyle-input no-box">
+        <span>I would you like to receive spam mail?</span>
+        <input required type="checkbox">
+    </label>
+
+    <button class="Vstyle-button">
+        Versturen
+    </button>
+
+    <br>
+    <br>
+    <br>
 
 </details>
 
@@ -145,17 +159,17 @@
 <details>
     <summary>minimal - text - default</summary>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>default</span>
         <input>
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>required</span>
         <input required>
     </label>
     
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>
             <i class="fa-duotone fa-balloons"></i>
             default + icon in span
@@ -163,21 +177,21 @@
         <input >
     </label>
 
-    <label class="input-box">
-        <span>default + icon left</span>
+    <label class="Vstyle-input">
+        <span>default + icon right</span>
         <input >
 
         <i class="fa-duotone fa-key"></i>
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <i class="fa-sharp fa-solid fa-music"></i>
 
         <span>default + icon</span>
         <input >
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <i class="fa-duotone fa-key"></i>
         
         <span>default + icon + note</span> 
@@ -186,23 +200,23 @@
         <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>default + alert</span> 
         <input>
         
         <span role="alert">Field cannot be empty!</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>Type "i am sure" to confirm delete</span> 
         <input>
         
         <span role="note">This action cannot be undone</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         
-        <span>default + icon left + note + alert</span> 
+        <span>default + icon right + note + alert</span> 
         <input>
         
         <i class="fa-duotone fa-key"></i>
@@ -215,17 +229,17 @@
 <details>
     <summary>minimal - text - floating</summary>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>default</span>
         <input placeholder=" ">
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>required</span>
         <input required placeholder=" ">
     </label>
     
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>
             <i class="fa-duotone fa-balloons"></i>
             default + icon in span
@@ -233,21 +247,21 @@
         <input  placeholder=" ">
     </label>
 
-    <label class="input-box">
-        <span>default + icon left</span>
+    <label class="Vstyle-input">
+        <span>default + icon right</span>
         <input placeholder=" " >
 
         <i class="fa-duotone fa-key"></i>
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <i class="fa-sharp fa-solid fa-music"></i>
 
         <span>default + icon</span>
         <input placeholder=" ">
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <i class="fa-duotone fa-key"></i>
         
         <span>default + icon + note</span> 
@@ -256,23 +270,23 @@
         <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>default + alert</span> 
         <input placeholder=" ">
         
         <span role="alert">Field cannot be empty!</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>Type "i am sure" to confirm delete</span> 
         <input placeholder=" ">
         
         <span role="note">This action cannot be undone</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         
-        <span>default + icon left + note + alert</span> 
+        <span>default + icon right + note + alert</span> 
         <input placeholder=" ">
         
         <i class="fa-duotone fa-key"></i>
@@ -287,17 +301,17 @@
 <details>
     <summary>minimal - textarea - default</summary>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>default</span>
         <textarea></textarea>
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>required</span>
         <textarea required></textarea>
     </label>
     
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>
             <i class="fa-duotone fa-balloons"></i>
             default + icon in span
@@ -305,14 +319,14 @@
         <textarea></textarea>
     </label>
 
-    <label class="input-box">
-        <span>default + icon left</span>
+    <label class="Vstyle-input">
+        <span>default + icon right</span>
         <textarea></textarea>
 
         <i class="fa-duotone fa-key"></i>
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <i class="fa-sharp fa-solid fa-music"></i>
 
         <span>default + icon</span>
@@ -320,7 +334,7 @@
         <textarea></textarea>
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <i class="fa-duotone fa-key"></i>
         
         <span>default + icon + note</span> 
@@ -330,23 +344,23 @@
         <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>default + alert</span> 
         <textarea></textarea>
         
         <span role="alert">Field cannot be empty!</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>Type "i am sure" to confirm delete</span> 
         <textarea></textarea>
         
         <span role="note">This action cannot be undone</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         
-        <span>default + icon left + note + alert</span> 
+        <span>default + icon right + note + alert</span> 
         <textarea></textarea>
         
         <i class="fa-duotone fa-key"></i>
@@ -359,17 +373,17 @@
 <details>
     <summary>minimal - textarea - floating</summary>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>default</span>
         <textarea placeholder=" "></textarea>
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>required</span>
         <textarea required placeholder=" "></textarea>
     </label>
     
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>
             <i class="fa-duotone fa-balloons"></i>
             default + icon in span
@@ -377,14 +391,14 @@
         <textarea placeholder=" "></textarea>
     </label>
 
-    <label class="input-box">
-        <span>default + icon left</span>
+    <label class="Vstyle-input">
+        <span>default + icon right</span>
         <textarea placeholder=" "></textarea>
 
         <i class="fa-duotone fa-key"></i>
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <i class="fa-sharp fa-solid fa-music"></i>
 
         <span>default + icon</span>
@@ -392,7 +406,7 @@
         <textarea placeholder=" "></textarea>
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <i class="fa-duotone fa-key"></i>
         
         <span>default + icon + note</span> 
@@ -402,23 +416,23 @@
         <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>default + alert</span> 
         <textarea placeholder=" "></textarea>
         
         <span role="alert">Field cannot be empty!</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>Type "i am sure" to confirm delete</span> 
         <textarea placeholder=" "></textarea>
         
         <span role="note">This action cannot be undone</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         
-        <span>default + icon left + note + alert</span> 
+        <span>default + icon right + note + alert</span> 
         <textarea placeholder=" "></textarea>
         
         <i class="fa-duotone fa-key"></i>
@@ -433,7 +447,7 @@
 <details>
     <summary>minimal - select - default</summary>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>default</span>
         <select>
             <option>Apple</option>
@@ -444,7 +458,7 @@
         </select>
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>required</span>
         <select required>
             <option disabled selected>select something</option>
@@ -456,7 +470,7 @@
         </select>
     </label>
     
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>
             <i class="fa-duotone fa-balloons"></i>
             default + icon in span
@@ -470,8 +484,8 @@
         </select>
     </label>
 
-    <label class="input-box">
-        <span>default + icon left</span>
+    <label class="Vstyle-input">
+        <span>default + icon right</span>
         <select>
             <option>Apple</option>
             <option>Banana</option>
@@ -483,7 +497,7 @@
         <i class="fa-duotone fa-key"></i>
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <i class="fa-sharp fa-solid fa-music"></i>
 
         <span>default + icon</span>
@@ -497,7 +511,7 @@
         </select>
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <i class="fa-duotone fa-key"></i>
         
         <span>default + icon + note</span> 
@@ -513,7 +527,7 @@
         <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>default + alert</span> 
         <select>
             <option>Apple</option>
@@ -526,7 +540,7 @@
         <span role="alert">Field cannot be empty!</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>Type "i am sure" to confirm delete</span> 
         <select>
             <option>Apple</option>
@@ -539,9 +553,9 @@
         <span role="note">This action cannot be undone</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         
-        <span>default + icon left + note + alert</span> 
+        <span>default + icon right + note + alert</span> 
         <select>
             <option>Apple</option>
             <option>Banana</option>
@@ -559,20 +573,20 @@
 
 <hr>
 
-<details open>
+<details >
     <summary>minimal - checkbox - default</summary>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>default</span>
         <input type="checkbox">
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>required</span>
         <input type="checkbox" required>
     </label>
     
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>
             <i class="fa-duotone fa-balloons"></i>
             default + icon in span
@@ -580,21 +594,21 @@
         <input type="checkbox" >
     </label>
 
-    <label class="input-box">
-        <span>default + icon left</span>
+    <label class="Vstyle-input">
+        <span>default + icon right</span>
         <input type="checkbox" >
 
         <i class="fa-duotone fa-key"></i>
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <i class="fa-sharp fa-solid fa-music"></i>
 
         <span>default + icon</span>
         <input type="checkbox" >
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <i class="fa-duotone fa-key"></i>
         
         <span>default + icon + note</span> 
@@ -603,23 +617,23 @@
         <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>default + alert</span> 
         <input type="checkbox">
         
         <span role="alert">Field cannot be empty!</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>Type "i am sure" to confirm delete</span> 
         <input type="checkbox">
         
         <span role="note">This action cannot be undone</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         
-        <span>default + icon left + note + alert</span> 
+        <span>default + icon right + note + alert</span> 
         <input type="checkbox">
         
         <i class="fa-duotone fa-key"></i>
@@ -629,20 +643,20 @@
     </label> 
 </details>
 
-<details>
+<details open>
     <summary>minimal - checkbox switch - default</summary>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>default</span>
         <input type="checkbox" role="switch">
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>required</span>
         <input type="checkbox" role="switch" required>
     </label>
     
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>
             <i class="fa-duotone fa-balloons"></i>
             default + icon in span
@@ -650,21 +664,21 @@
         <input type="checkbox" role="switch" >
     </label>
 
-    <label class="input-box">
-        <span>default + icon left</span>
+    <label class="Vstyle-input">
+        <span>default + icon right</span>
         <input type="checkbox" role="switch" >
 
         <i class="fa-duotone fa-key"></i>
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <i class="fa-sharp fa-solid fa-music"></i>
 
         <span>default + icon</span>
         <input type="checkbox" role="switch" >
     </label>
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <i class="fa-duotone fa-key"></i>
         
         <span>default + icon + note</span> 
@@ -673,23 +687,23 @@
         <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>default + alert</span> 
         <input type="checkbox" role="switch">
         
         <span role="alert">Field cannot be empty!</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         <span>Type "i am sure" to confirm delete</span> 
         <input type="checkbox" role="switch">
         
         <span role="note">This action cannot be undone</span>
     </label> 
 
-    <label class="input-box">
+    <label class="Vstyle-input">
         
-        <span>default + icon left + note + alert</span> 
+        <span>default + icon right + note + alert</span> 
         <input type="checkbox" role="switch">
         
         <i class="fa-duotone fa-key"></i>

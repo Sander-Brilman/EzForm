@@ -1,9 +1,22 @@
 
 
-.input-box input[type="checkbox"] {
+.Vstyle-input input[type="checkbox"] {
     grid-row-start: 1; 
-    /* justify-self: start; */
-
     grid-row: 1 / 3;
 
+    min-height: 1.5em;
+    width: 1em;
+
+    margin: var(--input-padding);
+}
+
+
+.Vstyle-input input[type="checkbox"][role="switch"] {
+    grid-row-start: 1; 
+    grid-row: 1 / 3;
+
+    min-height: 1.5em;
+    width: 1em;
+
+    margin: var(--input-padding);
 }

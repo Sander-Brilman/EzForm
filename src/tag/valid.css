@@ -10,7 +10,7 @@ for these styles to work propperly a placeholder of any value is needed
 /* 
 tag for when the input is valid
 */
-.input-box :where(label:has(
+.Vstyle-input :where(label:has(
     :is(
         input,
         select,
@@ -30,7 +30,7 @@ tag for when the input is valid
 /* 
 tag suffix for when the input is valid
 */
-.input-box :where(label:has(
+.Vstyle-input :where(label:has(
     :is(
         input,
         select,

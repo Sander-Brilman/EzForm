@@ -1,6 +1,6 @@
 
 
-.input-box:not(label) {
+.Vstyle-input:not(label) {
     /* flex wrap for allowing messages to be on a new line by setting a full width */
     flex-wrap: wrap;        
 

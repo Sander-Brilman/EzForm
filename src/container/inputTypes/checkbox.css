@@ -1,0 +1,22 @@
+
+/* 
+The styles for labels (minimal container or not) for checkboxes
+*/
+:is(label.Vstyle-input, .Vstyle-input > label):has(input[type="checkbox"]) 
+{
+    --internal-template-columns: auto 1fr;
+    --internal-input-column: 1;
+}
+
+
+:is(label.Vstyle-input, .Vstyle-input > label):has(input[type="checkbox"]):has(> i)
+{
+    --internal-template-columns: auto 1fr auto;
+    --internal-input-column: 1;
+}
+
+:is(label.Vstyle-input, .Vstyle-input > label):has(input[type="checkbox"]):has(> i ~ :is(input, textarea, select)) 
+{
+    --internal-template-columns: auto auto 1fr;
+    --internal-input-column: 2;
+}

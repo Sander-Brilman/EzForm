@@ -1,5 +1,5 @@
-.input-box,
-.input-box > * {
+.Vstyle-input,
+.Vstyle-input > * {
     border-radius: var(--global-border-radius);
     box-sizing: content-box;
     
@@ -9,7 +9,7 @@
     line-height: 20px !important;
 }
 
-.input-box *:focus 
+.Vstyle-input *:focus 
 {
     outline: var(--global-focus-outline);
     outline-offset: var(--global-focus-outline-offset);
@@ -23,7 +23,6 @@
         shared (global) settings being re-used in multiple places. 
         can be overridden using the specific css-style-specific variables listed below
     */
-
     --global-primary-color: blue;
     --global-secondary-color: #009dff;
 

@@ -2,7 +2,7 @@
 locked (readonly) state for input
 */
 
-.input-box :is(
+.Vstyle-input :is(
     input, 
     textarea, 
     select

@@ -1,14 +1,15 @@
 /* 
 disabled buttons
 */
-:where(
-    .input-box :is(
+:is(
+    .Vstyle-button,
+    .Vstyle-input :is(
         button, 
         input[type="submit"],
         input[type="button"],
         input[type="reset"]
-    ):disabled
-) {
+    )
+):disabled {
     cursor:not-allowed;
     opacity: .6;
 }

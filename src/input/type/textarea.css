@@ -1,6 +1,6 @@
 
 
-:is(.input-box > label, label.input-box) > textarea {
+:is(.Vstyle-input > label, label.Vstyle-input) > textarea {
 
     height: 3em;
 

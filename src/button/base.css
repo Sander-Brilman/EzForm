@@ -1,4 +1,5 @@
-.input-box :is(
+.Vstyle-button,
+.Vstyle-input :is(
     button, 
     input:is(
         [type="submit"],

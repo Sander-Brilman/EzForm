@@ -6,7 +6,7 @@ tag style for when the input is marked as required via the [required] attribute.
 
 
 
-:is(.input-box > label, label.input-box):has(
+:is(.Vstyle-input > label, label.Vstyle-input):has(
     :is(input, select, textarea):required:not(:user-valid)
 ) > span:not([role]) 
 {
@@ -19,7 +19,7 @@ tag style for when the input is marked as required via the [required] attribute.
     border-bottom: var(--tag-required-border-bottom, var(--tag-required-border));
 }
 
-:is(.input-box > label, label.input-box):has(
+:is(.Vstyle-input > label, label.Vstyle-input):has(
     :is(input, select, textarea):not(:user-valid):required
 ) > span:not([role])::after 
 {
