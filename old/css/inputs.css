@@ -142,8 +142,6 @@ input checkbox / radio switch
     background-position: -8px center;
     border-radius: 20px;
     transition: background-color .3s ease-out, background-position .3s ease-in-out, border .3s ease-out;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     padding: 0;
 }

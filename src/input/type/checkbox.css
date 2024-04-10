@@ -1,6 +1,6 @@
 
 
-.Vstyle-input input[type="checkbox"] {
+:is(.Vstyle-input > label, label.Vstyle-input) > input[type="checkbox"] {
     grid-row-start: 1; 
     grid-row: 1 / 3;
 
@@ -11,12 +11,64 @@
 }
 
 
-.Vstyle-input input[type="checkbox"][role="switch"] {
+:is(.Vstyle-input > label, label.Vstyle-input) > input[type="checkbox"][role="switch"] {
     grid-row-start: 1; 
     grid-row: 1 / 3;
 
-    min-height: 1.5em;
-    width: 1em;
+    min-height: 1em;
+    min-width: 2em;
+
+
+    /* 
+    reset styles for the switch 
+    */
+    padding: 0;
+    border-radius: 30px;
+    appearance: none;
+    
+    
 
     margin: var(--input-padding);
+    
+    align-self: center;
+
+    --internal-switch-border-fallback: solid 1px var(--global-primary-color);
+
+    border-left: var(--input-border-left, var(--input-border, var(--internal-switch-border-fallback)));
+    border-right: var(--input-border-right, var(--input-border, var(--internal-switch-border-fallback)));
+    border-top: var(--input-border-top, var(--input-border, var(--internal-switch-border-fallback)));
+    border-bottom: var(--input-border-bottom, var(--input-border, var(--internal-switch-border-fallback)));
+
+
+    background-image: radial-gradient(circle, var(--input-color, var(--global-primary-color))  25%, transparent 30%);
+    background-color: var(--input-background, transparent);
+    background-position: -7px center;
+
+
+    transition: 
+        background-color .3s ease-out, 
+        background-position .15s linear, 
+        border .3s ease-out;
 }
+
+
+:is(.Vstyle-input > label, label.Vstyle-input) > input[type="checkbox"][role="switch"]:checked {
+
+    background-image: radial-gradient(circle, var(--input-checked-color, white) 25%, transparent 30%);
+    background-position: 7px center;
+
+    background-color: var(--input-checked-background, var(--global-primary-color));
+
+    border-left: var(--input-checked-border-left, var(--input-checked-border, var(--internal-switch-border-fallback)));
+    border-right: var(--input-checked-border-right, var(--input-checked-border, var(--internal-switch-border-fallback)));
+    border-top: var(--input-checked-border-top, var(--input-checked-border, var(--internal-switch-border-fallback)));
+    border-bottom: var(--input-checked-border-bottom, var(--input-checked-border, var(--internal-switch-border-fallback)));
+}
+
+/* TODO: remake the entire switch code to use pseudo elements */
+/* input[type="checkbox"][role="switch"]::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: red;
+} */

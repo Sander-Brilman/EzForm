@@ -244,6 +244,8 @@
     --tag-valid-border-left: initial;
 
 
+
+
     /* input */
     --input-background: none;
     --input-color: initial;
@@ -270,10 +272,7 @@
     --input-floating-border-right: initial;
     --input-floating-border-left: initial;
 
-
-
     /* input required */
-
     --input-required-background: initial;
     --input-required-color: initial;
 
@@ -285,7 +284,6 @@
 
 
     /* input readonly */
-
     --input-readonly-background: initial;
     --input-readonly-color: #4d4d4d;
 
@@ -297,7 +295,6 @@
 
 
     /* input invalid */
-
     --input-invalid-background: initial;
     --input-invalid-color: initial;
 
@@ -309,7 +306,6 @@
 
     
     /* input valid */
-
     --input-valid-background: initial;
     --input-valid-color: initial;
 
@@ -318,4 +314,10 @@
     --input-valid-border-top: initial;
     --input-valid-border-right: initial;
     --input-valid-border-left: initial;
+
+
+    /* input checked */
+    --input-valid-background: initial;
+    --input-valid-color: initial;
+
 }
