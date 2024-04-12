@@ -54,8 +54,9 @@ the ::before element of the messages where the icon is rendered
     margin: 3px;
     margin-top: 3px;
     margin-bottom: 0; */
-    margin-right: 5px;
-    margin-top: 3px;
+    margin: 3px 5px 0 1px;
+    /* margin-right: 5px;
+    margin-top: 3px; */
 
 
     /* due use of an image mask, the background of the ::before will be the eventual color of the icon 

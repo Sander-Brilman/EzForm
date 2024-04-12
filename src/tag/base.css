@@ -4,8 +4,6 @@ styling for the tag. the tag is the span with text nested inside the label
 .Vstyle-input :is(label > span:not([role]))
 {
     display: block;
-    box-sizing: border-box;
-
     width: var(--tag-width);
     
     /* needed to allow the tag (span) to be position absolute in case of a floating label  */

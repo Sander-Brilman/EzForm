@@ -1,6 +1,6 @@
 
 
-:is(.Vstyle-input > label, label.Vstyle-input) > input[type="checkbox"] {
+:is(.Vstyle-input > label, label.Vstyle-input) > input:is([type="checkbox"], [type="radio"]) {
     grid-row-start: 1; 
     grid-row: 1 / 3;
 
@@ -11,7 +11,7 @@
 }
 
 
-:is(.Vstyle-input > label, label.Vstyle-input) > input[type="checkbox"][role="switch"] {
+:is(.Vstyle-input > label, label.Vstyle-input) > input:is([type="checkbox"], [type="radio"])[role="switch"] {
     grid-row-start: 1; 
     grid-row: 1 / 3;
 
@@ -52,7 +52,7 @@
 }
 
 
-:is(.Vstyle-input > label, label.Vstyle-input) > input[type="checkbox"][role="switch"]:checked {
+:is(.Vstyle-input > label, label.Vstyle-input) > input:is([type="checkbox"], [type="radio"])[role="switch"]:checked {
 
     background-image: radial-gradient(circle, var(--input-checked-color, white) 25%, transparent 30%);
     background-position: 7px center;

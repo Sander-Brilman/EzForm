@@ -1,65 +1,98 @@
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<link rel="stylesheet" href="src/global.css">
+
+
+<link rel="stylesheet" href="src/container/base.css">
+<link rel="stylesheet" href="src/container/minimal.css">
+<link rel="stylesheet" href="src/container/advanced.css">
+
+<link rel="stylesheet" href="src/container/inputTypes/checkbox_or_radio.css">
+
+
+<link rel="stylesheet" href="src/button/base.css">
+<link rel="stylesheet" href="src/button/hover.css">
+<link rel="stylesheet" href="src/button/locked.css">
+
+
+<link rel="stylesheet" href="src/icon/base.css">
+
+
+<link rel="stylesheet" href="src/info/base.css">
+<link rel="stylesheet" href="src/info/alert.css">
+<link rel="stylesheet" href="src/info/note.css">
+
+
+<link rel="stylesheet" href="src/input/base.css">
+<link rel="stylesheet" href="src/input/floating.css">
+
+<link rel="stylesheet" href="src/input/type/textarea.css">
+<link rel="stylesheet" href="src/input/type/checkbox_or_radio.css">
+<link rel="stylesheet" href="src/input/type/range.css">
+<link rel="stylesheet" href="src/input/type/color.css">
+
+
+<link rel="stylesheet" href="src/tag/base.css">
+<link rel="stylesheet" href="src/tag/required.css">
+<link rel="stylesheet" href="src/tag/valid.css">
+<link rel="stylesheet" href="src/tag/invalid.css">
+<link rel="stylesheet" href="src/tag/floating.css">
+<link rel="stylesheet" href="src/tag/locked.css">
+
+<link rel="stylesheet" href="src/tag/inputTypes/checkbox_or_radio.css">
 
 <style>
-
-    div {
-        display: grid;
-
-        grid-template-columns: auto auto auto auto 1fr auto auto auto auto;
-
-
-        gap: 30px;
-
-        border: black solid 2px;
+    body {
+        max-width: 700px;
+        margin: auto;
     }
 
-    h1,
-    span {
-        display: block;
-        width: 30px;
-        height: 30px;
-        background-color: rebeccapurple;
+    [type=range] {
+        padding: 10px !important;
+        box-sizing: border-box;
     }
 
-    h1 ~ span {
-        /* grid-column: 6; */
-    }
-
-    h1 {
-        background-color: blue;
-
-        grid-column: 5;
-    }
-
-    select {
-        /* border: none; */
-        padding: 0 !important;
-        margin: 0 !important;
+    .test {
+        appearance: none;
 
     }
-    
-    option::before {
-        content: 'HALLo';
+
+    ::-webkit-slider-runnable-track {
+        background: red;
     }
 
-    option {
-        padding: 0 !important;
-        margin: 0 !important;
+    ::-webkit-slider-thumb {
+        border-color:white;
+        color: white;
     }
 
 
 </style>
 
+<fieldset class="Vstyle-input">
+    <legend>Kies een optie</legend>
+    <label>
+        <span>Option 1</span>
+        <input type="radio" role="switch" name="radioG1" >
+    </label>
+
+    <label>
+        <span>Option 2</span>
+        <input type="radio" role="switch" name="radioG1" >
+    </label>
+
+    <label>
+        <span>Option 3</span>
+        <input type="radio" role="switch" name="radioG1" >
+    </label>
+</fieldset>
 
 
-<label>
-    SomeText
-    <br>
-    <select>
-        <option>Apple</option>
-        <option>Banana</option>
-        <option>Cherry</option>
-        <option>Date</option>
-        <option>Elderberry</option>
-    </select>
-</label>
+<input type="range" class="form-range" >
+
+<br>
+<br>
+<br>
+
+<input type="range" class="test" >

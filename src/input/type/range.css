@@ -1,0 +1,18 @@
+
+/* 
+.Vstyle-input input[type="range"] {
+    appearance: none;
+}
+
+
+.Vstyle-input input[type="range"]::-webkit-slider-runnable-track {
+    background-color: var(--input-background, #d3d3d3);
+    background-color: lightgrey;
+    border-radius: 50px;
+    height: 10px;
+}
+
+.Vstyle-input input[type="range"]::-webkit-slider-thumb {
+    position: relative;
+    top: -3px;
+} */
