@@ -1,12 +1,12 @@
 /* 
 styling for the tag for a floating label
 */
-.Vstyle-input :where(label:has(
+.Vstyle-input > label:has(
     :is(
         input,
         textarea
     )[placeholder=" "]:placeholder-shown:not(:focus)
-) > span:not([role="alert"], [role="note"])),
+) > span:not([role="alert"], [role="note"]),
 
 label.Vstyle-input:has(
     :is(
@@ -37,10 +37,5 @@ label.Vstyle-input:has(
     font-size: var(--tag-floating-font-size, var(--input-font-size));
 }
 
-:is(.Vstyle-input > label, label.Vstyle-input) > :is(
-    input,
-    textarea
-)[placeholder=" "] {
-    grid-row: 1;
-}
+
 

@@ -1,7 +1,10 @@
 
 
 :is(.Vstyle-input > label, label.Vstyle-input) > textarea {
+    height: 4em;
+}
 
-    height: 3em;
 
+:is(.Vstyle-input > label, label.Vstyle-input) > textarea[placeholder] {
+    height: 5em;
 }

@@ -3,6 +3,8 @@
     input, 
     textarea, 
 )[placeholder=" "] {
+    grid-row: 1;
+
     /* standard properties */
     padding: var(--input-floating-padding);
     background: var(--input-floating-background);

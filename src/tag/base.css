@@ -6,6 +6,14 @@ styling for the tag. the tag is the span with text nested inside the label
     display: block;
     width: var(--tag-width);
     
+
+
+    grid-column: var(--internal-input-column);
+    grid-row: 1;
+
+    height: fit-content;
+
+
     /* needed to allow the tag (span) to be position absolute in case of a floating label  */
     position: relative;
         top: var(--tag-offset-top, 0px);
@@ -50,10 +58,6 @@ styling for the tag. the tag is the span with text nested inside the label
     pointer-events: none;
 }
 
-/* .Vstyle-input:has(:is(input, textarea, select):focus) :is(label > span:not([role])) {
-    font-weight: bold;
-} */
-
 
 
 /* 
@@ -61,15 +65,4 @@ styling for the tag suffix. the suffix is a pseudo ::after element where the con
 */
 .Vstyle-input label > span:not([role="alert"], [role="note"])::after {
     margin-left: 3px;
-}
-
-
-/* 
-minimal container styles
-*/
-label.Vstyle-input > span:not([role="alert"], [role="note"]) {
-    grid-column: var(--internal-input-column);
-    grid-row: 1;
-
-    height: fit-content;
 }

@@ -8,13 +8,13 @@
 
 
 
-.Vstyle-input :where(label:has(
+.Vstyle-input label:has(
     :is(
         input,
         select,
         textarea
     ):user-invalid
-) > span) {
+) > span {
 
     background: var(--tag-invalid-background, var(--tag-background));
     color: var(--tag-invalid-color, var(--tag-color, var(--global-label-color)));
@@ -28,13 +28,13 @@
 /* 
 tag suffix for when the input is required
 */
-.Vstyle-input :where(label:has(
+.Vstyle-input label:has(
     :is(
         input,
         select,
         textarea
     ):user-invalid
-) > span)::after {
+) > span::after {
 
     color: var(--tag-invalid-suffix-color);
     content: var(--tag-invalid-suffix);

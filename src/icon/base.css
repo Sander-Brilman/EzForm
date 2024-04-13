@@ -1,7 +1,7 @@
 .Vstyle-input > :is(i, label > i)
 {
     /* give the icon a fixed width and center it to ensure consistent alignment between icons of different widths*/
-    width: 1em;
+    /* width: 1em; */
     justify-content: center;
     align-items: center;
 

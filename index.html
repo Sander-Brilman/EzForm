@@ -121,7 +121,7 @@
         }
     </style>
 
-    <fieldset class="Vstyle-input">
+    <!-- <fieldset class="Vstyle-input">
         <legend>Kies een optie</legend>
         <label>
             <span>Option 1</span>
@@ -137,16 +137,26 @@
             <span>Option 3</span>
             <input type="radio" role="switch" name="radioG1" >
         </label>
-    </fieldset>
+    </fieldset> -->
 
 
     <label class="Vstyle-input">
         <i class="fa-solid fa-book"></i>
 
         <span>What is your favorite book?</span>
-        <input placeholder="" >
+        <input placeholder=" " >
 
+        <span role="note">If you dont read at all leave empty</span>
     </label>
+
+    <div class="Vstyle-input">
+        <i class="fa-solid fa-book"></i>
+        <label>
+            <span>What is your favorite book?</span>
+            <input placeholder=" " >
+        </label>
+        <span role="note">If you dont read at all leave empty</span>
+    </div>
 
     <label class="Vstyle-input">
         <i class="fa-regular fa-circle-info"></i>
@@ -875,7 +885,6 @@
     </label> 
 </details>
 
-
 <hr>
 
 <details>
@@ -1027,7 +1036,7 @@
 
     <label class="Vstyle-input">
         <span>default</span>
-        <input type="file" placeholder=" ">
+        <input type="file">
     </label>
 
     <label class="Vstyle-input">
@@ -1090,4 +1099,359 @@
         <span role="alert">password does not meet requirements!</span>
         <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
     </label> 
+</details>
+
+
+<h1>Advanced containers</h1>
+
+<details>
+    <summary>Advanced - text - default</summary>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>default</span>
+            <input>
+        </label>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>required</span>
+            <input required>
+        </label>
+    </div>
+
+    <div class="Vstyle-input">
+        <span>$</span>
+
+        <label>
+            <span>prefix</span>
+            <input>
+        </label>
+
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>suffix</span>
+            <input>
+        </label>
+
+        <span>$</span>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>button right</span>
+            <input>
+        </label>
+
+        <button>Click me</button>
+    </div>
+
+    <div class="Vstyle-input">
+        <button>Click me</button>
+
+        <label>
+            <span>button left</span>
+            <input>
+        </label>
+    </div>
+
+    <div class="Vstyle-input">
+        <i class="fa-duotone fa-balloons"></i>
+        <label>
+            <span>icon left</span>
+            <input>
+        </label>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>note</span>
+            <input>
+        </label>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>alert</span>
+            <input>
+        </label>
+        <span role="alert">Field cannot be empty!</span>
+    </div>
+
+    <div class="Vstyle-input">
+        <i class="fa-duotone fa-balloons"></i>
+
+        <label>
+            <span>note + icon left</span>
+            <input>
+        </label>
+
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>note + icon right</span>
+            <input>
+        </label>
+
+        <i class="fa-duotone fa-balloons"></i>
+
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
+    
+    <div class="Vstyle-input">
+        <label>
+            <span>note + icon right</span>
+            <input>
+        </label>
+
+        <i class="fa-duotone fa-key"></i>
+
+        <span role="alert">password does not meet requirements!</span>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
+</details>
+
+<details>
+    <summary>Advanced - text - floating</summary>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>default</span>
+            <input placeholder=" ">
+        </label>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>required</span>
+            <input placeholder=" " required>
+        </label>
+    </div>
+
+    <div class="Vstyle-input">
+        <i class="fa-duotone fa-balloons"></i>
+        <label>
+            <span>icon left</span>
+            <input placeholder=" ">
+        </label>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>note</span>
+            <input placeholder=" ">
+        </label>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>alert</span>
+            <input placeholder=" ">
+        </label>
+        <span role="alert">Field cannot be empty!</span>
+    </div>
+
+    <div class="Vstyle-input">
+        <i class="fa-duotone fa-balloons"></i>
+
+        <label>
+            <span>note + icon left</span>
+            <input placeholder=" ">
+        </label>
+
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>note + icon right</span>
+            <input placeholder=" ">
+        </label>
+
+        <i class="fa-duotone fa-balloons"></i>
+
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
+    
+    <div class="Vstyle-input">
+        <label>
+            <span>note + icon right</span>
+            <input placeholder=" ">
+        </label>
+
+        <i class="fa-duotone fa-key"></i>
+
+        <span role="alert">password does not meet requirements!</span>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
+</details>
+
+<hr>
+
+<details>
+    <summary>Advanced - textarea - default</summary>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>default</span>
+            <textarea></textarea>
+        </label>
+    </div>
+    
+
+    <div class="Vstyle-input">
+        <label>
+            <span>required</span>
+            <textarea required></textarea>
+        </label>
+    </div>
+
+    <div class="Vstyle-input">
+        <i class="fa-duotone fa-balloons"></i>
+        <label>
+            <span>icon left</span>
+            <textarea></textarea>
+        </label>
+    </div>
+    
+    <div class="Vstyle-input">
+        <label>
+            <span>note</span>
+            <textarea></textarea>
+        </label>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>alert</span>
+            <textarea></textarea>
+        </label>
+        <span role="alert">Field cannot be empty!</span>
+    </div>
+
+    <div class="Vstyle-input">
+        <i class="fa-duotone fa-balloons"></i>
+
+        <label>
+            <span>note + icon left</span>
+            <textarea></textarea>
+        </label>
+
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>note + icon right</span>
+            <textarea></textarea>
+        </label>
+
+        <i class="fa-duotone fa-balloons"></i>
+
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
+    
+    <div class="Vstyle-input">
+        <label>
+            <span>note + icon right</span>
+            <textarea></textarea>
+        </label>
+
+        <i class="fa-duotone fa-key"></i>
+
+        <span role="alert">password does not meet requirements!</span>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
+</details>
+
+<details>
+    <summary>Advanced - textarea - floating</summary>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>default</span>
+            <textarea placeholder=" "></textarea>
+        </label>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>required</span>
+            <textarea placeholder=" " required></textarea>
+        </label>
+    </div>
+
+    <div class="Vstyle-input">
+        <i class="fa-duotone fa-balloons"></i>
+        <label>
+            <span>icon left</span>
+            <textarea placeholder=" "></textarea>
+        </label>
+    </div>
+    
+    <div class="Vstyle-input">
+        <label>
+            <span>note</span>
+            <textarea placeholder=" "></textarea>
+        </label>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>alert</span>
+            <textarea placeholder=" "></textarea>
+        </label>
+        <span role="alert">Field cannot be empty!</span>
+    </div>
+
+    <div class="Vstyle-input">
+        <i class="fa-duotone fa-balloons"></i>
+
+        <label>
+            <span>note + icon left</span>
+            <textarea placeholder=" "></textarea>
+        </label>
+
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>note + icon right</span>
+            <textarea placeholder=" "></textarea>
+        </label>
+
+        <i class="fa-duotone fa-balloons"></i>
+
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
+    
+    <div class="Vstyle-input">
+        <label>
+            <span>note + icon right</span>
+            <textarea placeholder=" "></textarea>
+        </label>
+
+        <i class="fa-duotone fa-key"></i>
+
+        <span role="alert">password does not meet requirements!</span>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
 </details>
