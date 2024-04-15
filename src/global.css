@@ -31,9 +31,6 @@
 
     --global-border-radius: 0px;
 
-    --global-button-color: var(--global-primary-color);
-    --global-button-hover-color: rgba(0, 0, 0, 0.212);
-
     --global-focus-outline: solid 2px rgba(0, 0, 0, 0.7);
     --global-focus-outline: solid 2px rgba(var(--global-primary-color), 50%);
     --global-focus-outline-offset: 2px;
@@ -41,34 +38,19 @@
     --global-transition-duration: .3s;
 
 
-    /* 
-    for each customizable item there will always be at least (but not limited to) the following css-style-specific variables available:
-    
-    - background
-    - padding
-    - border radius
-    - text color (AKA just color)
-    - font-size
 
-    - border
-    - border-left
-    - border-top
-    - border-right
-    - border-bottom
 
-    these will represent the pain css values that will always override the shared global settings 
-    */
 
 
     /* container */
     --container-background: white;
     --container-padding: 8px;
-    --container-border-radius: initial;
+    --container-border-radius: var(--global-border-radius);
     --container-box-shadow: 0px 0px 5px 1px #d3d3d3;
 
     --container-border: initial;
     --container-border-bottom: solid var(--global-primary-color);
-    --container-border-top: initial;
+    --container-border-top: var(--container-border);
     --container-border-right: solid white;
     --container-border-left: solid white;
 
@@ -81,14 +63,14 @@
     --icon-background: initial;
     --icon-color: var(--global-primary-color);
     --icon-padding: 8px;
-    --icon-border-radius: initial;
+    --icon-border-radius: var(--global-border-radius);
     --icon-font-size: 22px;
     
     --icon-border: initial;
-    --icon-border-bottom: initial;
-    --icon-border-top: initial;
-    --icon-border-right: initial;
-    --icon-border-left: initial;
+    --icon-border-bottom: var(--icon-border);
+    --icon-border-top: var(--icon-border);
+    --icon-border-right: var(--icon-border);
+    --icon-border-left: var(--icon-border);
 
     /* note message */
     --note-color: var(--global-label-color);
@@ -100,10 +82,10 @@
     --note-font-size: .9rem;
 
     --note-border: initial;
-    --note-border-bottom: initial;
-    --note-border-top: initial;
-    --note-border-right: initial;
-    --note-border-left: initial;
+    --note-border-bottom: var(--note-border);
+    --note-border-top: var(--note-border);
+    --note-border-right: var(--note-border);
+    --note-border-left: var(--note-border);
 
 
     /* alert message */
@@ -116,10 +98,10 @@
     --alert-font-size: .9rem;
 
     --alert-border: initial;
-    --alert-border-bottom: initial;
-    --alert-border-top: initial;
-    --alert-border-right: initial;
-    --alert-border-left: initial;
+    --alert-border-bottom: var(--alert-border);
+    --alert-border-top: var(--alert-border);
+    --alert-border-right: var(--alert-border);
+    --alert-border-left: var(--alert-border);
 
 
 
@@ -127,30 +109,40 @@
 
 
     /* button */
-    --button-background: var(--global-button-color);
+    --button-background: var(--global-primary-color);
     --button-color: white;
     --button-padding: .5em 1.2em;
-    --button-border-radius: initial;
+    --button-border-radius: var(--global-border-radius);
     --button-transition-duration: var(--global-transition-duration);
     --button-font-size: initial;
 
-    --button-border: transparent 2px solid;
-    --button-border-bottom: initial;
-    --button-border-top: initial;
-    --button-border-right: initial;
-    --button-border-left: initial;
-
-
+    --button-border: initial;
+    --button-border-bottom: var(--button-border);
+    --button-border-top: var(--button-border);
+    --button-border-right: var(--button-border);
+    --button-border-left: var(--button-border);
 
     /* button:hover */
-    --button-hover-background: var(--global-button-hover-color);
-    --button-hover-color: white;
+    --button-hover-background: color-mix(in srgb, var(--button-background), #000000ab);
+    --button-hover-color: var(--button-color);
     
     --button-hover-border: initial;
-    --button-hover-border-bottom: initial;
-    --button-hover-border-top: initial;
-    --button-hover-border-right: initial;
-    --button-hover-border-left: initial;
+    --button-hover-border-bottom: var(--button-hover-border);
+    --button-hover-border-top: var(--button-hover-border);
+    --button-hover-border-right: var(--button-hover-border);
+    --button-hover-border-left: var(--button-hover-border);
+
+
+    /* button:locked */
+    --button-locked-background: color-mix(in srgb, var(--button-background), var(--container-background));
+    --button-locked-color: var(--button-color);
+    
+    --button-locked-border: initial;
+    --button-locked-border-bottom: var(--button-locked-border);
+    --button-locked-border-top: var(--button-locked-border);
+    --button-locked-border-right: var(--button-locked-border);
+    --button-locked-border-left: var(--button-locked-border);
+
 
 
     /* tag */
@@ -166,132 +158,130 @@
     --tag-offset-left: initial;
     
     --tag-border: initial;
-    --tag-border-bottom: initial;
-    --tag-border-top: initial;
-    --tag-border-right: initial;
-    --tag-border-left: initial;
+    --tag-border-bottom: var(--tag-border);
+    --tag-border-top: var(--tag-border);
+    --tag-border-right: var(--tag-border);
+    --tag-border-left: var(--tag-border);
 
     /* tag floating */
 
-    --tag-floating-offset-top: initial;
+    --tag-floating-font-size: initial;
+
+    --tag-floating-offset-top: 0px;
     --tag-floating-offset-left: initial;
 
     --tag-floating-background: initial;
-    --tag-floating-color: initial;
-    --tag-floating-font-size: initial;
+    --tag-floating-color: var(--input-color);
 
     --tag-floating-border: initial;
-    --tag-floating-border-bottom: initial;
-    --tag-floating-border-top: initial;
-    --tag-floating-border-right: initial;
-    --tag-floating-border-left: initial;
+    --tag-floating-border-bottom: var(--tag-floating-border);
+    --tag-floating-border-top: var(--tag-floating-border);
+    --tag-floating-border-right: var(--tag-floating-border);
+    --tag-floating-border-left: var(--tag-floating-border);
 
 
     /* tag required */
 
-    --tag-required-background: initial;
-    --tag-required-color: initial;
-
     --tag-required-suffix-color: var(--global-error-color);
     --tag-required-suffix: '*';
 
+    --tag-required-background: var(--tag-background);
+    --tag-required-color: var(--tag-color);
+
     --tag-required-border: initial;
-    --tag-required-border-bottom: initial;
-    --tag-required-border-top: initial;
-    --tag-required-border-right: initial;
-    --tag-required-border-left: initial;
+    --tag-required-border-bottom: var(--tag-required-border, var(--tag-border, var(--tag-border-bottom)));
+    --tag-required-border-top: var(--tag-required-border, var(--tag-border, var(--tag-border-top)));
+    --tag-required-border-right: var(--tag-required-border, var(--tag-border, var(--tag-border-right)));
+    --tag-required-border-left: var(--tag-required-border, var(--tag-border, var(--tag-border-left)));
 
-    /* tag readonly */
+    /* tag locked */
 
-    --tag-readonly-background: initial;
-    --tag-readonly-color: initial;
+    --tag-locked-background: var(--tag-background);
+    --tag-locked-color: var(--tag-color);
 
-    --tag-readonly-suffix-color: initial;
-    --tag-readonly-suffix: initial;
+    --tag-locked-border: initial;
+    --tag-locked-border-bottom: var(--tag-locked-border, var(--tag-border-bottom, var(--tag-border)));
+    --tag-locked-border-top: var(--tag-locked-border, var(--tag-border-top, var(--tag-border)));
+    --tag-locked-border-right: var(--tag-locked-border, var(--tag-border-right, var(--tag-border)));
+    --tag-locked-border-left:  var(--tag-locked-border, var(--tag-border-left, var(--tag-border)));
 
-    --tag-readonly-border: initial;
-    --tag-readonly-border-bottom: initial;
-    --tag-readonly-border-top: initial;
-    --tag-readonly-border-right: initial;
-    --tag-readonly-border-left: initial;
-
+    
     /* tag invalid */
-    --tag-invalid-background: initial;
-    --tag-invalid-color: var(--global-error-color);
-
-    --tag-invalid-suffix-color: initial;
+    --tag-invalid-suffix-color: var(--global-error-color);
     --tag-invalid-suffix: '!';
 
+    --tag-invalid-background: var(--tag-background);
+    --tag-invalid-color: var(--global-error-color);
+
     --tag-invalid-border: initial;
-    --tag-invalid-border-bottom: initial;
-    --tag-invalid-border-top: initial;
-    --tag-invalid-border-right: initial;
-    --tag-invalid-border-left: initial;
+    --tag-invalid-border-bottom: var(--tag-invalid-border, var(--tag-border-bottom, var(--tag-border)));
+    --tag-invalid-border-top: var(--tag-invalid-border, var(--tag-border-top, var(--tag-border)));
+    --tag-invalid-border-right: var(--tag-invalid-border, var(--tag-border-right, var(--tag-border)));
+    --tag-invalid-border-left: var(--tag-invalid-border, var(--tag-border-left, var(--tag-border)));
 
 
 
     /* tag valid */
-    --tag-valid-background: initial;
-    --tag-valid-color: initial;
-
     --tag-valid-suffix-color: initial;
     --tag-valid-suffix: initial;
 
+    --tag-valid-background: var(--tag-background);
+    --tag-valid-color: var(--tag-color);
+
     --tag-valid-border: initial;
-    --tag-valid-border-bottom: initial;
-    --tag-valid-border-top: initial;
-    --tag-valid-border-right: initial;
-    --tag-valid-border-left: initial;
+    --tag-valid-border-bottom: var(--tag-valid-border, var(--tag-border, var(--tag-border-bottom)));
+    --tag-valid-border-top: var(--tag-valid-border, var(--tag-border, var(--tag-border-top)));
+    --tag-valid-border-right: var(--tag-valid-border, var(--tag-border, var(--tag-border-right)));
+    --tag-valid-border-left: var(--tag-valid-border, var(--tag-border, var(--tag-border-left)));
 
 
 
 
     /* input */
     --input-background: none;
-    --input-color: initial;
+    --input-color: black;
     --input-padding: 4px 5px;
-    --input-border-radius: initial;
+    --input-border-radius: var(--global-border-radius);
     --input-font-size: initial;
     
     --input-border: initial;
-    --input-border-bottom: initial;
-    --input-border-top: initial;
-    --input-border-right: initial;
-    --input-border-left: initial;
+    --input-border-bottom: var(--input-border);
+    --input-border-top: var(--input-border);
+    --input-border-right: var(--input-border);
+    --input-border-left: var(--input-border);
 
     /* input floating */
     --input-floating-background: none;
     --input-floating-color: initial;
     --input-floating-padding: 19px 5px 5px 5px;
     --input-floating-border-radius: initial;
-    --input-floating-font-size: initial;
 
     --input-floating-border: initial;
-    --input-floating-border-bottom: initial;
-    --input-floating-border-top: initial;
-    --input-floating-border-right: initial;
-    --input-floating-border-left: initial;
+    --input-floating-border-bottom: var(--input-floating-border);
+    --input-floating-border-top: var(--input-floating-border);
+    --input-floating-border-right: var(--input-floating-border);
+    --input-floating-border-left: var(--input-floating-border);
+
+    /* input locked */
+    --input-locked-background: var(--input-background);
+    --input-locked-color: color-mix(in srgb, var(--input-color), rgba(255, 255, 255, 0.479));
+
+    --input-locked-border: initial;
+    --input-locked-border-bottom: var(--input-locked-border, var(--input-border-bottom));
+    --input-locked-border-top: var(--input-locked-border, var(--input-border-top));
+    --input-locked-border-right: var(--input-locked-border, var(--input-border-right));
+    --input-locked-border-left: var(--input-locked-border, var(--input-border-left));
+
 
     /* input required */
     --input-required-background: initial;
     --input-required-color: initial;
 
     --input-required-border: initial;
-    --input-required-border-bottom: initial;
-    --input-required-border-top: initial;
-    --input-required-border-right: initial;
-    --input-required-border-left: initial;
-
-
-    /* input readonly */
-    --input-readonly-background: initial;
-    --input-readonly-color: #4d4d4d;
-
-    --input-readonly-border: initial;
-    --input-readonly-border-bottom: initial;
-    --input-readonly-border-top: initial;
-    --input-readonly-border-right: initial;
-    --input-readonly-border-left: initial;
+    --input-required-border-bottom: var(--input-required-border);
+    --input-required-border-top: var(--input-required-border);
+    --input-required-border-right: var(--input-required-border);
+    --input-required-border-left: var(--input-required-border);
 
 
     /* input invalid */
@@ -299,10 +289,10 @@
     --input-invalid-color: initial;
 
     --input-invalid-border: initial;
-    --input-invalid-border-bottom: initial;
-    --input-invalid-border-top: initial;
-    --input-invalid-border-right: initial;
-    --input-invalid-border-left: initial;
+    --input-invalid-border-bottom: var(--input-invalid-border);
+    --input-invalid-border-top: var(--input-invalid-border);
+    --input-invalid-border-right: var(--input-invalid-border);
+    --input-invalid-border-left: var(--input-invalid-border);
 
     
     /* input valid */
@@ -310,14 +300,9 @@
     --input-valid-color: initial;
 
     --input-valid-border: initial;
-    --input-valid-border-bottom: initial;
-    --input-valid-border-top: initial;
-    --input-valid-border-right: initial;
-    --input-valid-border-left: initial;
-
-
-    /* input checked */
-    --input-valid-background: initial;
-    --input-valid-color: initial;
+    --input-valid-border-bottom: var(--input-valid-border);
+    --input-valid-border-top: var(--input-valid-border);
+    --input-valid-border-right: var(--input-valid-border);
+    --input-valid-border-left: var(--input-valid-border);
 
 }

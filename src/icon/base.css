@@ -9,16 +9,12 @@
     color: var(--icon-color);
     padding: var(--icon-padding);
 
+    border-radius: var(--icon-border-radius);
 
-    border-radius: var(--icon-border-radius, var(--global-border-radius));
-
-
-
-    border-left: var(--icon-border-left, var(--icon-border));
-    border-right: var(--icon-border-right, var(--icon-border));
-    border-top: var(--icon-border-top, var(--icon-border));
-    border-bottom: var(--icon-border-bottom, var(--icon-border));
-
+    border-left: var(--icon-border-left);
+    border-right: var(--icon-border-right);
+    border-top: var(--icon-border-top);
+    border-bottom: var(--icon-border-bottom);
 
     /* icons are usually set with text and a specific imported font. so font-size == icon size */
     font-size: var(--icon-font-size);

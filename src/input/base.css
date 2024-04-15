@@ -11,13 +11,13 @@
     padding: var(--input-padding);
     background: var(--input-background);
     color: var(--input-color);
-    border-radius: var(--input-border-radius, var(--global-border-radius));
+    border-radius: var(--input-border-radius);
     font-size: var(--input-font-size);
 
-    border-left: var(--input-border-left, var(--input-border));
-    border-right: var(--input-border-right, var(--input-border));
-    border-top: var(--input-border-top, var(--input-border));
-    border-bottom: var(--input-border-bottom, var(--input-border));
+    border-left: var(--input-border-left);
+    border-right: var(--input-border-right);
+    border-top: var(--input-border-top);
+    border-bottom: var(--input-border-bottom);
 }
 
 

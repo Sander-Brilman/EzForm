@@ -12,10 +12,10 @@ specific style implementation for message type notes
     --internal-info-border-radius: var(--note-border-radius);
     --internal-info-font-size: var(--note-font-size);
 
-    --internal-info-border-left: var(--note-border-left, var(--note-border));
-    --internal-info-border-top: var(--note-border-top, var(--note-border));
-    --internal-info-border-bottom: var(--note-border-bottom, var(--note-border));
-    --internal-info-border-right: var(--note-border-right, var(--note-border));
+    --internal-info-border-left: var(--note-border-left);
+    --internal-info-border-top: var(--note-border-top);
+    --internal-info-border-bottom: var(--note-border-bottom);
+    --internal-info-border-right: var(--note-border-right);
 }
 
 

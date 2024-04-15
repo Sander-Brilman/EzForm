@@ -7,53 +7,41 @@
         [type="reset"]
     )
 ) {
-    /* center the text in the middle of the button. the button is already a flexbox due the reset.css */
+    /* center the text in the middle of the button. the button is already a flexbox due the global reset */
     justify-content: center;
     align-items: center;
 
 
-
     /* 
-    animation explained:
-
-    the --button-background is used to set a standard blank background color for the button.
-    this is the color that will be visible in the non-hover state
-
-    there is a radial-gradient over layed over the blank background color. the gradient has 2 sides.
-    the inner side is the --button-hover-background and the outer side (the one that is visible all the time) is transparent
-
-    in the non-hover state the background size is so small the inner circle is not visible.
-    on hover the background gets resized to make the inner circle cover the entire button.
+    In advanced containers (the only container types buttons are allowed in) all the contents are stretched.
+    To avoid buttons getting MASSIVE in case of textarea's there is this hard-coded height limit
     */
+    max-height: 3.7em;
+
+
+
+
     transition: 
         color var(--button-transition-duration), 
         border var(--button-transition-duration), 
         background var(--button-transition-duration) ease-out;
-    background: 
-        var(--button-background) /* background color */
-        radial-gradient(circle, var(--button-hover-background) 50%, transparent 50%)  /* background image */
-        center  /* background position */
-        top /* background position */
-        / 
-        0 
-        no-repeat; /* background repeat */
-
 
     /* standard properties */
     color: var(--button-color);
     padding: var(--button-padding);
-    border-radius: var(--button-border-radius, var(--global-border-radius));
+    border-radius: var(--button-border-radius);
     font-size: var(--button-font-size);
+    background: var(--button-background);
 
-    border-left: var(--button-border-left, var(--button-border));
-    border-right: var(--button-border-right, var(--button-border));
-    border-top: var(--button-border-top, var(--button-border));
-    border-bottom: var(--button-border-bottom, var(--button-border));
+    border-left: var(--button-border-left);
+    border-right: var(--button-border-right);
+    border-top: var(--button-border-top);
+    border-bottom: var(--button-border-bottom);
 
     cursor: pointer;
 
     /* meaning it will try to fill up all the available space in the container but only when the button is alone in the container
-    otherwise the space will be taken up by the label + input.
+    otherwise the space will be taken up by the label + input (since they have a MUCH higher grow size).
     if multiple buttons are alone (meaning without a label) in the container they will share the space */
     flex-grow: 1;
 }

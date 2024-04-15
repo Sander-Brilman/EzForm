@@ -9,4 +9,10 @@ valid state for input
 ):user-valid {
     background: var(--input-valid-background);
     color: var(--input-valid-color);
+
+    border-left: var(--input-valid-border-left);
+    border-right: var(--input-valid-border-right);
+    border-top: var(--input-valid-border-top);
+    border-bottom: var(--input-valid-border-bottom);
+
 }

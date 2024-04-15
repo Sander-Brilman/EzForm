@@ -10,6 +10,13 @@ disabled buttons
         input[type="reset"]
     )
 ):disabled {
-    cursor:not-allowed;
-    opacity: .6;
+    color: var(--button-locked-color);
+    background: var(--button-locked-background);
+
+    border-left: var(--button-locked-border-left);
+    border-right: var(--button-locked-border-right);
+    border-top: var(--button-locked-border-top);
+    border-bottom: var(--button-locked-border-bottom);
+
+    cursor: not-allowed;
 }

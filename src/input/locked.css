@@ -1,5 +1,5 @@
 /* 
-locked (readonly) state for input
+locked (readonly / disabled) state for input
 */
 
 .Vstyle-input :is(
@@ -10,12 +10,11 @@ locked (readonly) state for input
 {
     cursor: not-allowed;
 
-    background: var(--input-readonly-background, var(--input-background));
-    color: var(--input-readonly-color, var(--input-color));
+    background: var(--input-locked-background);
+    color: var(--input-locked-color);
 
-    border-left: var(--input-readonly-border-left, var(--input-readonly-border, var(--input-border-left, var(--input-border))));
-    border-right: var(--input-readonly-border-right, var(--input-readonly-border, var(--input-border-right, var(--input-border))));
-    border-top: var(--input-readonly-border-top, var(--input-readonly-border, var(--input-border-top, var(--input-border))));
-    border-bottom: var(--input-readonly-border-bottom, var(--input-readonly-border, var(--input-border-bottom, var(--input-border))));
-
+    border-left: var(--input-locked-border-left);
+    border-right: var(--input-locked-border-right);
+    border-top: var(--input-locked-border-top);
+    border-bottom: var(--input-locked-border-bottom);
 }

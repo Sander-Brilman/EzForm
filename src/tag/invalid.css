@@ -1,13 +1,3 @@
-/* 
-[== base styles: tag_core.css ==]
-
-
-
-
-*/
-
-
-
 .Vstyle-input label:has(
     :is(
         input,
@@ -15,18 +5,17 @@
         textarea
     ):user-invalid
 ) > span {
+    background: var(--tag-invalid-background);
+    color: var(--tag-invalid-color);
 
-    background: var(--tag-invalid-background, var(--tag-background));
-    color: var(--tag-invalid-color, var(--tag-color, var(--global-label-color)));
-
-    border-left: var(--tag-invalid-border-left, var(--tag-invalid-border, var(--tag-border-left, var(--tag-border))));
-    border-right: var(--tag-invalid-border-right, var(--tag-invalid-border, var(--tag-border-right, var(--tag-border))));
-    border-top: var(--tag-invalid-border-top, var(--tag-invalid-border, var(--tag-border-top, var(--tag-border))));
-    border-bottom: var(--tag-invalid-border-bottom, var(--tag-invalid-border, var(--tag-border-bottom, var(--tag-border))));
+    border-left: var(--tag-invalid-border-left);
+    border-right: var(--tag-invalid-border-right);
+    border-top: var(--tag-invalid-border-top);
+    border-bottom: var(--tag-invalid-border-bottom);
 }
 
 /* 
-tag suffix for when the input is required
+tag suffix
 */
 .Vstyle-input label:has(
     :is(
@@ -35,8 +24,6 @@ tag suffix for when the input is required
         textarea
     ):user-invalid
 ) > span::after {
-
     color: var(--tag-invalid-suffix-color);
     content: var(--tag-invalid-suffix);
-
 }

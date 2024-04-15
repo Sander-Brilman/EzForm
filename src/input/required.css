@@ -9,4 +9,9 @@ required state for input
 ):required {
     background: var(--input-required-background);
     color: var(--input-required-color);
+
+    border-left: var(--input-required-border-left);
+    border-right: var(--input-required-border-right);
+    border-top: var(--input-required-border-top);
+    border-bottom: var(--input-required-border-bottom);
 }

@@ -1,7 +1,5 @@
 /* 
-hover animation: hover-state
-
-the background transformation animation is in the style block above
+hover animation
 */
 :is(
     .Vstyle-button,
@@ -13,16 +11,12 @@ the background transformation animation is in the style block above
             [type="reset"]
         )
     )
-):hover {
-    background-size: 250%;
-
+):not(:disabled):hover {
     color: var(--button-hover-color);
+    background: var(--button-hover-background);
 
-
-    border-left: var(--button-hover-border-left, var(--button-hover-border, var(--button-border-left, var(--button-border))));
-    border-right: var(--button-hover-border-right, var(--button-hover-border, var(--button-border-right, var(--button-border))));
-    border-top: var(--button-hover-border-top, var(--button-hover-border, var(--button-border-top, var(--button-border))));
-    border-bottom: var(--button-hover-border-bottom, var(--button-hover-border, var(--button-border-bottom, var(--button-border))));
-
-
+    border-left: var(--button-hover-border-left);
+    border-right: var(--button-hover-border-right);
+    border-top: var(--button-hover-border-top);
+    border-bottom: var(--button-hover-border-bottom);
 }

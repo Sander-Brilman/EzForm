@@ -16,25 +16,23 @@ label.Vstyle-input:has(
 ) > span:not([role="alert"], [role="note"])
 
 {
-
-    top: calc(50% + var(--tag-floating-offset-top, 0px));
+    top: calc(50% + var(--tag-floating-offset-top));
     left: var(--tag-floating-offset-left);
 
     translate: 0 -50%;
-    
 
-    padding: var(--tag-floating-padding, var(--tag-padding));
+
     background: var(--tag-floating-background); 
-    color: var(--tag-floating-color, var(--input-color));
-
-    border-left: var(--tag-floating-border-left, var(--tag-floating-border));
-    border-right: var(--tag-floating-border-right, var(--tag-floating-border));
-    border-top: var(--tag-floating-border-top, var(--tag-floating-border));
-    border-bottom: var(--tag-floating-border-bottom, var(--tag-floating-border));
+    color: var(--tag-floating-color);
 
 
+    border-left: var(--tag-floating-border-left);
+    border-right: var(--tag-floating-border-right);
+    border-top: var(--tag-floating-border-top);
+    border-bottom: var(--tag-floating-border-bottom);
 
-    font-size: var(--tag-floating-font-size, var(--input-font-size));
+
+    font-size: var(--tag-floating-font-size);
 }
 
 

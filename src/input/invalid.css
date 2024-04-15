@@ -10,4 +10,9 @@ invalid state for input
 {
     background: var(--input-invalid-background);
     color: var(--input-invalid-color);
+
+    border-left: var(--input-invalid-border-left);
+    border-right: var(--input-invalid-border-right);
+    border-top: var(--input-invalid-border-top);
+    border-bottom: var(--input-invalid-border-bottom);
 }

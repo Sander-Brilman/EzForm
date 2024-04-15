@@ -38,6 +38,10 @@
 
 <link rel="stylesheet" href="src/input/base.css">
 <link rel="stylesheet" href="src/input/floating.css">
+<link rel="stylesheet" href="src/input/required.css">
+<link rel="stylesheet" href="src/input/invalid.css">
+<link rel="stylesheet" href="src/input/valid.css">
+<link rel="stylesheet" href="src/input/locked.css">
 
 <link rel="stylesheet" href="src/input/type/textarea.css">
 <link rel="stylesheet" href="src/input/type/checkbox_or_radio.css">
@@ -145,8 +149,6 @@
 
         <span>What is your favorite book?</span>
         <input placeholder=" " >
-
-        <span role="note">If you dont read at all leave empty</span>
     </label>
 
     <div class="Vstyle-input">
@@ -155,16 +157,13 @@
             <span>What is your favorite book?</span>
             <input placeholder=" " >
         </label>
-        <span role="note">If you dont read at all leave empty</span>
     </div>
 
     <label class="Vstyle-input">
         <i class="fa-regular fa-circle-info"></i>
 
         <span>Tell us about yourself</span>
-        <textarea placeholder="" ></textarea>
-
-        <span role="note">In about 200 words</span>
+        <textarea placeholder=" " ></textarea>
     </label>
 
     <label class="Vstyle-input no-box">
@@ -1217,6 +1216,21 @@
         <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
     </div>
 
+    
+    <div class="Vstyle-input">
+        <i class="fa-duotone fa-key"></i>
+
+        <label>
+            <span>note + alert + icon left + button</span>
+            <input>
+        </label>
+
+        <button type="button">Validate</button>
+
+        <span role="alert">password does not meet requirements!</span>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
 </details>
 
 <details>
@@ -1233,6 +1247,43 @@
         <label>
             <span>required</span>
             <input placeholder=" " required>
+        </label>
+    </div>
+    
+    <div class="Vstyle-input">
+        <span>$</span>
+
+        <label>
+            <span>prefix</span>
+            <input placeholder=" ">
+        </label>
+
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>suffix</span>
+            <input placeholder=" ">
+        </label>
+
+        <span>$</span>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>button right</span>
+            <input placeholder=" ">
+        </label>
+
+        <button>Click me</button>
+    </div>
+
+    <div class="Vstyle-input">
+        <button>Click me</button>
+
+        <label>
+            <span>button left</span>
+            <input placeholder=" ">
         </label>
     </div>
 
@@ -1295,6 +1346,21 @@
         <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
     </div>
 
+    
+    <div class="Vstyle-input">
+        <i class="fa-duotone fa-key"></i>
+
+        <label>
+            <span>note + alert + icon left + button</span>
+            <input placeholder=" ">
+        </label>
+
+        <button type="button">Validate</button>
+
+        <span role="alert">password does not meet requirements!</span>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
 </details>
 
 <hr>
@@ -1309,11 +1375,47 @@
         </label>
     </div>
     
-
     <div class="Vstyle-input">
         <label>
             <span>required</span>
             <textarea required></textarea>
+        </label>
+    </div>
+
+    <div class="Vstyle-input">
+        <span>$</span>
+
+        <label>
+            <span>prefix</span>
+            <textarea></textarea>
+        </label>
+
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>suffix</span>
+            <textarea></textarea>
+        </label>
+
+        <span>$</span>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>button right</span>
+            <textarea></textarea>
+        </label>
+
+        <button>Click me</button>
+    </div>
+
+    <div class="Vstyle-input">
+        <button>Click me</button>
+
+        <label>
+            <span>button left</span>
+            <textarea></textarea>
         </label>
     </div>
 
@@ -1371,6 +1473,21 @@
         </label>
 
         <i class="fa-duotone fa-key"></i>
+
+        <span role="alert">password does not meet requirements!</span>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
+    
+    <div class="Vstyle-input">
+        <i class="fa-duotone fa-key"></i>
+
+        <label>
+            <span>note + alert + icon left + button</span>
+            <textarea></textarea>
+        </label>
+
+        <button type="button">Validate</button>
 
         <span role="alert">password does not meet requirements!</span>
         <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
@@ -1396,6 +1513,43 @@
     </div>
 
     <div class="Vstyle-input">
+        <span>$</span>
+
+        <label>
+            <span>prefix</span>
+            <textarea placeholder=" "></textarea>
+        </label>
+
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>suffix</span>
+            <textarea placeholder=" "></textarea>
+        </label>
+
+        <span>$</span>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>button right</span>
+            <textarea placeholder=" "></textarea>
+        </label>
+
+        <button>Click me</button>
+    </div>
+
+    <div class="Vstyle-input">
+        <button>Click me</button>
+
+        <label>
+            <span>button left</span>
+            <textarea placeholder=" "></textarea>
+        </label>
+    </div>
+
+    <div class="Vstyle-input">
         <i class="fa-duotone fa-balloons"></i>
         <label>
             <span>icon left</span>
@@ -1453,5 +1607,20 @@
         <span role="alert">password does not meet requirements!</span>
         <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
     </div>
+    
+    <div class="Vstyle-input">
+        <i class="fa-duotone fa-key"></i>
+
+        <label>
+            <span>note + alert + icon left + button</span>
+            <textarea placeholder=" "></textarea>
+        </label>
+
+        <button type="button">Validate</button>
+
+        <span role="alert">password does not meet requirements!</span>
+        <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
+    </div>
+
 
 </details>

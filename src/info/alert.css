@@ -10,10 +10,10 @@ specific style implementation for message type alert
     --internal-info-border-radius: var(--alert-border-radius);
     --internal-info-font-size: var(--alert-font-size);
 
-    --internal-info-border-left: var(--alert-border-left, var(--alert-border));
-    --internal-info-border-top: var(--alert-border-top, var(--alert-border));
-    --internal-info-border-bottom: var(--alert-border-bottom, var(--alert-border));
-    --internal-info-border-right: var(--alert-border-right, var(--alert-border));
+    --internal-info-border-left: var(--alert-border-left);
+    --internal-info-border-top: var(--alert-border-top);
+    --internal-info-border-bottom: var(--alert-border-bottom);
+    --internal-info-border-right: var(--alert-border-right);
 }
 
 

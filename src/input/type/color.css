@@ -2,16 +2,15 @@
 
 .Vstyle-input input[type="color"] {
     width: 100%;
-    border: none;
     min-height: 2em;
 }
 
 .Vstyle-input ::-moz-color-swatch  {
-    border-radius: var(--sb-border-radius);
+    border-radius: var(--input-border-radius);
     border: none;
 }
 
 .Vstyle-input ::-webkit-color-swatch {
-    border-radius: var(--sb-border-radius);
+    border-radius: var(--input-border-radius);
     border: none;
 }
