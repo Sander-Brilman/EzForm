@@ -1,6 +1,5 @@
 .Vstyle-input,
 .Vstyle-input > * {
-    border-radius: var(--global-border-radius);
     box-sizing: border-box;
     
     /* display flex for putting all the items for that element side-by-side.  */
@@ -23,16 +22,14 @@
         shared (global) settings being re-used in multiple places. 
         can be overridden using the specific css-style-specific variables listed below
     */
-    --global-primary-color: blue;
-    --global-secondary-color: #009dff;
+    --global-theme-color: blue;
 
     --global-label-color: #6f6f6f;
     --global-error-color: #b22222;
 
     --global-border-radius: 0px;
 
-    --global-focus-outline: solid 2px rgba(0, 0, 0, 0.7);
-    --global-focus-outline: solid 2px rgba(var(--global-primary-color), 50%);
+    --global-focus-outline: solid 2px rgba(var(--global-theme-color), 50%);
     --global-focus-outline-offset: 2px;
 
     --global-transition-duration: .3s;
@@ -49,10 +46,10 @@
     --container-box-shadow: 0px 0px 5px 1px #d3d3d3;
 
     --container-border: initial;
-    --container-border-bottom: solid var(--global-primary-color);
+    --container-border-bottom: var(--container-border, solid var(--global-theme-color));
     --container-border-top: var(--container-border);
-    --container-border-right: solid white;
-    --container-border-left: solid white;
+    --container-border-right: var(--container-border, solid white);
+    --container-border-left: var(--container-border, solid white);
 
     --container-gap: 5px;
 
@@ -61,7 +58,7 @@
 
     /* icon */
     --icon-background: initial;
-    --icon-color: var(--global-primary-color);
+    --icon-color: var(--global-theme-color);
     --icon-padding: 8px;
     --icon-border-radius: var(--global-border-radius);
     --icon-font-size: 22px;
@@ -74,7 +71,7 @@
 
     /* note message */
     --note-color: var(--global-label-color);
-    --note-background: none;
+    --note-background: initial;
     --note-padding: 0;
     --note-border-radius: initial;
     --note-icon-color: var(--global-label-color);
@@ -109,7 +106,7 @@
 
 
     /* button */
-    --button-background: var(--global-primary-color);
+    --button-background: var(--global-theme-color);
     --button-color: white;
     --button-padding: .5em 1.2em;
     --button-border-radius: var(--global-border-radius);
@@ -170,14 +167,8 @@
     --tag-floating-offset-top: 0px;
     --tag-floating-offset-left: initial;
 
-    --tag-floating-background: initial;
     --tag-floating-color: var(--input-color);
-
-    --tag-floating-border: initial;
-    --tag-floating-border-bottom: var(--tag-floating-border);
-    --tag-floating-border-top: var(--tag-floating-border);
-    --tag-floating-border-right: var(--tag-floating-border);
-    --tag-floating-border-left: var(--tag-floating-border);
+    --tag-floating-background: transparent;
 
 
     /* tag required */

@@ -26,10 +26,10 @@ label.Vstyle-input:has(
     color: var(--tag-floating-color);
 
 
-    border-left: var(--tag-floating-border-left);
-    border-right: var(--tag-floating-border-right);
-    border-top: var(--tag-floating-border-top);
-    border-bottom: var(--tag-floating-border-bottom);
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
 
 
     font-size: var(--tag-floating-font-size);

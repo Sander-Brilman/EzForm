@@ -33,9 +33,9 @@
     align-self: center;
 
 
-    border: solid 1px var(--global-primary-color);
+    border: solid 1px var(--global-theme-color);
 
-    background-image: radial-gradient(circle, var(--global-primary-color)  25%, transparent 30%);
+    background-image: radial-gradient(circle, var(--global-theme-color)  25%, transparent 30%);
     background-color: transparent;
     background-position: -7px center;
 
@@ -51,7 +51,7 @@
     background-image: radial-gradient(circle, white 25%, transparent 30%);
     background-position: 7px center;
 
-    background-color: var(--global-primary-color);
+    background-color: var(--global-theme-color);
 }
 
 /* TODO: remake the entire switch code to use pseudo elements, also allowing for customization using variables */
