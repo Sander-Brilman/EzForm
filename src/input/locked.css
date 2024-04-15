@@ -6,7 +6,7 @@ locked (readonly / disabled) state for input
     input, 
     textarea, 
     select
-):read-only 
+):is([readonly], [disabled])
 {
     cursor: not-allowed;
 
