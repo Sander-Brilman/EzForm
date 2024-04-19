@@ -10,13 +10,13 @@ for these styles to work propperly a placeholder of any value is needed
 /* 
 tag for when the input is valid
 */
-.Vstyle-input :where(label:has(
+:is(.Vstyle-input > label, label.Vstyle-input):has(
     :is(
         input,
         select,
         textarea
     ):user-valid
-) > span) 
+) > span 
 {
     background: var(--tag-valid-background);
     color: var(--tag-valid-color);
@@ -30,13 +30,13 @@ tag for when the input is valid
 /* 
 tag suffix for when the input is valid
 */
-.Vstyle-input :where(label:has(
+:is(.Vstyle-input > label, label.Vstyle-input):has(
     :is(
         input,
         select,
         textarea
     ):user-valid
-) > span)::after {
+) > span::after {
     color: var(--tag-valid-suffix-color);
     content: var(--tag-valid-suffix);
 }

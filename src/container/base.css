@@ -26,6 +26,7 @@ a container can be either:
     display: grid;
 
     grid-template-columns: var(--internal-template-columns, 1fr);
+    grid-template-rows: auto 1fr;
 
     --internal-input-column: 1;
 

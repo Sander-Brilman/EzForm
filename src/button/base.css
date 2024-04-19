@@ -12,12 +12,6 @@
     align-items: center;
 
 
-    /* 
-    In advanced containers (the only container types buttons are allowed in) all the contents are stretched.
-    To avoid buttons getting MASSIVE in case of textarea's there is this hard-coded height limit
-    */
-    max-height: 3.7em;
-
 
 
 

@@ -29,6 +29,10 @@
 
 
 <link rel="stylesheet" href="src/icon/base.css">
+<link rel="stylesheet" href="src/icon/valid.css">
+<link rel="stylesheet" href="src/icon/invalid.css">
+<link rel="stylesheet" href="src/icon/locked.css">
+<link rel="stylesheet" href="src/icon/required.css">
 
 
 <link rel="stylesheet" href="src/info/base.css">
@@ -65,13 +69,44 @@
         max-width: 600px;
         margin: auto;
 
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Helvetica;
+    }
+
+    html {
     }
 
 
 
     .Vstyle-input {
         margin-bottom: 30px;
+    }
+
+    :root {
+        --container-box-shadow: none;
+        --container-border: none;
+        --container-gap: 5px 0px;
+
+        --input-border: solid 1px rgb(224, 224, 224);
+        --input-padding: 10px;
+
+        --input-valid-border:  solid 1px green;
+        --input-invalid-border:  solid 1px firebrick;
+        --input-border-right: none;
+        --input-valid-border-right: none;
+
+        --tag-background: transparent;
+        --tag-padding: 5px 0px;
+        --tag-font-size: 1rem;
+
+        --icon-border: solid 1px rgb(224, 224, 224);
+        --icon-valid-border:  solid 1px green;
+        --icon-border-left: none;
+        --icon-valid-border-left: none;
+
+    }
+
+    label.Vstyle-input > i {
+        grid-row: 2;
     }
 
 
@@ -112,7 +147,7 @@
 
 <h1>minimal containers</h1>
 
-<details>
+<details open>
     <summary>testing</summary>
 
 
@@ -145,31 +180,31 @@
 
 
     <label class="Vstyle-input">
-        <i class="fa-solid fa-book"></i>
+        <i class="fa-sharp fa-light fa-at"></i>
 
-        <span>What is your favorite book?</span>
+        <span>Email</span>
         <input placeholder=" " >
     </label>
 
     <div class="Vstyle-input">
         <i class="fa-solid fa-book"></i>
         <label>
-            <span>What is your favorite book?</span>
+            <span>Subject</span>
             <input placeholder=" " >
         </label>
     </div>
 
     <label class="Vstyle-input">
-        <i class="fa-regular fa-circle-info"></i>
-
-        <span>Tell us about yourself</span>
+        <i class="fa-duotone fa-signature"></i>
+                
+        <span>message</span>
         <textarea placeholder=" " ></textarea>
     </label>
 
-    <label class="Vstyle-input no-box">
+    <!-- <label class="Vstyle-input no-box">
         <span>I would like to receive spam mail</span>
         <input required role="switch" type="checkbox">
-    </label>
+    </label> -->
 
     <button class="Vstyle-button">
         Versturen
