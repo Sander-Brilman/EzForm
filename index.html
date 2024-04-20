@@ -82,7 +82,7 @@
     }
 
     :root {
-        --container-box-shadow: none;
+        /* --container-box-shadow: none;
         --container-border: none;
         --container-gap: 5px 0px;
 
@@ -92,7 +92,6 @@
         --input-valid-border:  solid 1px green;
         --input-invalid-border:  solid 1px firebrick;
         --input-border-right: none;
-        --input-valid-border-right: none;
 
         --tag-background: transparent;
         --tag-padding: 5px 0px;
@@ -100,9 +99,18 @@
 
         --icon-border: solid 1px rgb(224, 224, 224);
         --icon-valid-border:  solid 1px green;
-        --icon-border-left: none;
-        --icon-valid-border-left: none;
+        --icon-border-left: none; */
 
+    }
+
+    :root:has(.Vstyle-input:hover) {
+        --global-theme-color: firebrick;
+
+    }
+
+
+    .Vstyle-input:hover {
+        --global-theme-color: firebrick;
     }
 
     label.Vstyle-input > i {

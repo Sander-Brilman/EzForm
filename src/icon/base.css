@@ -18,6 +18,24 @@
 
     /* icons are usually set with text and a specific imported font. so font-size == icon size */
     font-size: var(--icon-font-size);
+
+
+
+
+    /* test */
+    --internal-justify-content: center;
+    --internal-align-items: center;
+    --internal-background: var(--icon-background);
+    --internal-color: var(--icon-color);
+    --internal-padding: var(--icon-padding);
+    --internal-border-radius: var(--icon-border-radius);
+    --internal-border-left: var(--icon-border-left);
+    --internal-border-right: var(--icon-border-right);
+    --internal-border-top: var(--icon-border-top);
+    --internal-border-bottom: var(--icon-border-bottom);
+    --internal-font-size: var(--icon-font-size);
+
+
 }
 
 

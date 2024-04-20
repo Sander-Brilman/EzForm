@@ -46,69 +46,28 @@
     body {
         max-width: 700px;
         margin: auto;
+
+        --test: solid 2px;
+        --test-l: revert-layer;
     }
 
-    [type=range] {
-        padding: 10px !important;
-        box-sizing: border-box;
-    }
 
     .test {
-        appearance: none;
 
-    }
+        width: 100px;
+        height: 100px;
 
-    ::-webkit-slider-runnable-track {
-        background: red;
-    }
-
-    ::-webkit-slider-thumb {
-        border-color:white;
-        color: white;
+        border: var(--test);
+        border-left: var(--test-l);
+        border-right: var(--test-r);
+        border-bottom: var(--test-b);
+        border-top: var(--test-t);
     }
 
 
 </style>
 
-<fieldset class="Vstyle-input">
-    <legend>Kies een optie</legend>
-    <label>
-        <span>Option 1</span>
-        <input type="radio" role="switch" name="radioG1" >
-    </label>
 
-    <label>
-        <span>Option 2</span>
-        <input type="radio" role="switch" name="radioG1" >
-    </label>
+<div class="test">
 
-    <label>
-        <span>Option 3</span>
-        <input type="radio" role="switch" name="radioG1" >
-    </label>
-</fieldset>
-
-
-<input type="range" class="form-range" >
-
-<br>
-<br>
-<br>
-
-
-<div class="input-group mb-3">
-    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
-    <span class="input-group-text">With textarea</span>
 </div>
-
-<div class="Vstyle-input">
-    <button>Click me</button>
-
-    <label>
-        <span>button left</span>
-        <textarea placeholder=" "></textarea>
-    </label>
-</div>
-
-<input type="range" class="test" >
