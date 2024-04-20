@@ -213,7 +213,7 @@
     /* tag required */
 
     --tag-required-suffix-color: var(--global-error-color);
-    --tag-required-suffix: '*';
+    --tag-required-suffix: ' *';
 
     --tag-required-background: var(--tag-background);
     --tag-required-color: var(--tag-color);

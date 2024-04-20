@@ -12,11 +12,11 @@ hover animation
         )
     )
 ):not(:disabled):hover {
-    color: var(--button-hover-color);
-    background: var(--button-hover-background);
+    --internal-color: var(--button-hover-color);
+    --internal-background: var(--button-hover-background);
 
-    border-left: var(--button-hover-border-left);
-    border-right: var(--button-hover-border-right);
-    border-top: var(--button-hover-border-top);
-    border-bottom: var(--button-hover-border-bottom);
+    --internal-border-left: var(--button-hover-border-left);
+    --internal-border-right: var(--button-hover-border-right);
+    --internal-border-top: var(--button-hover-border-top);
+    --internal-border-bottom: var(--button-hover-border-bottom);
 }

@@ -10,13 +10,13 @@ disabled buttons
         input[type="reset"]
     )
 ):disabled {
-    color: var(--button-locked-color);
-    background: var(--button-locked-background);
+    --internal-color: var(--button-locked-color);
+    --internal-background: var(--button-locked-background);
 
-    border-left: var(--button-locked-border-left);
-    border-right: var(--button-locked-border-right);
-    border-top: var(--button-locked-border-top);
-    border-bottom: var(--button-locked-border-bottom);
+    --internal-border-left: var(--button-locked-border-left);
+    --internal-border-right: var(--button-locked-border-right);
+    --internal-border-top: var(--button-locked-border-top);
+    --internal-border-bottom: var(--button-locked-border-bottom);
 
     cursor: not-allowed;
 }

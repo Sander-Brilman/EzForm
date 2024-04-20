@@ -5,36 +5,18 @@
     justify-content: center;
     align-items: center;
 
-    background: var(--icon-background);
-    color: var(--icon-color);
-    padding: var(--icon-padding);
-
-    border-radius: var(--icon-border-radius);
-
-    border-left: var(--icon-border-left);
-    border-right: var(--icon-border-right);
-    border-top: var(--icon-border-top);
-    border-bottom: var(--icon-border-bottom);
-
-    /* icons are usually set with text and a specific imported font. so font-size == icon size */
-    font-size: var(--icon-font-size);
-
-
-
-
-    /* test */
-    --internal-justify-content: center;
-    --internal-align-items: center;
     --internal-background: var(--icon-background);
     --internal-color: var(--icon-color);
     --internal-padding: var(--icon-padding);
     --internal-border-radius: var(--icon-border-radius);
+    --internal-box-shadow: var(--icon-box-shadow);
+    --internal-font-size: var(--icon-font-size);
+
     --internal-border-left: var(--icon-border-left);
     --internal-border-right: var(--icon-border-right);
     --internal-border-top: var(--icon-border-top);
     --internal-border-bottom: var(--icon-border-bottom);
-    --internal-font-size: var(--icon-font-size);
-    --internal-box-shadow: var(--icon-box-shadow);
+
 }
 
 

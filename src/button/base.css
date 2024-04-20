@@ -13,24 +13,18 @@
 
 
 
-
-
-    transition: 
-        color var(--button-transition-duration), 
-        border var(--button-transition-duration), 
-        background var(--button-transition-duration) ease-out;
-
     /* standard properties */
-    color: var(--button-color);
-    padding: var(--button-padding);
-    border-radius: var(--button-border-radius);
-    font-size: var(--button-font-size);
-    background: var(--button-background);
+    --internal-color: var(--button-color);
+    --internal-padding: var(--button-padding);
+    --internal-border-radius: var(--button-border-radius);
+    --internal-font-size: var(--button-font-size);
+    --internal-background: var(--button-background);
+    --internal-box-shadow: var(--button-box-shadow);
 
-    border-left: var(--button-border-left);
-    border-right: var(--button-border-right);
-    border-top: var(--button-border-top);
-    border-bottom: var(--button-border-bottom);
+    --internal-border-left: var(--button-border-left);
+    --internal-border-right: var(--button-border-right);
+    --internal-border-top: var(--button-border-top);
+    --internal-border-bottom: var(--button-border-bottom);
 
     cursor: pointer;
 

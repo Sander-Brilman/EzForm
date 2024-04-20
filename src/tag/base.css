@@ -38,16 +38,6 @@ styling for the tag. the tag is the span with text nested inside the label
     font-style: italic;
 
     /* prevent user from selecting the text for a better UX */
-    -webkit-user-select: none;
     user-select: none;
     pointer-events: none;
-}
-
-
-
-/* 
-styling for the tag suffix. the suffix is a pseudo ::after element where the content is being set in the respective state css file
-*/
-.Vstyle-input label > span:not([role="alert"], [role="note"])::after {
-    margin-left: 3px;
 }
