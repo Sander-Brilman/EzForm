@@ -8,11 +8,11 @@ invalid state for input
     select
 ):user-invalid
 {
-    background: var(--input-invalid-background);
-    color: var(--input-invalid-color);
+    --internal-background: var(--input-invalid-background);
+    --internal-color: var(--input-invalid-color);
 
-    border-left: var(--input-invalid-border-left);
-    border-right: var(--input-invalid-border-right);
-    border-top: var(--input-invalid-border-top);
-    border-bottom: var(--input-invalid-border-bottom);
+    --internal-border-left: var(--input-invalid-border-left);
+    --internal-border-right: var(--input-invalid-border-right);
+    --internal-border-top: var(--input-invalid-border-top);
+    --internal-border-bottom: var(--input-invalid-border-bottom);
 }

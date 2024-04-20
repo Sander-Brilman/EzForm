@@ -34,8 +34,7 @@
     --internal-border-top: var(--icon-border-top);
     --internal-border-bottom: var(--icon-border-bottom);
     --internal-font-size: var(--icon-font-size);
-
-
+    --internal-box-shadow: var(--icon-box-shadow);
 }
 
 

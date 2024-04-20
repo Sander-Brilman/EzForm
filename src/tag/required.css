@@ -10,13 +10,13 @@ tag style for when the input is marked as required via the [required] attribute.
     :is(input, select, textarea):required:not(:user-valid)
 ) > span:not([role]) 
 {
-    background: var(--tag-required-background);
-    color: var(--tag-required-color);
+    --internal-background: var(--tag-required-background);
+    --internal-color: var(--tag-required-color);
 
-    border-left: var(--tag-required-border-left);
-    border-right: var(--tag-required-border-right);
-    border-top: var(--tag-required-border-top);
-    border-bottom: var(--tag-required-border-bottom);
+    --internal-border-left: var(--tag-required-border-left);
+    --internal-border-right: var(--tag-required-border-right);
+    --internal-border-top: var(--tag-required-border-top);
+    --internal-border-bottom: var(--tag-required-border-bottom);
 }
 
 :is(.Vstyle-input > label, label.Vstyle-input):has(

@@ -7,11 +7,11 @@ required state for input
     textarea, 
     select
 ):required {
-    background: var(--input-required-background);
-    color: var(--input-required-color);
+    --internal-background: var(--input-required-background);
+    --internal-color: var(--input-required-color);
 
-    border-left: var(--input-required-border-left);
-    border-right: var(--input-required-border-right);
-    border-top: var(--input-required-border-top);
-    border-bottom: var(--input-required-border-bottom);
+    --internal-border-left: var(--input-required-border-left);
+    --internal-border-right: var(--input-required-border-right);
+    --internal-border-top: var(--input-required-border-top);
+    --internal-border-bottom: var(--input-required-border-bottom);
 }

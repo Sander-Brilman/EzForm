@@ -7,12 +7,12 @@ valid state for input
     textarea, 
     select
 ):user-valid {
-    background: var(--input-valid-background);
-    color: var(--input-valid-color);
+    --internal-background: var(--input-valid-background);
+    --internal-color: var(--input-valid-color);
 
-    border-left: var(--input-valid-border-left);
-    border-right: var(--input-valid-border-right);
-    border-top: var(--input-valid-border-top);
-    border-bottom: var(--input-valid-border-bottom);
+    --internal-border-left: var(--input-valid-border-left);
+    --internal-border-right: var(--input-valid-border-right);
+    --internal-border-top: var(--input-valid-border-top);
+    --internal-border-bottom: var(--input-valid-border-bottom);
 
 }

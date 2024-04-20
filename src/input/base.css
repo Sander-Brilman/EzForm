@@ -8,16 +8,17 @@
     select
 ) {
     /* standard properties */
-    padding: var(--input-padding);
-    background: var(--input-background);
-    color: var(--input-color);
-    border-radius: var(--input-border-radius);
-    font-size: var(--input-font-size);
+    --internal-padding: var(--input-padding);
+    --internal-background: var(--input-background);
+    --internal-color: var(--input-color);
+    --internal-border-radius: var(--input-border-radius);
+    --internal-font-size: var(--input-font-size);
+    --internal-box-shadow: var(--input-box-shadow);
 
-    border-left: var(--input-border-left);
-    border-right: var(--input-border-right);
-    border-top: var(--input-border-top);
-    border-bottom: var(--input-border-bottom);
+    --internal-border-left: var(--input-border-left);
+    --internal-border-right: var(--input-border-right);
+    --internal-border-top: var(--input-border-top);
+    --internal-border-bottom: var(--input-border-bottom);
 }
 
 

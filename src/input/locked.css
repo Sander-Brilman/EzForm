@@ -10,11 +10,11 @@ locked (readonly / disabled) state for input
 {
     cursor: not-allowed;
 
-    background: var(--input-locked-background);
-    color: var(--input-locked-color);
+    --internal-background: var(--input-locked-background);
+    --internal-color: var(--input-locked-color);
 
-    border-left: var(--input-locked-border-left);
-    border-right: var(--input-locked-border-right);
-    border-top: var(--input-locked-border-top);
-    border-bottom: var(--input-locked-border-bottom);
+    --internal-border-left: var(--input-locked-border-left);
+    --internal-border-right: var(--input-locked-border-right);
+    --internal-border-top: var(--input-locked-border-top);
+    --internal-border-bottom: var(--input-locked-border-bottom);
 }

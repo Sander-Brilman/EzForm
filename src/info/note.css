@@ -6,16 +6,17 @@ specific style implementation for message type notes
 
 .Vstyle-input :is([role="note"]) {
     /* variable used in base styles */
-    --internal-info-color: var(--note-color);
-    --internal-info-background: var(--note-background);
-    --internal-info-padding: var(--note-padding);
-    --internal-info-border-radius: var(--note-border-radius);
-    --internal-info-font-size: var(--note-font-size);
+    --internal-color: var(--note-color);
+    --internal-background: var(--note-background);
+    --internal-padding: var(--note-padding);
+    --internal-border-radius: var(--note-border-radius);
+    --internal-font-size: var(--note-font-size);
+    --internal-box-shadow: var(--note-box-shadow);
 
-    --internal-info-border-left: var(--note-border-left);
-    --internal-info-border-top: var(--note-border-top);
-    --internal-info-border-bottom: var(--note-border-bottom);
-    --internal-info-border-right: var(--note-border-right);
+    --internal-border-left: var(--note-border-left);
+    --internal-border-top: var(--note-border-top);
+    --internal-border-bottom: var(--note-border-bottom);
+    --internal-border-right: var(--note-border-right);
 }
 
 

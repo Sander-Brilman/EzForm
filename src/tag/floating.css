@@ -14,17 +14,17 @@ styling for the tag for a floating label
     translate: 0 -50%;
 
 
-    background: var(--tag-floating-background); 
-    color: var(--tag-floating-color);
+    --internal-background: var(--tag-floating-background); 
+    --internal-color: var(--tag-floating-color);
 
 
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    border-bottom: none;
+    --internal-border-left: none;
+    --internal-border-right: none;
+    --internal-border-top: none;
+    --internal-border-bottom: none;
 
 
-    font-size: var(--tag-floating-font-size);
+    --internal-font-size: var(--tag-floating-font-size);
 }
 
 :is(.Vstyle-input > label, label.Vstyle-input):has(

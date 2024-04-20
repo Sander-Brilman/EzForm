@@ -15,17 +15,6 @@ base styles for the messages such as notes & alerts at the bottom of the contain
     is displayed at the end even though it might have a different position in the html */
     order: 3;
 
-    /* variables will be set by the specific implementation in the message_note.css & message_alert.css files  */
-    color: var(--internal-info-color);
-    background: var(--internal-info-background);
-    padding: var(--internal-info-padding);
-    border-radius: var(--internal-info-border-radius, var(--global-border-radius));
-    font-size: var(--internal-info-font-size);
-
-    border-left: var(--internal-info-border-left);
-    border-right: var(--internal-info-border-right);
-    border-top: var(--internal-info-border-top);
-    border-bottom: var(--internal-info-border-bottom);
 
     line-height: 23px !important;
 }

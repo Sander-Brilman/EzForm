@@ -1,4 +1,6 @@
-.Vstyle-input
+.Vstyle-input,
+.Vstyle-input > *:not(label),
+.Vstyle-input > label > *
 {
     box-sizing: border-box;
     
@@ -21,42 +23,14 @@
     padding: var(--internal-padding) !important;    
     margin: var(--internal-margin) !important;
 
-    --internal-transition-value: var(--internal-transition-duration) ease-out;
-    transition: 
-        border var(--internal-transition-value), 
-        background var(--internal-transition-value),
-        color var(--internal-transition-value), 
-        font-size var(--internal-transition-value), 
-        box-shadow var(--internal-transition-value),
-        border-radius var(--internal-transition-value),
-        padding var(--internal-transition-value),
-        margin var(--internal-transition-value) !important;
-}
 
-.Vstyle-input > *
-{
-    box-sizing: border-box;
     
-    /* display flex for putting all the items for that element side-by-side.  */
-    display: flex;
-
-    line-height: 20px !important;
-
-
-    border-left: var(--internal-border-left) !important;
-    border-right: var(--internal-border-right) !important;
-    border-top: var(--internal-border-top) !important;
-    border-bottom: var(--internal-border-bottom) !important;
-
-    background: var(--internal-background) !important;
-    color: var(--internal-color) !important;
-    font-size: var(--internal-font-size) !important;
-    box-shadow: var(--internal-box-shadow) !important;
-    border-radius: var(--internal-border-radius) !important;
-    padding: var(--internal-padding) !important;    
-    margin: var(--internal-margin) !important;
-
-    --internal-transition-value: var(--internal-transition-duration) ease-out;
+    /* 
+    here this new internal variable is used instead of the "var(--internal-transition-duration) ease-out" directly 
+    
+    because internal variables get a minified name resulting in a smaller total output size at build time
+    */
+    --internal-transition-value: var(--internal-transition-duration, var(--global-transition-duration)) ease-out;
     transition: 
         border var(--internal-transition-value), 
         background var(--internal-transition-value),
@@ -65,8 +39,12 @@
         box-shadow var(--internal-transition-value),
         border-radius var(--internal-transition-value),
         padding var(--internal-transition-value),
+        top var(--internal-transition-value),
+        left var(--internal-transition-value),
+        translate var(--internal-transition-value),
         margin var(--internal-transition-value) !important;
 }
+
 
 
 .Vstyle-input *:focus 

@@ -5,13 +5,13 @@
         textarea
     ):user-invalid
 ) > span {
-    background: var(--tag-invalid-background);
-    color: var(--tag-invalid-color);
+    --internal-background: var(--tag-invalid-background);
+    --internal-color: var(--tag-invalid-color);
 
-    border-left: var(--tag-invalid-border-left);
-    border-right: var(--tag-invalid-border-right);
-    border-top: var(--tag-invalid-border-top);
-    border-bottom: var(--tag-invalid-border-bottom);
+    --internal-border-left: var(--tag-invalid-border-left);
+    --internal-border-right: var(--tag-invalid-border-right);
+    --internal-border-top: var(--tag-invalid-border-top);
+    --internal-border-bottom: var(--tag-invalid-border-bottom);
 }
 
 /* 

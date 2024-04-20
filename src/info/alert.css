@@ -4,16 +4,17 @@ specific style implementation for message type alert
 
 .Vstyle-input [role="alert"] {
     /* variable used in base styles */
-    --internal-info-color: var(--alert-color);
-    --internal-info-background: var(--alert-background);
-    --internal-info-padding: var(--alert-padding);
-    --internal-info-border-radius: var(--alert-border-radius);
-    --internal-info-font-size: var(--alert-font-size);
+    --internal-color: var(--alert-color);
+    --internal-background: var(--alert-background);
+    --internal-padding: var(--alert-padding);
+    --internal-border-radius: var(--alert-border-radius);
+    --internal-font-size: var(--alert-font-size);
+    --internal-box-shadow: var(--alert-box-shadow);
 
-    --internal-info-border-left: var(--alert-border-left);
-    --internal-info-border-top: var(--alert-border-top);
-    --internal-info-border-bottom: var(--alert-border-bottom);
-    --internal-info-border-right: var(--alert-border-right);
+    --internal-border-left: var(--alert-border-left);
+    --internal-border-top: var(--alert-border-top);
+    --internal-border-bottom: var(--alert-border-bottom);
+    --internal-border-right: var(--alert-border-right);
 }
 
 

@@ -9,16 +9,14 @@ tag for when the input is read-only
     ):read-only
 ) > span) {
 
-    background: var(--tag-locked-background);
-    color: var(--tag-locked-color);
 
-    background: var(--tag-locked-background);
-    color: var(--tag-locked-color);
+    --internal-background: var(--tag-locked-background);
+    --internal-color: var(--tag-locked-color);
 
-    border-left: var(--tag-locked-border-left);
-    border-right: var(--tag-locked-border-right);
-    border-top: var(--tag-locked-border-top);
-    border-bottom: var(--tag-locked-border-bottom);
+    --internal-border-left: var(--tag-locked-border-left);
+    --internal-border-right: var(--tag-locked-border-right);
+    --internal-border-top: var(--tag-locked-border-top);
+    --internal-border-bottom: var(--tag-locked-border-bottom);
 
 
 }

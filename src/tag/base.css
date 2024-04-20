@@ -19,34 +19,19 @@ styling for the tag. the tag is the span with text nested inside the label
         top: var(--tag-offset-top, 0px);
         left: var(--tag-offset-left, 0px);
 
-    /* 
-    here this new internal variable is used instead of the --tag-transition-duration directly 
-    
-    because internal variables get a minified name resulting in a smaller total output size at build time
-    */
-    --internal-tag-transition: var(--tag-transition-duration) ease-out;
-    transition: 
-        font-size var(--internal-tag-transition),
-        border var(--internal-tag-transition),
-        color var(--internal-tag-transition),
-        padding var(--internal-tag-transition),
-        top var(--internal-tag-transition),
-        left var(--internal-tag-transition),
-        background var(--internal-tag-transition),
-        translate var(--internal-tag-transition);
 
+    --internal-padding: var(--tag-padding);
+    --internal-background: var(--tag-background);
+    --internal-color: var(--tag-color);
+    --internal-border-radius: var(--tag-border-radius);
+    --internal-font-size: var(--tag-font-size);
+    --internal-box-shadow: var(--tag-box-shadow);
 
-    padding: var(--tag-padding);
-    background: var(--tag-background);
-    color: var(--tag-color);
-    border-radius: var(--tag-border-radius, inherit);
+    --internal-border-left: var(--tag-border-left);
+    --internal-border-right: var(--tag-border-right);
+    --internal-border-top: var(--tag-border-top);
+    --internal-border-bottom: var(--tag-border-bottom);
 
-    border-left: var(--tag-border-left);
-    border-right: var(--tag-border-right);
-    border-top: var(--tag-border-top);
-    border-bottom: var(--tag-border-bottom);
-
-    font-size: var(--tag-font-size);
     
     line-height: 1rem !important;
     font-weight: lighter;
