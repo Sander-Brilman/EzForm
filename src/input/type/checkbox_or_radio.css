@@ -21,8 +21,6 @@
     --internal-border-radius: 30px;
     appearance: none;
     
-    --internal-margin: var(--input-margin, var(--input-padding));
-    
 
     /* prevent the input from being stretched  */
     align-self: center;
