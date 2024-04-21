@@ -1,7 +1,6 @@
 .Vstyle-input > :is(i, label > i)
 {
     /* give the icon a fixed width and center it to ensure consistent alignment between icons of different widths*/
-    /* width: 1em; */
     justify-content: center;
     align-items: center;
 
@@ -11,17 +10,22 @@
     --internal-border-radius: var(--icon-border-radius);
     --internal-box-shadow: var(--icon-box-shadow);
     --internal-font-size: var(--icon-font-size);
+    --internal-margin: var(--icon-margin);
 
     --internal-border-left: var(--icon-border-left);
     --internal-border-right: var(--icon-border-right);
     --internal-border-top: var(--icon-border-top);
     --internal-border-bottom: var(--icon-border-bottom);
-
 }
 
 
 /* 
 minimal container styles for the icon
+
+the tag is on row 1
+the input is on row 2
+
+make the icon span both rows
 */
 
 label.Vstyle-input > i {

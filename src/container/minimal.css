@@ -1,11 +1,5 @@
 /* 
 minimal container using the label directly as host
+
+currently has no need for specific styles
 */
-
-label.Vstyle-input {
-        /* remove the row-gap provided by css grid and artificially re-create it using a top margin at info and alert elements
-
-    This is because the tag and the input are in separate rows.
-    Leaving the row-gap as-is would mean there would be a gap between the tag and the input */
-    row-gap: 0px;
-}

@@ -5,3 +5,12 @@
     grid-row: 1 / 3;
     align-self: center;
 }
+
+
+/* 
+display cancel cursor for checkboxes / radio buttons that are disabled 
+since in those senario's the tag is the largest content in the container
+*/
+.Vstyle-input :is(label:has(input:is([type="checkbox"], [type="radio"]):disabled) > span:not([role])) {
+    cursor: not-allowed;
+}

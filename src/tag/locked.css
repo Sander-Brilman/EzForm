@@ -8,8 +8,6 @@ tag for when the input is read-only
         textarea
     ):read-only
 ) > span) {
-
-
     --internal-background: var(--tag-locked-background);
     --internal-color: var(--tag-locked-color);
 
@@ -17,6 +15,4 @@ tag for when the input is read-only
     --internal-border-right: var(--tag-locked-border-right);
     --internal-border-top: var(--tag-locked-border-top);
     --internal-border-bottom: var(--tag-locked-border-bottom);
-
-
 }

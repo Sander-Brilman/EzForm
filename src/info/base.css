@@ -1,13 +1,10 @@
 /* 
-[== base styles: container_item.css ==]
-
-base styles for the messages such as notes & alerts at the bottom of the containers
+base styles for the info elements such as notes & alerts at the bottom of the containers
 */
 .Vstyle-input :is(
     [role="alert"], 
     [role="note"]
 ) {
-
     /* Set width to 100% to put it on a new line using the flex-wrap on the parent */
     width: 100%;
 
@@ -15,20 +12,17 @@ base styles for the messages such as notes & alerts at the bottom of the contain
     is displayed at the end even though it might have a different position in the html */
     order: 3;
 
-
     line-height: 23px !important;
 }
 
 
 
 /* 
-the ::before element of the messages where the icon is rendered 
+the ::before element of the messages where the icon is rendered via a background and a image mask
 */
 .Vstyle-input :is([role="alert"], [role="note"])::before
 {
-    /* needed for the ::before to appear at all */
     content: '';
-
 
     /* puts the icon at the same level of the fist line of the text */
     align-self: flex-start;
@@ -36,16 +30,10 @@ the ::before element of the messages where the icon is rendered
 
     /* width for the spacing between the icon and the text and the height to control 
     at what hight the icon is displayed */
-    min-width: 1.5em;
+    min-width: 1.2em;
     height: 1em;
 
-    /* margin: var(--icon-padding);
-    margin: 3px;
-    margin-top: 3px;
-    margin-bottom: 0; */
-    margin: 3px 5px 0 1px;
-    /* margin-right: 5px;
-    margin-top: 3px; */
+    margin: 3px 7px 0 0;
 
 
     /* due use of an image mask, the background of the ::before will be the eventual color of the icon 
@@ -79,13 +67,4 @@ label.Vstyle-input > :is(
 ) {
     /* since minimal containers use a grid instead of flexbox this is used to make it take up the full width */
     grid-column: 1 / -1;
-    
-    /* 
-    basically we only want the top margin here to act as gap,
-    but since --container-gap can contain either 1 value or 2 it cannot be used in top-margin directly
-    hence this workaround
-    */
-    margin: var(--container-gap) 0 0;
-    margin-left: 0;
-    margin-right: 0;
 }

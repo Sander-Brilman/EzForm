@@ -1,5 +1,5 @@
 /* 
-    base styles for all methods of input. including inputs, textarea and select
+    base styles for all methods of input. including textarea, select and input elements
 */
 
 :is(.Vstyle-input > label, label.Vstyle-input) :is(
@@ -7,13 +7,13 @@
     textarea, 
     select
 ) {
-    /* standard properties */
     --internal-padding: var(--input-padding);
     --internal-background: var(--input-background);
     --internal-color: var(--input-color);
     --internal-border-radius: var(--input-border-radius);
     --internal-font-size: var(--input-font-size);
     --internal-box-shadow: var(--input-box-shadow);
+    --internal-margin: var(--input-margin);
 
     --internal-border-left: var(--input-border-left);
     --internal-border-right: var(--input-border-right);

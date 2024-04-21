@@ -20,6 +20,7 @@
     --internal-font-size: var(--button-font-size);
     --internal-background: var(--button-background);
     --internal-box-shadow: var(--button-box-shadow);
+    --internal-margin: var(--button-margin);
 
     --internal-border-left: var(--button-border-left);
     --internal-border-right: var(--button-border-right);

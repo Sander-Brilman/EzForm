@@ -1,13 +1,4 @@
 /* 
-[== base styles: tag_core.css ==]
-
-these styles will be activated once the respective input field of the tag is valid
-
-for these styles to work propperly a placeholder of any value is needed 
-
-*/
-
-/* 
 tag for when the input is valid
 */
 :is(.Vstyle-input > label, label.Vstyle-input):has(
@@ -16,7 +7,7 @@ tag for when the input is valid
         select,
         textarea
     ):user-valid
-) > span 
+) > span:not([role])
 {
     --internal-background: var(--tag-valid-background);
     --internal-color: var(--tag-valid-color);
@@ -36,7 +27,7 @@ tag suffix for when the input is valid
         select,
         textarea
     ):user-valid
-) > span::after {
+) > span:not([role])::after {
     color: var(--tag-valid-suffix-color);
     content: var(--tag-valid-suffix);
 }

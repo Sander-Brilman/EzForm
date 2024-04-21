@@ -6,8 +6,6 @@ styling for the tag. the tag is the span with text nested inside the label
     display: block;
     width: var(--tag-width);
     
-
-
     grid-column: var(--internal-input-column);
     grid-row: 1;
 
@@ -26,6 +24,7 @@ styling for the tag. the tag is the span with text nested inside the label
     --internal-border-radius: var(--tag-border-radius);
     --internal-font-size: var(--tag-font-size);
     --internal-box-shadow: var(--tag-box-shadow);
+    --internal-margin: var(--tag-margin);
 
     --internal-border-left: var(--tag-border-left);
     --internal-border-right: var(--tag-border-right);
@@ -39,5 +38,4 @@ styling for the tag. the tag is the span with text nested inside the label
 
     /* prevent user from selecting the text for a better UX */
     user-select: none;
-    pointer-events: none;
 }

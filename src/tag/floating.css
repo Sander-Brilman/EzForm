@@ -13,10 +13,8 @@ styling for the tag for a floating label
 
     translate: 0 -50%;
 
-
     --internal-background: var(--tag-floating-background); 
     --internal-color: var(--tag-floating-color);
-
 
     --internal-border-left: none;
     --internal-border-right: none;

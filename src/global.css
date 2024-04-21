@@ -1,7 +1,27 @@
-.Vstyle-input,
-.Vstyle-input > *:not(label),
-.Vstyle-input > label > *
+/* 
+Explanation of internal variables and how styling is done
+
+The selector below selects for (almost) all elements within a input container (minimal and advanced) such as icons, buttons, inputs, ect.. 
+All the styling for those elements are defined here using internal variables
+
+Styling for each element is done by setting these internal variables like this:
+
+.Vstyle-input > i 
 {
+    --internal-color: red; 
+    ect..
+}
+
+The reason for this is that at compile time internal variables get renamed to a single letter.
+Resulting in a much smaller output size comparing to writing "border-right: var(--some-variable) !important;" at every element.
+*/
+
+:is(
+    .Vstyle-input,
+    .Vstyle-input > *:not(label),
+    .Vstyle-input > label > *,
+    .Vstyle-button
+) {
     box-sizing: border-box;
     
     /* display flex for putting all the items for that element side-by-side.  */
@@ -71,7 +91,7 @@
     --global-focus-outline: solid 2px rgba(var(--global-theme-color), 50%);
     --global-focus-outline-offset: 2px;
 
-    --global-transition-duration: .3s;
+    --global-transition-duration: .2s;
 
 
 
@@ -83,12 +103,13 @@
     --container-padding: 8px;
     --container-border-radius: var(--global-border-radius);
     --container-box-shadow: 0px 0px 5px 1px #d3d3d3;
+    --container-margin: 0 0 30px 0;
 
     --container-border: initial;
     --container-border-bottom: var(--container-border, solid var(--global-theme-color));
     --container-border-top: var(--container-border);
-    --container-border-right: var(--container-border, solid white);
-    --container-border-left: var(--container-border, solid white);
+    --container-border-right: var(--container-border, solid transparent);
+    --container-border-left: var(--container-border, solid transparent);
 
     --container-gap: 5px;
 
@@ -294,7 +315,7 @@
 
     /* input locked */
     --input-locked-background: var(--input-background);
-    --input-locked-color: color-mix(in srgb, var(--input-color), rgba(255, 255, 255, 0.479));
+    --input-locked-color: color-mix(in srgb, var(--input-color), rgba(126, 126, 126, 0.507));
 
     --input-locked-border: initial;
     --input-locked-border-bottom: var(--input-locked-border, var(--input-border-bottom));

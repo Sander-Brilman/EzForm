@@ -6,5 +6,13 @@
 }
 
 .Vstyle-input > label {
+
+    /* 
+    advanced containers use flexbox
+
+    to make sure the <label> (<label> being the host for the <input>) takes up all the available space set it to flex grow.
+
+    it is 999 because buttons are also set to grow. and a labels should always have priority over buttons 
+    */
     flex-grow: 999;
 }

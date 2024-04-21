@@ -47,7 +47,6 @@
 <link rel="stylesheet" href="src/input/valid.css">
 <link rel="stylesheet" href="src/input/locked.css">
 
-<link rel="stylesheet" href="src/input/type/textarea.css">
 <link rel="stylesheet" href="src/input/type/checkbox_or_radio.css">
 <link rel="stylesheet" href="src/input/type/range.css">
 <link rel="stylesheet" href="src/input/type/color.css">
@@ -65,6 +64,11 @@
 
 
 <style>
+    body, html {
+        /* background: rgb(24, 24, 24);
+        color: lightgrey; */
+    }
+
     body {
         max-width: 600px;
         margin: auto;
@@ -72,13 +76,8 @@
         font-family: Helvetica;
     }
 
-    html {
-    }
-
-
-
-    .Vstyle-input {
-        margin-bottom: 30px;
+    textarea {
+        height: 7rem;
     }
 
     :root {
@@ -101,49 +100,18 @@
         --icon-valid-border:  solid 1px green;
         --icon-border-left: none; */
 
-    }
-
-    :root:has(.Vstyle-input:hover) {
-        --global-theme-color: firebrick;
-
-    }
+        /* --global-theme-color: rgb(170, 170, 170); */
 
 
-    .Vstyle-input:hover {
-        --global-theme-color: firebrick;
+        /* --container-background: rgb(34, 34, 34);
+        --container-box-shadow: none;
+        --input-color: rgb(243, 243, 243);
+        --global-theme-color: #00b26eb0; */
     }
 
     label.Vstyle-input > i {
-        grid-row: 2;
+        /* grid-row: 2; */
     }
-
-
-    body {
-        /* --container-border: solid black 2px;
-        --container-border-left: solid black 2px;
-        --container-border-right: solid black 2px;
-        --container-border-bottom: solid black 2px;
-        --container-gap: 0px;
-    
-        --container-box-shadow: 
-        5px 5px 0px 0px black,
-        10px 10px 0px 0px rgba(0, 0, 0, 0.534);
-
-        --icon-color: firebrick;
-        --icon-padding: 10px 15px;
-        --icon-border-right: solid black 1px;
-        --icon-border-bottom: solid black 1px;
-
-        --input-border-bottom: solid black 1px;
-        --input-padding: 5px 10px;
-
-        --tag-padding: 0px 10px; */
-
-
-
-    }
-
-
 </style>
 
 <br>
@@ -172,17 +140,17 @@
         <legend>Kies een optie</legend>
         <label>
             <span>Option 1</span>
-            <input type="radio" role="switch" name="radioG1" >
+            <input type="radio" name="radio-button" role="switch" name="radioG1" >
         </label>
 
         <label>
             <span>Option 2</span>
-            <input type="radio" role="switch" name="radioG1" >
+            <input type="radio" name="radio-button" role="switch" name="radioG1" >
         </label>
 
         <label>
             <span>Option 3</span>
-            <input type="radio" role="switch" name="radioG1" >
+            <input type="radio" name="radio-button" role="switch" name="radioG1" >
         </label>
     </fieldset> -->
 
@@ -239,6 +207,11 @@
     <label class="Vstyle-input">
         <span>required</span>
         <input required>
+    </label>
+
+    <label class="Vstyle-input">
+        <span>readonly (locked)</span>
+        <input value="A user entered value" readonly>
     </label>
     
     <label class="Vstyle-input">
@@ -309,6 +282,11 @@
     <label class="Vstyle-input">
         <span>required</span>
         <input required placeholder=" ">
+    </label>
+
+    <label class="Vstyle-input">
+        <span>readonly (locked)</span>
+        <input placeholder=" " value="A user entered value" readonly>
     </label>
     
     <label class="Vstyle-input">
@@ -382,6 +360,11 @@
         <span>required</span>
         <textarea required></textarea>
     </label>
+
+    <label class="Vstyle-input">
+        <span>readonly (locked)</span>
+        <textarea readonly>A user entered value</textarea>
+    </label>
     
     <label class="Vstyle-input">
         <span>
@@ -453,6 +436,11 @@
     <label class="Vstyle-input">
         <span>required</span>
         <textarea required placeholder=" "></textarea>
+    </label>
+
+    <label class="Vstyle-input">
+        <span>readonly (locked)</span>
+        <textarea placeholder=" " readonly>A user entered value</textarea>
     </label>
     
     <label class="Vstyle-input">
@@ -533,6 +521,18 @@
     <label class="Vstyle-input">
         <span>required</span>
         <select required>
+            <option disabled selected>select something</option>
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Cherry</option>
+            <option>Date</option>
+            <option>Elderberry</option>
+        </select>
+    </label>
+
+    <label class="Vstyle-input">
+        <span>readonly (locked)</span>
+        <select disabled>
             <option disabled selected>select something</option>
             <option>Apple</option>
             <option>Banana</option>
@@ -657,6 +657,11 @@
         <span>required</span>
         <input type="checkbox" required>
     </label>
+
+    <label class="Vstyle-input">
+        <span>readonly (locked)</span>
+        <input type="checkbox" checked disabled>
+    </label>
     
     <label class="Vstyle-input">
         <span>
@@ -727,6 +732,11 @@
         <span>required</span>
         <input type="checkbox" role="switch" required>
     </label>
+
+    <label class="Vstyle-input">
+        <span>readonly (locked)</span>
+        <input role="switch" type="checkbox" checked disabled>
+    </label>
     
     <label class="Vstyle-input">
         <span>
@@ -792,12 +802,17 @@
 
     <label class="Vstyle-input">
         <span>default</span>
-        <input type="radio">
+        <input type="radio" name="radio-button">
     </label>
 
     <label class="Vstyle-input">
         <span>required</span>
-        <input type="radio" required>
+        <input type="radio" name="radio-button" required>
+    </label>
+
+    <label class="Vstyle-input">
+        <span>readonly (locked)</span>
+        <input type="radio" name="radio-button" checked disabled>
     </label>
     
     <label class="Vstyle-input">
@@ -805,12 +820,12 @@
             <i class="fa-duotone fa-balloons"></i>
             default + icon in span
         </span>
-        <input type="radio" >
+        <input type="radio" name="radio-button" >
     </label>
 
     <label class="Vstyle-input">
         <span>default + icon right</span>
-        <input type="radio" >
+        <input type="radio" name="radio-button" >
 
         <i class="fa-duotone fa-key"></i>
     </label>
@@ -819,28 +834,28 @@
         <i class="fa-sharp fa-solid fa-music"></i>
 
         <span>default + icon</span>
-        <input type="radio" >
+        <input type="radio" name="radio-button" >
     </label>
 
     <label class="Vstyle-input">
         <i class="fa-duotone fa-key"></i>
         
         <span>default + icon + note</span> 
-        <input type="radio">
+        <input type="radio" name="radio-button">
         
         <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
     </label> 
 
     <label class="Vstyle-input">
         <span>default + alert</span> 
-        <input type="radio">
+        <input type="radio" name="radio-button">
         
         <span role="alert">Field cannot be empty!</span>
     </label> 
 
     <label class="Vstyle-input">
         <span>Type "i am sure" to confirm delete</span> 
-        <input type="radio">
+        <input type="radio" name="radio-button">
         
         <span role="note">This action cannot be undone</span>
     </label> 
@@ -848,7 +863,7 @@
     <label class="Vstyle-input">
         
         <span>default + icon right + note + alert</span> 
-        <input type="radio">
+        <input type="radio" name="radio-button">
         
         <i class="fa-duotone fa-key"></i>
 
@@ -862,12 +877,17 @@
 
     <label class="Vstyle-input">
         <span>default</span>
-        <input type="radio" role="switch">
+        <input type="radio" name="radio-button" role="switch">
     </label>
 
     <label class="Vstyle-input">
         <span>required</span>
-        <input type="radio" role="switch" required>
+        <input type="radio" name="radio-button" role="switch" required>
+    </label>
+
+    <label class="Vstyle-input">
+        <span>readonly (locked)</span>
+        <input role="switch" type="radio" name="radio-button" checked disabled>
     </label>
     
     <label class="Vstyle-input">
@@ -875,12 +895,12 @@
             <i class="fa-duotone fa-balloons"></i>
             default + icon in span
         </span>
-        <input type="radio" role="switch" >
+        <input type="radio" name="radio-button" role="switch" >
     </label>
 
     <label class="Vstyle-input">
         <span>default + icon right</span>
-        <input type="radio" role="switch" >
+        <input type="radio" name="radio-button" role="switch" >
 
         <i class="fa-duotone fa-key"></i>
     </label>
@@ -889,28 +909,28 @@
         <i class="fa-sharp fa-solid fa-music"></i>
 
         <span>default + icon</span>
-        <input type="radio" role="switch" >
+        <input type="radio" name="radio-button" role="switch" >
     </label>
 
     <label class="Vstyle-input">
         <i class="fa-duotone fa-key"></i>
         
         <span>default + icon + note</span> 
-        <input type="radio" role="switch">
+        <input type="radio" name="radio-button" role="switch">
         
         <span role="note">make sure your password is strong. It must be longer than 8 characters, must contain capital and lowercase letters and symbols</span>
     </label> 
 
     <label class="Vstyle-input">
         <span>default + alert</span> 
-        <input type="radio" role="switch">
+        <input type="radio" name="radio-button" role="switch">
         
         <span role="alert">Field cannot be empty!</span>
     </label> 
 
     <label class="Vstyle-input">
         <span>Type "i am sure" to confirm delete</span> 
-        <input type="radio" role="switch">
+        <input type="radio" name="radio-button" role="switch">
         
         <span role="note">This action cannot be undone</span>
     </label> 
@@ -918,7 +938,7 @@
     <label class="Vstyle-input">
         
         <span>default + icon right + note + alert</span> 
-        <input type="radio" role="switch">
+        <input type="radio" name="radio-button" role="switch">
         
         <i class="fa-duotone fa-key"></i>
 
@@ -940,6 +960,11 @@
     <label class="Vstyle-input">
         <span>required</span>
         <input type="range" required>
+    </label>
+
+    <label class="Vstyle-input">
+        <span>readonly (locked)</span>
+        <input type="range" value="33" disabled>
     </label>
     
     <label class="Vstyle-input">
@@ -1013,6 +1038,11 @@
         <span>required</span>
         <input type="color" required>
     </label>
+
+    <label class="Vstyle-input">
+        <span>readonly (locked)</span>
+        <input type="color" readonly value="1c684f"> 
+    </label>
     
     <label class="Vstyle-input">
         <span>
@@ -1084,6 +1114,11 @@
     <label class="Vstyle-input">
         <span>required</span>
         <input type="file" required>
+    </label>
+
+    <label class="Vstyle-input">
+        <span>readonly (locked)</span>
+        <input type="file" readonly>
     </label>
     
     <label class="Vstyle-input">
@@ -1160,6 +1195,13 @@
         <label>
             <span>required</span>
             <input required>
+        </label>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>readonly (locked)</span>
+            <input readonly value="some user entered value">
         </label>
     </div>
 
@@ -1290,6 +1332,13 @@
         <label>
             <span>required</span>
             <input placeholder=" " required>
+        </label>
+    </div>
+
+    <div class="Vstyle-input">
+        <label>
+            <span>readonly (locked)</span>
+            <input placeholder=" " readonly value="some user entered value">
         </label>
     </div>
     
@@ -1426,6 +1475,13 @@
     </div>
 
     <div class="Vstyle-input">
+        <label>
+            <span>readonly (locked)</span>
+            <textarea readonly>some user entered value</textarea>
+        </label>
+    </div>
+
+    <div class="Vstyle-input">
         <span>$</span>
 
         <label>
@@ -1552,6 +1608,13 @@
         <label>
             <span>required</span>
             <textarea placeholder=" " required></textarea>
+        </label>
+    </div>
+    
+    <div class="Vstyle-input">
+        <label>
+            <span>required</span>
+            <textarea required placeholder=" ">some user entered value</textarea>
         </label>
     </div>
 

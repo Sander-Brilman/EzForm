@@ -1,10 +1,6 @@
 /* 
-tag style for when the input is marked as required via the [required] attribute. 
+tag style for when the input is marked as required 
 */
-
-
-
-
 
 :is(.Vstyle-input > label, label.Vstyle-input):has(
     :is(input, select, textarea):required:not(:user-valid)

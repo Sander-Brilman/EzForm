@@ -1,13 +1,9 @@
-
-
 :is(.Vstyle-input > label, label.Vstyle-input) > input:is([type="checkbox"], [type="radio"]) {
     grid-row-start: 1; 
     grid-row: 1 / 3;
 
     min-height: 1.5em;
     width: 1em;
-
-    margin: var(--input-padding);
 }
 
 
@@ -18,46 +14,51 @@
     min-height: 1em;
     min-width: 2em;
 
-
     /* 
-    reset styles for the switch 
+    reset some styles for the switch 
     */
-    padding: 0;
-    border-radius: 30px;
+    --internal-padding: 0;
+    --internal-border-radius: 30px;
     appearance: none;
     
+    --internal-margin: var(--input-margin, var(--input-padding));
     
 
-    margin: var(--input-padding);
-    
+    /* prevent the input from being stretched  */
     align-self: center;
 
 
-    border: solid 1px var(--global-theme-color);
+    /* 
+    a internal variable is used here instead of directly inlining the value  
+    because internal variables are renamed and minified. resulting in a smaller output size
+    */
+    --internal-switch-border: solid 1px var(--global-theme-color);
 
-    background-image: radial-gradient(circle, var(--global-theme-color)  25%, transparent 30%);
-    background-color: transparent;
-    background-position: -7px center;
+    --internal-border-left: var(--internal-switch-border);
+    --internal-border-right: var(--internal-switch-border);
+    --internal-border-bottom: var(--internal-switch-border);
+    --internal-border-top: var(--internal-switch-border);
 
-    transition: 
-        background-color .3s ease-out, 
-        background-position .15s linear, 
-        border .3s ease-out;
+
+    --internal-background: 
+        transparent /* background-color */
+        radial-gradient(circle, var(--global-theme-color)  25%, transparent 30%) /* background-image */
+        -7px center; /* background-position */
 }
 
 
 :is(.Vstyle-input > label, label.Vstyle-input) > input:is([type="checkbox"], [type="radio"])[role="switch"]:checked 
 {
-    background-image: radial-gradient(circle, white 25%, transparent 30%);
-    background-position: 7px center;
-
-    background-color: var(--global-theme-color);
+    --internal-background: 
+        var(--global-theme-color) /* background-color */
+        radial-gradient(circle, white 25%, transparent 30%) /* background-image */
+        7px center; /* background-position */
 }
 
+:is(.Vstyle-input > label, label.Vstyle-input) > input:is([type="checkbox"], [type="radio"])[role="switch"]:disabled
+{
+    opacity: .5;
+}
+
+
 /* TODO: remake the entire switch code to use pseudo elements, also allowing for customization using variables */
-/* input[type="checkbox"][role="switch"]::after {
-    content: '';
-    width: 10px;
-    height: 10px;
-    background: red;
-} */
