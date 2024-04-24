@@ -6,12 +6,4 @@
     grid-row: 1 / 3;
 
     --internal-padding: var(--input-floating-padding);
-    --internal-background: var(--input-floating-background);
-    --internal-color: var(--input-floating-color);
-    --internal-border-radius: var(--input-floating-border-radius);
-
-    --internal-border-left: var(--input-floating-border-left);
-    --internal-border-right: var(--input-floating-border-right);
-    --internal-border-top: var(--input-floating-border-top);
-    --internal-border-bottom: var(--input-floating-border-bottom);
 }

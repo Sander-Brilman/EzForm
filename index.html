@@ -29,10 +29,6 @@
 
 
 <link rel="stylesheet" href="src/icon/base.css">
-<link rel="stylesheet" href="src/icon/valid.css">
-<link rel="stylesheet" href="src/icon/invalid.css">
-<link rel="stylesheet" href="src/icon/locked.css">
-<link rel="stylesheet" href="src/icon/required.css">
 
 
 <link rel="stylesheet" href="src/info/base.css">
@@ -42,9 +38,6 @@
 
 <link rel="stylesheet" href="src/input/base.css">
 <link rel="stylesheet" href="src/input/floating.css">
-<link rel="stylesheet" href="src/input/required.css">
-<link rel="stylesheet" href="src/input/invalid.css">
-<link rel="stylesheet" href="src/input/valid.css">
 <link rel="stylesheet" href="src/input/locked.css">
 
 <link rel="stylesheet" href="src/input/type/checkbox_or_radio.css">
@@ -55,10 +48,7 @@
 
 <link rel="stylesheet" href="src/tag/base.css">
 <link rel="stylesheet" href="src/tag/required.css">
-<link rel="stylesheet" href="src/tag/valid.css">
-<link rel="stylesheet" href="src/tag/invalid.css">
-<link rel="stylesheet" href="src/tag/floating.css">
-<link rel="stylesheet" href="src/tag/locked.css">
+<link rel="stylesheet" href="src/tag/floating.css">  
 
 <link rel="stylesheet" href="src/tag/inputTypes/checkbox_or_radio.css">
 
@@ -76,37 +66,17 @@
         font-family: Helvetica;
     }
 
-    textarea {
-        height: 7rem;
+    .Vstyle-input:has(:is(input, textarea):user-invalid) {
+        --tag-color: var(--global-error-color);
+
+        --container-border-left: solid var(--global-error-color) 1px;
+        --container-border-right: solid var(--global-error-color) 1px;
+        --container-border-top: solid var(--global-error-color) 1px;
+        --container-border-bottom: solid var(--global-error-color) 1px;
     }
 
     :root {
-        /* --container-box-shadow: none;
-        --container-border: none;
-        --container-gap: 5px 0px;
 
-        --input-border: solid 1px rgb(224, 224, 224);
-        --input-padding: 10px;
-
-        --input-valid-border:  solid 1px green;
-        --input-invalid-border:  solid 1px firebrick;
-        --input-border-right: none;
-
-        --tag-background: transparent;
-        --tag-padding: 5px 0px;
-        --tag-font-size: 1rem;
-
-        --icon-border: solid 1px rgb(224, 224, 224);
-        --icon-valid-border:  solid 1px green;
-        --icon-border-left: none; */
-
-        /* --global-theme-color: rgb(170, 170, 170); */
-
-
-        /* --container-background: rgb(34, 34, 34);
-        --container-box-shadow: none;
-        --input-color: rgb(243, 243, 243);
-        --global-theme-color: #00b26eb0; */
     }
 
     label.Vstyle-input > i {
@@ -136,50 +106,28 @@
         }
     </style>
 
-    <!-- <fieldset class="Vstyle-input">
-        <legend>Kies een optie</legend>
-        <label>
-            <span>Option 1</span>
-            <input type="radio" name="radio-button" role="switch" name="radioG1" >
-        </label>
-
-        <label>
-            <span>Option 2</span>
-            <input type="radio" name="radio-button" role="switch" name="radioG1" >
-        </label>
-
-        <label>
-            <span>Option 3</span>
-            <input type="radio" name="radio-button" role="switch" name="radioG1" >
-        </label>
-    </fieldset> -->
-
-
-    <label class="Vstyle-input">
-        <i class="fa-sharp fa-light fa-at"></i>
-
-        <span>Email</span>
-        <input placeholder=" " >
-    </label>
-
     <div class="Vstyle-input">
-        <i class="fa-solid fa-book"></i>
+        <!-- <i class="fa-sharp fa-light fa-at"></i> -->
         <label>
-            <span>Subject</span>
-            <input placeholder=" " >
+            <span>Email</span>
+            <input type="email" placeholder=" " required >
         </label>
     </div>
 
-    <label class="Vstyle-input">
+
+    <div class="Vstyle-input">
+        <!-- <i class="fa-solid fa-book"></i> -->
+        <label>
+            <span>password</span>
+            <input placeholder=" "  >
+        </label>
+    </div>
+
+    <!-- <label class="Vstyle-input">
         <i class="fa-duotone fa-signature"></i>
                 
         <span>message</span>
-        <textarea placeholder=" " ></textarea>
-    </label>
-
-    <!-- <label class="Vstyle-input no-box">
-        <span>I would like to receive spam mail</span>
-        <input required role="switch" type="checkbox">
+        <textarea required ></textarea>
     </label> -->
 
     <button class="Vstyle-button">
@@ -1041,7 +989,7 @@
 
     <label class="Vstyle-input">
         <span>readonly (locked)</span>
-        <input type="color" readonly value="1c684f"> 
+        <input type="color" readonly value="#1c684f"> 
     </label>
     
     <label class="Vstyle-input">

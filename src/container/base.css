@@ -32,6 +32,13 @@ a container can be either:
     gap: var(--container-gap);
 }
 
+
+
+
+/* 
+handle the positions of the icons inside the label both if the label is inside a container or is the container itself
+*/
+
 /* icon on the right */
 :is(label.Vstyle-input, .Vstyle-input > label):has(> i)
 {

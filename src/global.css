@@ -86,7 +86,7 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     --global-label-color: #6f6f6f;
     --global-error-color: #b22222;
 
-    --global-border-radius: 0px;
+    --global-border-radius: 5px;
 
     --global-focus-outline: solid 2px rgba(var(--global-theme-color), 50%);
     --global-focus-outline-offset: 2px;
@@ -101,17 +101,18 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     /* container */
     --container-background: white;
     --container-padding: 8px;
+    --container-padding: 10px;
     --container-border-radius: var(--global-border-radius);
-    --container-box-shadow: 0px 0px 5px 1px #d3d3d3;
+    --container-box-shadow: initial;
     --container-margin: 0 0 30px 0;
 
-    --container-border: initial;
-    --container-border-bottom: var(--container-border, solid var(--global-theme-color));
+    --container-border: solid 1px lightgrey;
+    --container-border-bottom: var(--container-border);
     --container-border-top: var(--container-border);
-    --container-border-right: var(--container-border, solid transparent);
-    --container-border-left: var(--container-border, solid transparent);
+    --container-border-right: var(--container-border);
+    --container-border-left: var(--container-border);
 
-    --container-gap: 5px;
+    --container-gap: 5px 10px;
 
 
 
@@ -119,7 +120,7 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     /* icon */
     --icon-background: initial;
     --icon-color: var(--global-theme-color);
-    --icon-padding: 8px;
+    --icon-padding: 0 8px;
     --icon-border-radius: var(--global-border-radius);
     --icon-font-size: 22px;
     
@@ -168,7 +169,7 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     /* button */
     --button-background: var(--global-theme-color);
     --button-color: white;
-    --button-padding: .5em 1.2em;
+    --button-padding: .7em 1.1em;
     --button-border-radius: var(--global-border-radius);
     --button-transition-duration: var(--global-transition-duration);
     --button-font-size: initial;
@@ -206,6 +207,7 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     --tag-background: var(--container-background);
     --tag-color: var(--global-label-color);
     --tag-padding: 0 5px;
+    --tag-padding: 0;
     --tag-border-radius: initial;
     --tag-transition-duration: var(--global-transition-duration);
     --tag-font-size: .85rem;
@@ -231,20 +233,6 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     --tag-floating-background: transparent;
 
 
-    /* tag required */
-
-    --tag-required-suffix-color: var(--global-error-color);
-    --tag-required-suffix: ' *';
-
-    --tag-required-background: var(--tag-background);
-    --tag-required-color: var(--tag-color);
-
-    --tag-required-border: initial;
-    --tag-required-border-bottom: var(--tag-required-border, var(--tag-border-bottom));
-    --tag-required-border-top: var(--tag-required-border, var(--tag-border-top));
-    --tag-required-border-right: var(--tag-required-border, var(--tag-border-right));
-    --tag-required-border-left: var(--tag-required-border, var(--tag-border-left));
-
     /* tag locked */
 
     --tag-locked-background: var(--tag-background);
@@ -256,42 +244,14 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     --tag-locked-border-right: var(--tag-locked-border, var(--tag-border-right));
     --tag-locked-border-left:  var(--tag-locked-border, var(--tag-border-left));
 
-    
-    /* tag invalid */
-    --tag-invalid-suffix-color: var(--global-error-color);
-    --tag-invalid-suffix: '!';
-
-    --tag-invalid-background: var(--tag-background);
-    --tag-invalid-color: var(--global-error-color);
-
-    --tag-invalid-border: initial;
-    --tag-invalid-border-bottom: var(--tag-invalid-border, var(--tag-border-bottom));
-    --tag-invalid-border-top: var(--tag-invalid-border, var(--tag-border-top));
-    --tag-invalid-border-right: var(--tag-invalid-border, var(--tag-border-right));
-    --tag-invalid-border-left: var(--tag-invalid-border, var(--tag-border-left));
-
-
-
-    /* tag valid */
-    --tag-valid-suffix-color: initial;
-    --tag-valid-suffix: initial;
-
-    --tag-valid-background: var(--tag-background);
-    --tag-valid-color: var(--tag-color);
-
-    --tag-valid-border: initial;
-    --tag-valid-border-bottom: var(--tag-valid-border, var(--tag-border-bottom));
-    --tag-valid-border-top: var(--tag-valid-border, var(--tag-border-top));
-    --tag-valid-border-right: var(--tag-valid-border, var(--tag-border-right));
-    --tag-valid-border-left: var(--tag-valid-border, var(--tag-border-left));
-
 
 
 
     /* input */
     --input-background: none;
     --input-color: black;
-    --input-padding: 4px 5px;
+    --input-padding: 0 5px;
+    --input-padding: 0;
     --input-border-radius: var(--global-border-radius);
     --input-font-size: initial;
     
@@ -302,16 +262,7 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     --input-border-left: var(--input-border);
 
     /* input floating */
-    --input-floating-background: var(--input-background);
-    --input-floating-color: var(--input-color);
-    --input-floating-padding: 19px 5px 5px 5px;
-    --input-floating-border-radius: initial;
-
-    --input-floating-border: initial;
-    --input-floating-border-bottom: var(--input-floating-border, var(--input-border-bottom));
-    --input-floating-border-top: var(--input-floating-border, var(--input-border-top));
-    --input-floating-border-right: var(--input-floating-border, var(--input-border-right));
-    --input-floating-border-left: var(--input-floating-border, var(--input-border-left));
+    --input-floating-padding: 20px 0 0 0;
 
     /* input locked */
     --input-locked-background: var(--input-background);
@@ -322,38 +273,5 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     --input-locked-border-top: var(--input-locked-border, var(--input-border-top));
     --input-locked-border-right: var(--input-locked-border, var(--input-border-right));
     --input-locked-border-left: var(--input-locked-border, var(--input-border-left));
-
-
-    /* input required */
-    --input-required-background: var(--input-background);
-    --input-required-color: var(--input-color);
-
-    --input-required-border: initial;
-    --input-required-border-bottom: var(--input-required-border, var(--input-border-bottom));
-    --input-required-border-top: var(--input-required-border, var(--input-border-top));
-    --input-required-border-right: var(--input-required-border, var(--input-border-right));
-    --input-required-border-left: var(--input-required-border, var(--input-border-left));
-
-
-    /* input invalid */
-    --input-invalid-background: var(--input-background);
-    --input-invalid-color: var(--input-color);
-
-    --input-invalid-border: initial;
-    --input-invalid-border-bottom: var(--input-invalid-border, var(--input-border-bottom));
-    --input-invalid-border-top: var(--input-invalid-border, var(--input-border-top));
-    --input-invalid-border-right: var(--input-invalid-border, var(--input-border-right));
-    --input-invalid-border-left: var(--input-invalid-border, var(--input-border-left));
-
-    
-    /* input valid */
-    --input-valid-background: var(--input-background);
-    --input-valid-color: var(--input-color);
-
-    --input-valid-border: initial;
-    --input-valid-border-bottom: var(--input-valid-border, var(--input-border-bottom));
-    --input-valid-border-top: var(--input-valid-border, var(--input-border-top));
-    --input-valid-border-right: var(--input-valid-border, var(--input-border-right));
-    --input-valid-border-left: var(--input-valid-border, var(--input-border-left));
 
 }
