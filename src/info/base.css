@@ -33,7 +33,8 @@ the ::before element of the messages where the icon is rendered via a background
     min-width: 1.2em;
     height: 1em;
 
-    margin: 3px 7px 0 0;
+    margin: 3px 10px 0 10px;
+    margin: 2px .7ch 0 0;
 
 
     /* due use of an image mask, the background of the ::before will be the eventual color of the icon 
@@ -44,15 +45,9 @@ the ::before element of the messages where the icon is rendered via a background
     /* mask-image for the svg icon at the start of the message 
     --internal-info-svg-icon will be set by the specific implementation in the note.css & alert.css files */
     mask-image: var(--internal-info-icon);
-    -webkit-mask-image: var(--internal-info-icon);
-
     mask-size: 1em;
-
     mask-position: center ;
-    -webkit-mask-position: center ;
-    
     mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
 }
 
 

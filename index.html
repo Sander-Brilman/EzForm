@@ -77,6 +77,14 @@
 
     :root {
 
+        --container-border: none;
+        --input-border: solid 1px grey;
+
+        --alert-color: grey;
+        --alert-icon-color: rgb(172, 0, 0);
+
+        --note-icon-color: rgb(0, 132, 172);
+
     }
 
     label.Vstyle-input > i {
@@ -96,7 +104,6 @@
 <details open>
     <summary>testing</summary>
 
-
     <style>
         .no-box {
             --container-box-shadow: none;
@@ -106,8 +113,14 @@
         }
     </style>
 
+    <Label class="Vstyle-input">
+        <i class="fa-duotone fa-signature"></i>
+
+        <input placeholder="Name">
+    </Label>
+
     <div class="Vstyle-input">
-        <!-- <i class="fa-sharp fa-light fa-at"></i> -->
+        <i class="fa-sharp fa-light fa-at"></i>
         <label>
             <span>Email</span>
             <input type="email" placeholder=" " required >
@@ -116,19 +129,26 @@
 
 
     <div class="Vstyle-input">
-        <!-- <i class="fa-solid fa-book"></i> -->
+        <i class="fa-solid fa-book"></i>
         <label>
-            <span>password</span>
-            <input placeholder=" "  >
+            <span>Subject</span>
+            <input  >
         </label>
     </div>
 
-    <!-- <label class="Vstyle-input">
+    <label class="Vstyle-input">
         <i class="fa-duotone fa-signature"></i>
                 
-        <span>message</span>
-        <textarea required ></textarea>
-    </label> -->
+        <span>Message</span>
+        <textarea required placeholder=" "></textarea>
+    </label>
+
+    <label class="Vstyle-input">
+        <i class="fa-regular fa-truck-fast"></i>
+        <span>Fast delivery?</span>
+        <input role="switch" type="checkbox">
+    </label>
+
 
     <button class="Vstyle-button">
         Versturen

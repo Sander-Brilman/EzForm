@@ -34,7 +34,7 @@ styling for the tag. the tag is the span with text nested inside the label
     
     line-height: 1rem !important;
     font-weight: lighter;
-    font-style: italic;
+    /* font-style: italic; */
 
     /* prevent user from selecting the text for a better UX */
     user-select: none;

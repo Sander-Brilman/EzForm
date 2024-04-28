@@ -18,11 +18,15 @@ a container can be either:
     --internal-border-bottom: var(--container-border-bottom);
     --internal-border-right: var(--container-border-right);
 
+    --internal-width: 100%;
+    --internal-display: flex;
+
+
     gap: var(--container-gap);
 }
 
 :is(label.Vstyle-input, .Vstyle-input > label) {
-    display: grid;
+    --internal-display: grid;
 
     grid-template-columns: var(--internal-template-columns, 1fr);
     grid-template-rows: auto 1fr;
@@ -31,6 +35,11 @@ a container can be either:
 
     gap: var(--container-gap);
 }
+
+:is(label.Vstyle-input, .Vstyle-input > label) * {
+    --internal-display: flex;
+}
+
 
 
 

@@ -16,6 +16,8 @@
     --internal-border-right: var(--icon-border-right);
     --internal-border-top: var(--icon-border-top);
     --internal-border-bottom: var(--icon-border-bottom);
+
+    --internal-width: 1.5em;
 }
 
 

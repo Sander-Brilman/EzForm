@@ -17,15 +17,16 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
 */
 
 :is(
+    #Vstyle-input#Vstyle-input#Vstyle-input#Vstyle-input#Vstyle-input, /* selectors only here to increase specificity to ensure all styles are overwritten */
     .Vstyle-input,
     .Vstyle-input > *:not(label),
     .Vstyle-input > label > *,
     .Vstyle-button
 ) {
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     
     /* display flex for putting all the items for that element side-by-side.  */
-    display: flex;
+    display: var(--internal-display) !important;
 
     line-height: 20px !important;
 
@@ -43,7 +44,8 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     padding: var(--internal-padding) !important;    
     margin: var(--internal-margin) !important;
 
-
+    width: var(--internal-width) !important;
+    height: var(--internal-height) !important;
     
     /* 
     here this new internal variable is used instead of the "var(--internal-transition-duration) ease-out" directly 
@@ -100,8 +102,7 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
 
     /* container */
     --container-background: white;
-    --container-padding: 8px;
-    --container-padding: 10px;
+    --container-padding: 7px 10px;
     --container-border-radius: var(--global-border-radius);
     --container-box-shadow: initial;
     --container-margin: 0 0 30px 0;
@@ -112,15 +113,16 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     --container-border-right: var(--container-border);
     --container-border-left: var(--container-border);
 
-    --container-gap: 5px 10px;
-
+    --container-gap: 0;
+    --container-gap: 0 10px;
+    
 
 
 
     /* icon */
     --icon-background: initial;
     --icon-color: var(--global-theme-color);
-    --icon-padding: 0 8px;
+    --icon-padding: initial;
     --icon-border-radius: var(--global-border-radius);
     --icon-font-size: 22px;
     
@@ -135,9 +137,9 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     --note-background: initial;
     --note-padding: 0;
     --note-border-radius: initial;
-    --note-icon-color: var(--global-label-color);
-    --note-font-size: initial;
+    --note-icon-color: var(--note-color, var(--global-label-color));
     --note-font-size: .9rem;
+    --note-margin: 10px 0 0 0;
 
     --note-border: initial;
     --note-border-bottom: var(--note-border);
@@ -151,9 +153,9 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     --alert-background: none;
     --alert-padding: 0;
     --alert-border-radius: inherit;
-    --alert-icon-color: var(--global-error-color);
-    --alert-font-size: initial;
+    --alert-icon-color: var(--alert-color, var(--global-error-color));
     --alert-font-size: .9rem;
+    --alert-margin: 10px 0 0 0;
 
     --alert-border: initial;
     --alert-border-bottom: var(--alert-border);
@@ -206,7 +208,6 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     /* tag */
     --tag-background: var(--container-background);
     --tag-color: var(--global-label-color);
-    --tag-padding: 0 5px;
     --tag-padding: 0;
     --tag-border-radius: initial;
     --tag-transition-duration: var(--global-transition-duration);
@@ -250,8 +251,7 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     /* input */
     --input-background: none;
     --input-color: black;
-    --input-padding: 0 5px;
-    --input-padding: 0;
+    --input-padding: 4px 0;
     --input-border-radius: var(--global-border-radius);
     --input-font-size: initial;
     
@@ -262,7 +262,7 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     --input-border-left: var(--input-border);
 
     /* input floating */
-    --input-floating-padding: 20px 0 0 0;
+    --input-floating-padding: 19px 5px 5px 5px;
 
     /* input locked */
     --input-locked-background: var(--input-background);
