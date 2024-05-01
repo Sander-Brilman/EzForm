@@ -171,7 +171,7 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     /* button */
     --button-background: var(--global-theme-color);
     --button-color: white;
-    --button-padding: .7em 1.1em;
+    --button-padding: .6em 1em;
     --button-border-radius: var(--global-border-radius);
     --button-transition-duration: var(--global-transition-duration);
     --button-font-size: initial;
@@ -208,7 +208,7 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     /* tag */
     --tag-background: var(--container-background);
     --tag-color: var(--global-label-color);
-    --tag-padding: 0;
+    --tag-padding: 0 5px 0 0;
     --tag-border-radius: initial;
     --tag-transition-duration: var(--global-transition-duration);
     --tag-font-size: .85rem;
@@ -262,7 +262,7 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     --input-border-left: var(--input-border);
 
     /* input floating */
-    --input-floating-padding: 19px 5px 5px 5px;
+    --input-floating-padding: 19px 0 4px 0;
 
     /* input locked */
     --input-locked-background: var(--input-background);

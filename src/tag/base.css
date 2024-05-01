@@ -3,13 +3,13 @@ styling for the tag. the tag is the span with text nested inside the label
 */
 .Vstyle-input :is(label > span:not([role]))
 {
-    display: block;
-    width: var(--tag-width);
+    --internal-display: block;
     
     grid-column: var(--internal-input-column);
     grid-row: 1;
 
-    height: fit-content;
+    --internal-height: fit-content;
+    --internal-width: var(--tag-width);
 
 
     /* needed to allow the tag (span) to be position absolute in case of a floating label  */

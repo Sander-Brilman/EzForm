@@ -7,5 +7,5 @@ tag style for when the input is marked as required
 ) > span:not([role])::after 
 {
     color: var(--global-error-color);
-    content: '*';
+    content: ' *';
 }

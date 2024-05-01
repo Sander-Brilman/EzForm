@@ -26,6 +26,7 @@ a container can be either:
 }
 
 :is(label.Vstyle-input, .Vstyle-input > label) {
+    display: grid;
     --internal-display: grid;
 
     grid-template-columns: var(--internal-template-columns, 1fr);
