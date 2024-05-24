@@ -138,7 +138,7 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     --note-padding: 0;
     --note-border-radius: initial;
     --note-icon-color: var(--note-color, var(--global-label-color));
-    --note-font-size: .9rem;
+    --note-font-size: .8rem;
     --note-margin: 10px 0 0 0;
 
     --note-border: initial;
@@ -154,7 +154,7 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     --alert-padding: 0;
     --alert-border-radius: inherit;
     --alert-icon-color: var(--alert-color, var(--global-error-color));
-    --alert-font-size: .9rem;
+    --alert-font-size: .8rem;
     --alert-margin: 10px 0 0 0;
 
     --alert-border: initial;
