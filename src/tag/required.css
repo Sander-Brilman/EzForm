@@ -2,8 +2,8 @@
 tag style for when the input is marked as required 
 */
 
-:is(.Vstyle-input > label, label.Vstyle-input):has(
-    :is(input, select, textarea):not(:user-valid, :user-invalid):required
+:is(.vici-input > label, label.vici-input):has(
+    :is(input, select, textarea):not(:user-valid):required
 ) > span:not([role])::after 
 {
     color: var(--global-error-color);

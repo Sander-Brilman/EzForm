@@ -1,7 +1,7 @@
 /* 
 styling for the tag. the tag is the span with text nested inside the label
 */
-.Vstyle-input :is(label > span:not([role]))
+.vici-input :is(label > span:not([role]))
 {
     --internal-display: block;
     

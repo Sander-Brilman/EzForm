@@ -2,21 +2,15 @@
 disabled buttons
 */
 :is(
-    .Vstyle-button,
-    .Vstyle-input :is(
+    .vici-button,
+    .vici-input :is(
         button, 
         input[type="submit"],
         input[type="button"],
         input[type="reset"]
     )
 ):disabled {
-    --internal-color: var(--button-locked-color);
-    --internal-background: var(--button-locked-background);
-
-    --internal-border-left: var(--button-locked-border-left);
-    --internal-border-right: var(--button-locked-border-right);
-    --internal-border-top: var(--button-locked-border-top);
-    --internal-border-bottom: var(--button-locked-border-bottom);
+    opacity: var(--global-locked-opacity);
 
     cursor: not-allowed;
 }

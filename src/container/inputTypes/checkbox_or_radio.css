@@ -2,20 +2,20 @@
 /* 
 The styles for labels (minimal container or not) for checkboxes
 */
-:is(label.Vstyle-input, .Vstyle-input > label):has(input:is([type="checkbox"], [type="radio"])) 
+:is(label.vici-input, .vici-input > label):has(input:is([type="checkbox"], [type="radio"])) 
 {
     --internal-template-columns: auto 1fr;
     --internal-input-column: 1;
 }
 
 
-:is(label.Vstyle-input, .Vstyle-input > label):has(input:is([type="checkbox"]), [type="radio"]):has(> i)
+:is(label.vici-input, .vici-input > label):has(input:is([type="checkbox"]), [type="radio"]):has(> i)
 {
     --internal-template-columns: auto 1fr auto;
     --internal-input-column: 1;
 }
 
-:is(label.Vstyle-input, .Vstyle-input > label):has(input:is([type="checkbox"]), [type="radio"]):has(> i ~ :is(input, textarea, select)) 
+:is(label.vici-input, .vici-input > label):has(input:is([type="checkbox"]), [type="radio"]):has(> i ~ :is(input, textarea, select)) 
 {
     --internal-template-columns: auto auto 1fr;
     --internal-input-column: 2;
@@ -23,7 +23,7 @@ The styles for labels (minimal container or not) for checkboxes
 
 
 
-.Vstyle-input:has([type="radio"]) > label {
+.vici-input:has([type="radio"]) > label {
     width: 100%;
 }
 

@@ -1,4 +1,4 @@
-:is(.Vstyle-input > label, label.Vstyle-input) > input:is([type="checkbox"], [type="radio"]) {
+:is(.vici-input > label, label.vici-input) > input:is([type="checkbox"], [type="radio"]) {
     grid-row-start: 1; 
     grid-row: 1 / 3;
 
@@ -7,7 +7,7 @@
 }
 
 
-:is(.Vstyle-input > label, label.Vstyle-input) > input:is([type="checkbox"], [type="radio"])[role="switch"] {
+:is(.vici-input > label, label.vici-input) > input:is([type="checkbox"], [type="radio"])[role="switch"] {
     grid-row-start: 1; 
     grid-row: 1 / 3;
 
@@ -45,7 +45,7 @@
 }
 
 
-:is(.Vstyle-input > label, label.Vstyle-input) > input:is([type="checkbox"], [type="radio"])[role="switch"]:checked 
+:is(.vici-input > label, label.vici-input) > input:is([type="checkbox"], [type="radio"])[role="switch"]:checked 
 {
     --internal-background: 
         var(--global-theme-color) /* background-color */
@@ -53,7 +53,7 @@
         7px center; /* background-position */
 }
 
-:is(.Vstyle-input > label, label.Vstyle-input) > input:is([type="checkbox"], [type="radio"])[role="switch"]:disabled
+:is(.vici-input > label, label.vici-input) > input:is([type="checkbox"], [type="radio"])[role="switch"]:disabled
 {
     opacity: .5;
 }

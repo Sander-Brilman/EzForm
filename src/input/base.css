@@ -2,7 +2,7 @@
     base styles for all methods of input. including textarea, select and input elements
 */
 
-:is(.Vstyle-input > label, label.Vstyle-input) :is(
+:is(.vici-input > label, label.vici-input) :is(
     input, 
     textarea, 
     select
@@ -26,7 +26,7 @@
 minimal container styles
 */
 
-:is(.Vstyle-input > label, label.Vstyle-input) > :is(input, select, textarea) {
+:is(.vici-input > label, label.vici-input) > :is(input, select, textarea) {
     grid-column: var(--internal-input-column);
     grid-row: 2;
 }

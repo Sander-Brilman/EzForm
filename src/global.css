@@ -6,7 +6,7 @@ All the styling for those elements are defined here using internal variables
 
 Styling for each element is done by setting these internal variables like this:
 
-.Vstyle-input > i 
+.vici-input > i 
 {
     --internal-color: red; 
     ect..
@@ -17,11 +17,11 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
 */
 
 :is(
-    #Vstyle-input#Vstyle-input#Vstyle-input#Vstyle-input#Vstyle-input, /* selectors only here to increase specificity to ensure all styles are overwritten */
-    .Vstyle-input,
-    .Vstyle-input > *:not(label),
-    .Vstyle-input > label > *,
-    .Vstyle-button
+    #vici-input#vici-input#vici-input#vici-input#vici-input, /* selectors only here to increase specificity to ensure all styles are overwritten */
+    .vici-input,
+    .vici-input > *:not(label),
+    .vici-input > label > *,
+    .vici-button
 ) {
     box-sizing: border-box !important;
     
@@ -69,7 +69,7 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
 
 
 
-.Vstyle-input *:focus 
+.vici-input *:focus 
 {
     outline: var(--global-focus-outline);
     outline-offset: var(--global-focus-outline-offset);
@@ -84,9 +84,8 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
         can be overridden using the specific css-style-specific variables listed below
     */
     --global-theme-color: blue;
-
-    --global-label-color: #6f6f6f;
     --global-error-color: #b22222;
+    --global-locked-opacity: 50%;
 
     --global-border-radius: 5px;
 
@@ -133,11 +132,11 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     --icon-border-left: var(--icon-border);
 
     /* note message */
-    --note-color: var(--global-label-color);
+    --note-color: #6f6f6f;
     --note-background: initial;
     --note-padding: 0;
     --note-border-radius: initial;
-    --note-icon-color: var(--note-color, var(--global-label-color));
+    --note-icon-color: var(--note-color, #6f6f6f);
     --note-font-size: .8rem;
     --note-margin: 10px 0 0 0;
 
@@ -207,9 +206,9 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
 
     /* tag */
     --tag-background: var(--container-background);
-    --tag-color: var(--global-label-color);
+    --tag-color: #6f6f6f;
     --tag-padding: 0 5px 0 0;
-    --tag-border-radius: initial;
+    --tag-border-radius: var(--global-border-radius);
     --tag-transition-duration: var(--global-transition-duration);
     --tag-font-size: .85rem;
     --tag-width: fit-content;
@@ -234,17 +233,6 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     --tag-floating-background: transparent;
 
 
-    /* tag locked */
-
-    --tag-locked-background: var(--tag-background);
-    --tag-locked-color: var(--tag-color);
-
-    --tag-locked-border: initial;
-    --tag-locked-border-bottom: var(--tag-locked-border, var(--tag-border-bottom));
-    --tag-locked-border-top: var(--tag-locked-border, var(--tag-border-top));
-    --tag-locked-border-right: var(--tag-locked-border, var(--tag-border-right));
-    --tag-locked-border-left:  var(--tag-locked-border, var(--tag-border-left));
-
 
 
 
@@ -262,16 +250,6 @@ Resulting in a much smaller output size comparing to writing "border-right: var(
     --input-border-left: var(--input-border);
 
     /* input floating */
-    --input-floating-padding: 19px 0 4px 0;
-
-    /* input locked */
-    --input-locked-background: var(--input-background);
-    --input-locked-color: color-mix(in srgb, var(--input-color), rgba(126, 126, 126, 0.507));
-
-    --input-locked-border: initial;
-    --input-locked-border-bottom: var(--input-locked-border, var(--input-border-bottom));
-    --input-locked-border-top: var(--input-locked-border, var(--input-border-top));
-    --input-locked-border-right: var(--input-locked-border, var(--input-border-right));
-    --input-locked-border-left: var(--input-locked-border, var(--input-border-left));
+    --input-floating-padding: 24px 0 4px 0;
 
 }

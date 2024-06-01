@@ -1,7 +1,7 @@
 /* 
 base styles for the info elements such as notes & alerts at the bottom of the containers
 */
-.Vstyle-input :is(
+.vici-input :is(
     [role="alert"], 
     [role="note"]
 ) {
@@ -20,7 +20,7 @@ base styles for the info elements such as notes & alerts at the bottom of the co
 /* 
 the ::before element of the messages where the icon is rendered via a background and a image mask
 */
-.Vstyle-input :is([role="alert"], [role="note"])::before
+.vici-input :is([role="alert"], [role="note"])::before
 {
     content: '';
 
@@ -56,7 +56,7 @@ the ::before element of the messages where the icon is rendered via a background
 minimal container styles
 */
 
-label.Vstyle-input > :is(
+label.vici-input > :is(
     [role="alert"], 
     [role="note"]
 ) {

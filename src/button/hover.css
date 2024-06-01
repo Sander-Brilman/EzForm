@@ -2,8 +2,8 @@
 hover animation
 */
 :is(
-    .Vstyle-button,
-    .Vstyle-input :is(
+    .vici-button,
+    .vici-input :is(
         button, 
         input:is(
             [type="submit"],
@@ -20,3 +20,10 @@ hover animation
     --internal-border-top: var(--button-hover-border-top);
     --internal-border-bottom: var(--button-hover-border-bottom);
 }
+
+
+
+
+
+
+

@@ -2,7 +2,7 @@
 locked (readonly / disabled) state for input
 */
 
-.Vstyle-input :is(
+.vici-input :is(
     input, 
     textarea, 
     select

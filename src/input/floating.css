@@ -1,5 +1,5 @@
 
-.Vstyle-input :is(
+.vici-input :is(
     input, 
     textarea, 
 )[placeholder=" "] {

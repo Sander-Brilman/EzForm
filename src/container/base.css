@@ -1,11 +1,11 @@
 /* 
 a container can be either:
 
-- a element (usually a div) with the class .Vstyle-input
+- a element (usually a div) with the class .vici-input
 - a label as a minimal container
 */
 
-.Vstyle-input {
+.vici-input {
     --internal-margin: var(--container-margin);
     --internal-padding: var(--container-padding);
     --internal-box-shadow: var(--container-box-shadow);
@@ -25,7 +25,7 @@ a container can be either:
     gap: var(--container-gap);
 }
 
-:is(label.Vstyle-input, .Vstyle-input > label) {
+:is(label.vici-input, .vici-input > label) {
     display: grid;
     --internal-display: grid;
 
@@ -37,7 +37,7 @@ a container can be either:
     gap: var(--container-gap);
 }
 
-:is(label.Vstyle-input, .Vstyle-input > label) * {
+:is(label.vici-input, .vici-input > label) * {
     --internal-display: flex;
 }
 
@@ -50,13 +50,13 @@ handle the positions of the icons inside the label both if the label is inside a
 */
 
 /* icon on the right */
-:is(label.Vstyle-input, .Vstyle-input > label):has(> i)
+:is(label.vici-input, .vici-input > label):has(> i)
 {
     --internal-template-columns: 1fr auto;
 }
 
 /* icon on the left */
-:is(label.Vstyle-input, .Vstyle-input > label):has(> i ~ :is(input, textarea, select))
+:is(label.vici-input, .vici-input > label):has(> i ~ :is(input, textarea, select))
 {
     --internal-template-columns: auto 1fr;
     --internal-input-column: 2;

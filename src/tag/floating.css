@@ -1,7 +1,7 @@
 /* 
 styling for the tag for a floating label
 */
-:is(.Vstyle-input > label, label.Vstyle-input):has(
+:is(.vici-input > label, label.vici-input):has(
     :is(
         input,
         textarea
@@ -25,7 +25,7 @@ styling for the tag for a floating label
     --internal-font-size: var(--tag-floating-font-size);
 }
 
-:is(.Vstyle-input > label, label.Vstyle-input):has(
+:is(.vici-input > label, label.vici-input):has(
     :is(
         input,
         textarea

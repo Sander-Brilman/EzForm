@@ -1,4 +1,4 @@
-.Vstyle-input > :is(i, label > i)
+.vici-input > :is(i, label > i)
 {
     /* give the icon a fixed width and center it to ensure consistent alignment between icons of different widths*/
     justify-content: center;
@@ -30,6 +30,6 @@ the input is on row 2
 make the icon span both rows
 */
 
-label.Vstyle-input > i {
+label.vici-input > i {
     grid-row: span 2;
 }

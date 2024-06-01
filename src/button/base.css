@@ -1,5 +1,5 @@
-.Vstyle-button,
-.Vstyle-input :is(
+.vici-button,
+.vici-input :is(
     button, 
     input:is(
         [type="submit"],

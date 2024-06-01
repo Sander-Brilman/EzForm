@@ -1,0 +1,10 @@
+
+/* This selector uses a :where to reset the specificity to 0. allowing the user to override it from anywhere */
+:where(.outline) {
+    --button-border: solid 2px var(--global-theme-color);
+    --button-background: transparent;
+    --button-color: var(--global-theme-color);
+    
+    --button-hover-color: white;
+    --button-background: var(--global-theme-color);
+} 
